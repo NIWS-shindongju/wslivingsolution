@@ -10,7 +10,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -50,7 +50,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-white shadow-sm' : 'bg-transparent'
+        isScrolled ? 'bg-white shadow-sm' : 'bg-gradient-to-b from-black/40 to-transparent'
       }`}
     >
       <div className="container mx-auto px-6 lg:px-8">

@@ -13,7 +13,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-dark-slate text-warm-ivory border-t border-copper">
+    <footer className="bg-dark-slate text-warm-ivory">
+      <div className="h-px bg-copper"></div>
       <div className="container mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
