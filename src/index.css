@@ -4,11 +4,11 @@
 
 @layer base {
   body {
-    @apply font-sans bg-white text-dark;
+    @apply font-sans bg-white text-charcoal;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-serif font-light;
   }
 
   * {

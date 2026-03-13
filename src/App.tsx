@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
-import Products from './pages/Products';
+import Flooring from './pages/Flooring';
+import Wall from './pages/Wall';
 import Ecostec from './pages/Ecostec';
 import Custom from './pages/Custom';
 import Portfolio from './pages/Portfolio';
@@ -15,7 +16,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="products" element={<Products />} />
+          <Route path="flooring" element={<Flooring />} />
+          <Route path="wall" element={<Wall />} />
           <Route path="ecostec" element={<Ecostec />} />
           <Route path="custom" element={<Custom />} />
           <Route path="portfolio" element={<Portfolio />} />
