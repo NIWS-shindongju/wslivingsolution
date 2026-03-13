@@ -27,18 +27,18 @@ export default function Header() {
       name: '바닥재',
       path: '/flooring',
       submenu: [
-        { name: '진 시리즈', path: '/flooring#jin' },
-        { name: '아이코닉 스톤', path: '/flooring#iconic' },
-        { name: '기타 마루', path: '/flooring#other' },
+        { name: '진 시리즈', path: '/flooring' },
+        { name: '아이코닉 스톤', path: '/flooring/iconic-stone' },
+        { name: '기타 마루', path: '/flooring' },
       ]
     },
     {
       name: '벽재',
       path: '/wall',
       submenu: [
-        { name: '시그니월', path: '/wall#signiwall' },
-        { name: '디자인월', path: '/wall#designwall' },
-        { name: '디하임', path: '/wall#dheim' },
+        { name: '시그니월', path: '/wall/signiwall' },
+        { name: '디자인월', path: '/wall/designwall' },
+        { name: '디하임', path: '/wall/dheim' },
       ]
     },
     { name: '에코스텍·세이프월', path: '/ecostec' },

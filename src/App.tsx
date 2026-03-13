@@ -8,6 +8,7 @@ import Ecostec from './pages/Ecostec';
 import Custom from './pages/Custom';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   return (
@@ -17,8 +18,11 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="flooring" element={<Flooring />} />
+          <Route path="flooring/:productId" element={<ProductDetail />} />
           <Route path="wall" element={<Wall />} />
+          <Route path="wall/:productId" element={<ProductDetail />} />
           <Route path="ecostec" element={<Ecostec />} />
+          <Route path="ecostec/:productId" element={<ProductDetail />} />
           <Route path="custom" element={<Custom />} />
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="contact" element={<Contact />} />

@@ -1,239 +1,134 @@
 import { Link } from 'react-router-dom';
-import { Volume2, Palette, Award, Shield, Droplets, Sparkles, Users, Building2, BookOpen, Dumbbell, Briefcase, Church } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { getProductsByCategory } from '../data/products';
 
 export default function Ecostec() {
-  const processSteps = [
-    '상담·요구사항 파악',
-    '현장 방문 실측',
-    '자재 선정·설계',
-    '견적·계약',
-    '자재 납품·시공',
-    '검수·A/S'
-  ];
+  const ecostecProducts = getProductsByCategory('ecostec');
 
-  const applications = [
-    { icon: Users, label: '회의실' },
-    { icon: Building2, label: '강당·다목적홀' },
-    { icon: BookOpen, label: '도서관' },
-    { icon: Dumbbell, label: '체육관' },
-    { icon: Briefcase, label: '사무실' },
-    { icon: Church, label: '교회·예배당' }
-  ];
+  const getBadgeStyle = (badge: string) => {
+    if (badge === 'NEW' || badge === 'NEW 2024' || badge === 'NEW 2025') {
+      return 'bg-copper text-white';
+    }
+    if (badge === 'BEST' || badge === 'PREMIUM') {
+      return 'bg-dark-slate text-white';
+    }
+    return 'bg-copper/10 text-copper';
+  };
 
   return (
     <div className="w-full">
       <section className="relative h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-charcoal">
-          <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 to-charcoal/50"></div>
-          <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-sm">
-            [에코스텍이 시공된 고급 강당 또는 도서관]
-          </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate">
+          <div className="absolute inset-0 bg-gradient-to-r from-dark-slate/90 to-dark-slate/50"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-            에코스텍 & 세이프월
-          </h1>
-          <p className="text-xl md:text-2xl text-cream">
-            소리를 다스리고, 공간을 완성하다
-          </p>
-        </div>
-      </section>
-
-      <section className="py-20 bg-cream">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-              <div className="h-96 bg-gray-200 rounded-2xl flex items-center justify-center text-sm text-gray-500">
-                [에코스텍 타공 판넬 클로즈업]
-              </div>
-              <div>
-                <h2 className="font-serif text-4xl font-bold text-charcoal mb-6">
-                  에코스텍 (ECOSTEC)
-                </h2>
-                <p className="text-gray-700 leading-relaxed mb-8">
-                  동화기업이 개발한 기능성 흡음 인테리어 패널. 최상급 MDF에 정밀 타공 기술을 적용하여 NRC(흡음계수) 1.00에 가까운 흡음 성능. 멜라민, 도장, 무늬목 등 다양한 마감 가능. 우성리빙솔루션은 2005년부터 에코스텍을 시공해온 국내 최장수 시공 파트너입니다.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-white p-6 rounded-xl shadow-lg">
-                    <div className="w-14 h-14 bg-deepgreen/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                      <Volume2 className="text-deepgreen" size={28} />
-                    </div>
-                    <h3 className="font-serif text-lg font-bold text-charcoal text-center mb-2">
-                      NRC 1.0급 흡음력
-                    </h3>
-                    <p className="text-sm text-gray-600 text-center">
-                      소리의 반사를 억제하여 명료한 음향 환경 조성
-                    </p>
-                  </div>
-
-                  <div className="bg-white p-6 rounded-xl shadow-lg">
-                    <div className="w-14 h-14 bg-deepgreen/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                      <Palette className="text-deepgreen" size={28} />
-                    </div>
-                    <h3 className="font-serif text-lg font-bold text-charcoal text-center mb-2">
-                      다양한 디자인 마감
-                    </h3>
-                    <p className="text-sm text-gray-600 text-center">
-                      멜라민, 도장, 무늬목 등 공간 콘셉트에 맞는 마감
-                    </p>
-                  </div>
-
-                  <div className="bg-white p-6 rounded-xl shadow-lg">
-                    <div className="w-14 h-14 bg-deepgreen/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                      <Award className="text-deepgreen" size={28} />
-                    </div>
-                    <h3 className="font-serif text-lg font-bold text-charcoal text-center mb-2">
-                      20년 시공 노하우
-                    </h3>
-                    <p className="text-sm text-gray-600 text-center">
-                      2005년 첫 시공부터 축적된 현장 데이터와 경험
-                    </p>
-                  </div>
-                </div>
-              </div>
+        <div className="relative z-10 container mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="inline-block bg-copper/20 border border-copper text-copper px-4 py-2 rounded-full text-sm font-normal mb-6">
+              FUNCTIONAL PANELS
             </div>
-
-            <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-xl mb-20">
-              <h3 className="font-serif text-3xl font-bold text-charcoal text-center mb-12">
-                적용 공간
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                {applications.map((app, index) => {
-                  const Icon = app.icon;
-                  return (
-                    <div key={index} className="text-center">
-                      <div className="w-16 h-16 bg-deepgreen/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Icon className="text-deepgreen" size={32} />
-                      </div>
-                      <div className="text-sm font-semibold text-charcoal">{app.label}</div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
+              소리를 다스리고<br />공간을 완성하다
+            </h1>
+            <p className="text-warm-ivory text-lg md:text-xl mb-8 leading-relaxed font-light">
+              에코스텍 · 세이프월<br />
+              20년 시공 노하우의 흡음 전문 솔루션
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white" id="safewall">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-              <div className="lg:order-2">
-                <div className="h-96 bg-gray-200 rounded-2xl flex items-center justify-center text-sm text-gray-500">
-                  [세이프월 시공 사진]
-                </div>
-              </div>
-              <div className="lg:order-1">
-                <h2 className="font-serif text-4xl font-bold text-charcoal mb-6">
-                  세이프월 (SAFE WALL)
-                </h2>
-                <p className="text-gray-700 leading-relaxed mb-8">
-                  준불연 성능과 흡음 기능을 동시에 갖춘 동화기업의 고기능 벽장재. Super E0 최고 등급 친환경 자재로, 다중이용시설의 안전 기준을 충족하면서도 뛰어난 디자인을 구현합니다.
-                </p>
-              </div>
-            </div>
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-4xl md:text-5xl font-light text-charcoal mb-4">
+              기능성 인테리어 패널
+            </h2>
+            <p className="text-xl text-stone-gray font-light">
+              흡음 · 준불연 · 친환경
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-cream p-8 rounded-xl">
-                <div className="w-14 h-14 bg-deepgreen/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Shield className="text-deepgreen" size={28} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {ecostecProducts.map((product) => (
+              <Link
+                key={product.id}
+                to={`/ecostec/${product.id}`}
+                className="group bg-warm-ivory rounded-xl overflow-hidden hover-lift"
+              >
+                <div className="h-80 bg-gray-200 flex items-center justify-center text-sm text-gray-500 p-4 text-center relative overflow-hidden">
+                  [{product.image}]
+                  <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span className="text-white font-normal">자세히 보기</span>
+                  </div>
                 </div>
-                <h3 className="font-serif text-lg font-bold text-charcoal text-center mb-2">
-                  준불연 인증
-                </h3>
-                <p className="text-sm text-gray-600 text-center">
-                  화재 안전 기준 충족
-                </p>
-              </div>
+                <div className="p-8">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {product.badges.slice(0, 3).map((badge, i) => (
+                      <span key={i} className={`px-2 py-1 rounded-full text-xs ${getBadgeStyle(badge)}`}>
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="text-xs text-copper mb-2">{product.type}</div>
+                  <h3 className="font-serif text-2xl font-light text-charcoal mb-3 group-hover:text-copper transition-colors">
+                    {product.name}
+                  </h3>
+                  <p className="text-stone-gray mb-4 line-clamp-2">{product.tagline}</p>
+                  <div className="flex items-center text-copper font-normal text-sm">
+                    자세히 <ArrowRight size={18} className="ml-1" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <div className="bg-cream p-8 rounded-xl">
-                <div className="w-14 h-14 bg-deepgreen/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Droplets className="text-deepgreen" size={28} />
-                </div>
-                <h3 className="font-serif text-lg font-bold text-charcoal text-center mb-2">
-                  흡음 성능
-                </h3>
-                <p className="text-sm text-gray-600 text-center">
-                  쾌적한 실내 음향 환경
-                </p>
+      <section className="py-24 bg-warm-ivory">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-serif text-3xl md:text-4xl font-light text-charcoal mb-6">
+              27년간 쌓아온 현장 경험
+            </h2>
+            <p className="text-lg text-stone-gray mb-8 font-light leading-relaxed">
+              우성리빙솔루션은 2005년부터 에코스텍을 시공해온 국내 최장수 시공 파트너입니다.<br />
+              국립중앙디지털도서관, 서울시 인재개발원, 연세대학교, 국회의사당 등<br />
+              까다로운 관공서·교육기관의 시공 실적을 보유하고 있습니다.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="bg-white rounded-lg p-6">
+                <div className="text-3xl font-serif text-copper mb-2">2005</div>
+                <div className="text-sm text-charcoal">첫 시공 이래</div>
               </div>
-
-              <div className="bg-cream p-8 rounded-xl">
-                <div className="w-14 h-14 bg-deepgreen/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Sparkles className="text-deepgreen" size={28} />
-                </div>
-                <h3 className="font-serif text-lg font-bold text-charcoal text-center mb-2">
-                  Super E0 친환경
-                </h3>
-                <p className="text-sm text-gray-600 text-center">
-                  최고 등급 친환경 인증
-                </p>
+              <div className="bg-white rounded-lg p-6">
+                <div className="text-3xl font-serif text-copper mb-2">20+</div>
+                <div className="text-sm text-charcoal">년 경험</div>
               </div>
-
-              <div className="bg-cream p-8 rounded-xl">
-                <div className="w-14 h-14 bg-deepgreen/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Award className="text-deepgreen" size={28} />
-                </div>
-                <h3 className="font-serif text-lg font-bold text-charcoal text-center mb-2">
-                  우수한 내구성
-                </h3>
-                <p className="text-sm text-gray-600 text-center">
-                  내수성, 내마모성 우수
-                </p>
+              <div className="bg-white rounded-lg p-6">
+                <div className="text-3xl font-serif text-copper mb-2">100+</div>
+                <div className="text-sm text-charcoal">시공 실적</div>
+              </div>
+              <div className="bg-white rounded-lg p-6">
+                <div className="text-3xl font-serif text-copper mb-2">1위</div>
+                <div className="text-sm text-charcoal">시공 건수</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-cream">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-4">
-                시공 프로세스
-              </h2>
-            </div>
-
-            <div className="relative">
-              <div className="hidden md:block absolute top-12 left-0 right-0 h-1 bg-deepgreen/30"></div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
-                {processSteps.map((step, index) => (
-                  <div key={index} className="relative">
-                    <div className="bg-white rounded-xl p-6 shadow-lg relative z-10">
-                      <div className="w-12 h-12 bg-deepgreen rounded-full flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto">
-                        {index + 1}
-                      </div>
-                      <div className="text-center text-sm font-semibold text-charcoal">
-                        {step}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="text-center mt-12">
-              <p className="text-sm text-gray-600">
-                동화기업 본사를 통해 문의하셔도, 현장 상담은 저희가 담당합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-charcoal mb-8">
-            에코스텍·세이프월 견적문의
+      <section className="py-24 bg-dark-slate text-white">
+        <div className="container mx-auto px-6 lg:px-8 text-center">
+          <h2 className="font-serif text-3xl md:text-4xl font-light mb-6 leading-tight">
+            에코스텍·세이프월<br />견적 문의
           </h2>
+          <p className="text-gray-400 mb-8 font-light">
+            동화기업 본사를 통해 문의하셔도, 현장 상담은 저희가 담당합니다
+          </p>
           <Link
             to="/contact"
-            className="inline-block bg-deepgreen hover:bg-deepgreen/90 text-white px-10 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105"
+            className="inline-block bg-copper hover:bg-copper-dark text-white px-10 py-4 rounded-lg text-lg transition-all"
           >
             견적 요청하기
           </Link>

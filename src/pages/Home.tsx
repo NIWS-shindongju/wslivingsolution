@@ -120,9 +120,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: '진 그란데 / 진 그란데 스퀘어', type: '바닥재', desc: '프리미엄 타일형 강마루', link: '/flooring#iconic', img: '진 그란데 스퀘어 이모션블랑 패턴' },
-              { name: '시그니월', type: '벽재', desc: '초대형 빅슬랩 벽장재 (1,010×2,460mm)', link: '/wall#signiwall', img: '시그니월 몬테화이트 시공' },
-              { name: '디하임', type: '가구재', desc: '친환경 E0 프리미엄 가구 마감재', link: '/wall#dheim', img: '디하임 LPM 가구 도어' }
+              { name: '진 그란데 / 진 그란데 스퀘어', type: '바닥재', desc: '프리미엄 타일형 강마루', link: '/flooring/iconic-stone', img: '진 그란데 스퀘어 이모션블랑 패턴' },
+              { name: '시그니월', type: '벽재', desc: '초대형 빅슬랩 벽장재 (1,010×2,460mm)', link: '/wall/signiwall', img: '시그니월 몬테화이트 시공' },
+              { name: '디하임', type: '가구재', desc: '친환경 E0 프리미엄 가구 마감재', link: '/wall/dheim', img: '디하임 LPM 가구 도어' }
             ].map((product, i) => (
               <Link key={i} to={product.link} className="group bg-warm-ivory rounded-xl overflow-hidden hover-lift">
                 <div className="h-64 bg-gray-300 flex items-center justify-center text-sm text-gray-600 relative overflow-hidden">
@@ -151,11 +151,11 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: '에코스텍 (ECOSTEC)', desc: 'NRC 1.0급 흡음 인테리어 패널', link: '/ecostec', image: '에코스텍 타공 판넬' },
-              { title: '세이프월 (SAFE WALL)', desc: '준불연 + 흡음, 안전과 디자인을 동시에', link: '/ecostec', image: '세이프월 시공' },
-              { title: '디자인월', desc: '입체무늬 공법의 프리미엄 벽장재', link: '/wall', image: '디자인월 패턴' },
+              { title: '에코스텍 (ECOSTEC)', desc: 'NRC 1.0급 흡음 인테리어 패널', link: '/ecostec/ecostec', image: '에코스텍 타공 판넬' },
+              { title: '세이프월 (SAFE WALL)', desc: '준불연 + 흡음, 안전과 디자인을 동시에', link: '/ecostec/safewall', image: '세이프월 시공' },
+              { title: '디자인월', desc: '입체무늬 공법의 프리미엄 벽장재', link: '/wall/designwall', image: '디자인월 패턴' },
               { title: '동화자연마루', desc: '자연마루·강마루·강화마루·진마루 풀라인업', link: '/flooring', image: '동화자연마루 시공' },
-              { title: '디하임 (D:Heim)', desc: '친환경 E0 보드 가구 마감재, 2024 신제품', link: '/wall', image: '디하임 마감재' },
+              { title: '디하임 (D:Heim)', desc: '친환경 E0 보드 가구 마감재, 2024 신제품', link: '/wall/dheim', image: '디하임 마감재' },
               { title: 'MDF · PB · 합판', desc: '건축·가구용 원자재 도소매', link: '/custom', image: '원자재 제품' }
             ].map((product, index) => (
               <Link key={index} to={product.link} className="group bg-white rounded-xl overflow-hidden hover-lift">
