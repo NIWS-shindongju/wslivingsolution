@@ -14,11 +14,11 @@ export default function Footer() {
 
   return (
     <footer className="bg-dark-slate text-warm-ivory">
-      <div className="h-px bg-copper"></div>
-      <div className="container mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          <div>
-            <div className="flex items-baseline mb-4">
+      <div className="border-t-2 border-copper"></div>
+      <div className="container mx-auto px-5 md:px-6 lg:px-8 py-14 md:py-20 lg:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
+          <div className="text-center md:text-left">
+            <div className="flex items-baseline mb-4 justify-center md:justify-start">
               <span className="font-serif text-2xl font-normal text-copper">WS</span>
               <span className="ml-1 font-serif text-xl font-light text-white">리빙솔루션</span>
             </div>
@@ -30,7 +30,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="hidden md:block">
             <h3 className="font-serif text-lg font-light mb-6 text-white">메뉴</h3>
             <nav className="grid grid-cols-2 gap-3">
               {menuItems.map((item) => (
@@ -51,7 +51,7 @@ export default function Footer() {
               <p className="font-normal text-white">주식회사 우성인더스 | 우성리빙솔루션</p>
               <p>대표: 신만식</p>
               <p>사업자등록번호: 626-86-02954</p>
-              <p className="font-normal text-copper mt-4 text-base">032-589-7744</p>
+              <p className="font-normal text-copper mt-4 text-sm md:text-base">032-589-7744</p>
               <p className="mt-4">
                 <span className="font-normal text-white">김포 공장</span><br />
                 <span className="text-xs">경기도 김포시 통진읍 가현로 201-56</span>
@@ -66,11 +66,22 @@ export default function Footer() {
                 </a>
               </p>
             </div>
+            <a href="tel:032-589-7744" className="block bg-copper text-white text-center py-4 rounded-lg text-lg font-normal mt-4 md:hidden">032-589-7744 전화하기</a>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+        <div className="md:hidden px-0 py-4 border-t border-gray-700 text-center">
+          <nav className="flex justify-center space-x-4 text-sm text-gray-400 font-light">
+            <Link to="/contact" className="hover:text-copper transition-colors">견적문의</Link>
+            <span>|</span>
+            <Link to="/portfolio" className="hover:text-copper transition-colors">시공사례</Link>
+            <span>|</span>
+            <a href="tel:032-589-7744" className="hover:text-copper transition-colors">전화하기</a>
+          </nav>
+        </div>
+
+        <div className="border-t border-gray-700 pt-6 md:pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex space-x-6">
               <a href="#" className="text-gray-400 hover:text-copper transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
@@ -81,10 +92,10 @@ export default function Footer() {
             </div>
 
             <div className="text-center md:text-right">
-              <p className="text-sm text-gray-500 font-light">
+              <p className="text-xs text-gray-500 font-light">
                 © 2026 우성리빙솔루션. All Rights Reserved.
               </p>
-              <div className="flex justify-center md:justify-end space-x-4 mt-2 text-xs text-gray-600">
+              <div className="flex justify-center md:justify-end space-x-4 mt-1 text-xs text-gray-600">
                 <a href="#" className="hover:text-copper transition-colors">개인정보취급방침</a>
                 <span>|</span>
                 <a href="#" className="hover:text-copper transition-colors">이메일무단수집거부</a>

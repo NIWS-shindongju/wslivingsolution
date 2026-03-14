@@ -18,25 +18,25 @@ export default function About() {
 
   return (
     <div className="w-full">
-      <section className="relative h-96 flex items-center justify-center bg-charcoal">
+      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 to-charcoal"></div>
-        <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-sm">
+        <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-sm md:text-base">
           [김포 공장 전경 또는 작업 현장 파노라마]
         </div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">우성이야기</h1>
-          <p className="text-xl text-gray-300">우성산업 → 우성인더스 → 우성리빙솔루션, 27년의 여정</p>
+        <div className="relative z-10 text-center text-white px-5">
+          <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold mb-4">우성이야기</h1>
+          <p className="text-sm md:text-xl text-gray-300">우성산업 → 우성인더스 → 우성리빙솔루션, 27년의 여정</p>
         </div>
       </section>
 
-      <section className="py-20 bg-cream">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-serif text-4xl font-bold text-charcoal mb-6">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-cream">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="md:order-2 md:flex-1">
+              <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-6">
                 현장에서 직접 해보고,<br />결과물로 말합니다
               </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-sm md:text-base text-gray-700 leading-relaxed">
                 <p>
                   1997년, 작은 목재 가공 사업장 '우성산업'으로 시작했습니다.
                 </p>
@@ -54,20 +54,20 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="h-96 bg-gray-200 rounded-2xl flex items-center justify-center text-sm text-gray-500">
+            <div className="md:order-1 md:flex-1 w-full h-56 md:h-96 bg-gray-200 rounded-2xl flex items-center justify-center text-sm text-gray-500">
               [우성산업 창업 당시 또는 초기 시공 현장 사진]
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-white">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-4">
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
               걸어온 길
             </h2>
-            <p className="text-xl text-gray-600">27년간의 발자취</p>
+            <p className="text-sm md:text-xl text-gray-600">27년간의 발자취</p>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -77,7 +77,7 @@ export default function About() {
                 <div className="bg-cream p-6 rounded-lg">
                   <div className="font-serif text-2xl font-bold text-deepgreen mb-2">{item.year}</div>
                   <div className="text-lg font-semibold text-charcoal mb-1">{item.title}</div>
-                  {item.desc && <div className="text-gray-600">{item.desc}</div>}
+                  {item.desc && <div className="text-sm md:text-base text-gray-600">{item.desc}</div>}
                 </div>
               </div>
             ))}
@@ -85,38 +85,38 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 bg-cream">
-        <div className="container mx-auto px-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-cream">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-4">
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
               대표 인사말
             </h2>
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-1">
-                <div className="aspect-square bg-gray-200 rounded-2xl flex items-center justify-center text-sm text-gray-500 mb-4">
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="md:flex-shrink-0">
+                <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-200 rounded-2xl flex items-center justify-center text-sm text-gray-500 mb-4 mx-auto md:mx-0">
                   [대표 신만식 프로필 사진]
                 </div>
-                <div className="text-center">
+                <div className="text-center md:text-left">
                   <div className="font-serif text-2xl font-bold text-charcoal mb-1">신만식</div>
-                  <div className="text-gray-600">대표이사</div>
+                  <div className="text-sm md:text-base text-gray-600">대표이사</div>
                 </div>
               </div>
 
-              <div className="lg:col-span-2 flex items-center">
+              <div className="flex items-center">
                 <div className="bg-white p-8 rounded-2xl shadow-lg">
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
                     안녕하십니까. 우성리빙솔루션 대표이사 신만식입니다.
                   </p>
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
                     [대표 인사말 내용이 들어갈 자리입니다. 실제 대표님의 메시지로 교체해 주세요.]
                   </p>
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
                     1997년 우성산업을 시작한 이래, 27년간 한결같이 목재와 인테리어 자재 분야에서 최선을 다해왔습니다.
                   </p>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                     앞으로도 현장 최우선의 자세로, 고객 여러분께 최상의 품질과 서비스를 제공하겠습니다. 감사합니다.
                   </p>
                 </div>
@@ -126,10 +126,10 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-white">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-4">
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
               우성리빙솔루션이 다른 이유
             </h2>
           </div>
@@ -142,7 +142,7 @@ export default function About() {
               <h3 className="font-serif text-2xl font-bold text-charcoal mb-4">
                 동화기업 위탁 상담 파트너
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                 제조사가 자사 제품의 소비자 상담을 맡길 만큼 검증된 현장 전문성. 제품의 스펙은 카탈로그에도 있지만, '이 공간에 이 제품이 맞는지'는 27년 현장 경험이 답합니다.
               </p>
             </div>
@@ -154,7 +154,7 @@ export default function About() {
               <h3 className="font-serif text-2xl font-bold text-charcoal mb-4">
                 자체 공장 원스톱 체계
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                 경기도 김포시에 자체 생산 공장을 보유. CNC Router, 레이저 가공기 등으로 맞춤 가공이 가능하며, 자재 수급부터 시공·A/S까지 한 곳에서 해결합니다.
               </p>
             </div>
@@ -166,7 +166,7 @@ export default function About() {
               <h3 className="font-serif text-2xl font-bold text-charcoal mb-4">
                 결과물로 말하는 문화
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
                 '항상 최고의 결과물로 말합니다' — 1997년 우성산업 때부터 이어온 우리의 원칙입니다. 화려한 마케팅보다 현장의 완성도로 신뢰를 쌓아왔습니다.
               </p>
             </div>
@@ -174,10 +174,10 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 bg-cream">
-        <div className="container mx-auto px-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-cream">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-4">
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
               오시는길
             </h2>
           </div>
@@ -187,10 +187,10 @@ export default function About() {
               <h3 className="font-serif text-2xl font-bold text-charcoal mb-4">
                 김포 공장 (제조·가공)
               </h3>
-              <p className="text-gray-700 mb-6">
+              <p className="text-sm md:text-base text-gray-700 mb-6">
                 경기도 김포시 통진읍 가현로 201-56
               </p>
-              <div className="h-64 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">
+              <div className="h-56 md:h-64 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">
                 [김포 공장 지도]
               </div>
             </div>
@@ -199,10 +199,10 @@ export default function About() {
               <h3 className="font-serif text-2xl font-bold text-charcoal mb-4">
                 인천 사무실 (영업·상담)
               </h3>
-              <p className="text-gray-700 mb-6">
+              <p className="text-sm md:text-base text-gray-700 mb-6">
                 인천광역시 동구 방축로 37번길 30, 1동 121호(송현동)
               </p>
-              <div className="h-64 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">
+              <div className="h-56 md:h-64 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">
                 [인천 사무실 지도]
               </div>
             </div>

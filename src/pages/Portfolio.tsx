@@ -127,21 +127,21 @@ export default function Portfolio() {
 
   return (
     <div className="w-full">
-      <section className="relative h-96 flex items-center justify-center bg-charcoal">
+      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
         <div className="relative z-10 text-center text-white">
-          <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">시공사례</h1>
-          <p className="text-xl text-gray-300">27년간 현장에서 쌓은 기록</p>
+          <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold mb-4">시공사례</h1>
+          <p className="text-sm md:text-xl text-gray-300">27년간 현장에서 쌓은 기록</p>
         </div>
       </section>
 
-      <section className="py-12 bg-cream">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-cream">
+        <div className="container mx-auto">
+          <div className="flex overflow-x-auto gap-2 -mx-5 px-5 pb-2 scrollbar-hide md:flex-wrap md:justify-center md:mx-0 md:px-0">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all ${
+                className={`px-4 py-2 text-sm whitespace-nowrap rounded-full font-semibold transition-all ${
                   selectedCategory === category
                     ? 'bg-deepgreen text-white shadow-lg'
                     : 'bg-white text-charcoal hover:bg-gray-100'
@@ -154,8 +154,8 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-white">
+        <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
               <div
@@ -163,7 +163,7 @@ export default function Portfolio() {
                 onClick={() => setSelectedProject(project)}
                 className="group cursor-pointer bg-cream rounded-xl overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-2"
               >
-                <div className="relative h-64 bg-gray-200 overflow-hidden">
+                <div className="relative h-48 md:h-64 bg-gray-200 overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center text-sm text-gray-500 p-4 text-center">
                     [{project.image}]
                   </div>
@@ -176,7 +176,7 @@ export default function Portfolio() {
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="p-4 md:p-6">
                   <h3 className="font-serif text-xl font-bold text-charcoal mb-2 group-hover:text-deepgreen transition-colors">
                     {project.title}
                   </h3>
@@ -201,7 +201,7 @@ export default function Portfolio() {
 
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80" onClick={() => setSelectedProject(null)}>
-          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[85vh] md:max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex justify-between items-center">
               <h2 className="font-serif text-2xl font-bold text-charcoal">{selectedProject.title}</h2>
               <button
@@ -213,7 +213,7 @@ export default function Portfolio() {
             </div>
 
             <div className="p-8">
-              <div className="h-96 bg-gray-200 rounded-xl flex items-center justify-center text-sm text-gray-500 mb-8">
+              <div className="h-48 md:h-96 bg-gray-200 rounded-xl flex items-center justify-center text-sm text-gray-500 mb-8">
                 [{selectedProject.image}]
               </div>
 

@@ -59,31 +59,31 @@ export default function Custom() {
 
   return (
     <div className="w-full">
-      <section className="relative h-96 flex items-center justify-center bg-charcoal">
+      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 to-charcoal"></div>
         <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-sm">
           [김포 공장 CNC 가공 현장]
         </div>
-        <div className="relative z-10 text-center text-white">
-          <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">목재 맞춤가공</h1>
-          <p className="text-xl text-gray-300">김포 자체 공장에서, 어떤 형태든 깎아냅니다</p>
+        <div className="relative z-10 text-center text-white px-5">
+          <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold mb-4">목재 맞춤가공</h1>
+          <p className="text-sm md:text-xl text-gray-300">김포 자체 공장에서, 어떤 형태든 깎아냅니다</p>
         </div>
       </section>
 
-      <section className="py-20 bg-cream">
-        <div className="container mx-auto px-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-cream">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-4">
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
               김포 공장 보유 장비
             </h2>
           </div>
 
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
             {equipment.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="h-48 bg-gray-200 rounded-lg flex items-center justify-center text-xs text-gray-500 mb-6">
+                <div key={index} className="bg-white rounded-xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="h-28 md:h-48 bg-gray-200 rounded-lg flex items-center justify-center text-xs text-gray-500 mb-6">
                     [{item.name} 장비 사진]
                   </div>
                   <div className="w-14 h-14 bg-deepgreen/10 rounded-full flex items-center justify-center mb-4 mx-auto">
@@ -102,10 +102,10 @@ export default function Custom() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-white">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-4">
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
               가공 가능 품목
             </h2>
           </div>
@@ -123,13 +123,13 @@ export default function Custom() {
         </div>
       </section>
 
-      <section className="py-20 bg-cream">
-        <div className="container mx-auto px-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-cream">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-4">
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
               가공 소재
             </h2>
-            <p className="text-xl text-gray-600">다루지 못하는 소재가 없습니다</p>
+            <p className="text-sm md:text-xl text-gray-600">다루지 못하는 소재가 없습니다</p>
           </div>
 
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -150,17 +150,17 @@ export default function Custom() {
           </div>
 
           <div className="max-w-3xl mx-auto bg-woodbrown/10 border-l-4 border-woodbrown rounded-lg p-6">
-            <p className="text-charcoal text-center leading-relaxed">
+            <p className="text-sm md:text-base text-charcoal text-center leading-relaxed">
               (주)우성인더스는 <span className="font-bold">15년 이상 엔지니어링 플라스틱 볼베어링까지 가공</span>해온 정밀 가공 전문 기업입니다
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-white">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-4">
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
               가공 프로세스
             </h2>
           </div>
@@ -169,14 +169,14 @@ export default function Custom() {
             <div className="relative">
               <div className="hidden md:block absolute top-16 left-0 right-0 h-1 bg-deepgreen/30"></div>
 
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+              <div className="flex flex-col md:grid md:grid-cols-5 gap-8">
                 {processSteps.map((step, index) => (
                   <div key={index} className="relative">
-                    <div className="bg-cream rounded-xl p-6 shadow-lg relative z-10 hover:shadow-xl transition-shadow">
-                      <div className="w-14 h-14 bg-deepgreen rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto">
+                    <div className="flex items-center gap-4 md:block bg-cream rounded-xl p-6 shadow-lg relative z-10 hover:shadow-xl transition-shadow">
+                      <div className="w-10 h-10 md:w-14 md:h-14 flex-shrink-0 bg-deepgreen rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl md:mb-4 md:mx-auto">
                         {index + 1}
                       </div>
-                      <div className="text-center font-semibold text-charcoal">
+                      <div className="md:text-center font-semibold text-charcoal">
                         {step}
                       </div>
                     </div>
@@ -188,14 +188,14 @@ export default function Custom() {
         </div>
       </section>
 
-      <section className="py-20 bg-charcoal text-white">
-        <div className="container mx-auto px-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-charcoal text-white">
+        <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="font-serif text-2xl md:text-4xl font-bold mb-6">
               어떤 형태든 가능합니다.<br />
               도면만 있으면 만들어드립니다.
             </h2>
-            <p className="text-gray-400 mb-8">
+            <p className="text-sm md:text-base text-gray-400 mb-8">
               15년 이상의 정밀 가공 경험으로 어떤 난이도의 작업도 수행합니다
             </p>
             <Link

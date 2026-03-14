@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, ChevronDown } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown, MessageCircle } from 'lucide-react';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -19,7 +20,19 @@ export default function Header() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
+    setMobileSubmenu(null);
   }, [location]);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMobileMenuOpen]);
 
   const menuItems = [
     { name: '우성이야기', path: '/about' },
@@ -47,26 +60,32 @@ export default function Header() {
     { name: '견적문의', path: '/contact' },
   ];
 
+  const handleMobileMenuClick = (item: typeof menuItems[0]) => {
+    if (item.submenu) {
+      setMobileSubmenu(mobileSubmenu === item.name ? null : item.name);
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         isScrolled ? 'bg-white shadow-sm' : 'bg-gradient-to-b from-black/40 to-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-5 md:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
             <div className="flex items-baseline">
-              <span className="font-serif text-2xl font-normal text-copper transition-colors group-hover:text-copper-dark">
+              <span className="font-serif text-xl md:text-2xl font-normal text-copper transition-colors group-hover:text-copper-dark">
                 WS
               </span>
-              <span className={`ml-1 font-serif text-xl font-light transition-colors ${
+              <span className={`ml-1 font-serif text-lg md:text-xl font-light transition-colors ${
                 isScrolled ? 'text-dark-slate' : 'text-white'
               } group-hover:text-copper`}>
                 리빙솔루션
               </span>
             </div>
-            <span className={`ml-3 text-xs font-light transition-colors ${
+            <span className={`ml-3 text-xs font-light transition-colors hidden lg:inline ${
               isScrolled ? 'text-stone-gray' : 'text-white/70'
             }`}>
               by (주)우성인더스
@@ -133,48 +152,87 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="메뉴"
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
-          <nav className="container mx-auto px-6 py-6 flex flex-col space-y-4">
-            {menuItems.map((item) => (
-              <div key={item.path}>
-                <Link
-                  to={item.path}
-                  className={`text-base font-normal py-2 transition-colors flex justify-between items-center ${
-                    location.pathname === item.path ? 'text-copper' : 'text-charcoal hover:text-copper'
-                  }`}
-                >
-                  {item.name}
-                  {item.submenu && <ChevronDown size={16} />}
-                </Link>
-                {item.submenu && (
-                  <div className="ml-4 mt-2 space-y-2">
-                    {item.submenu.map((subitem) => (
-                      <Link
-                        key={subitem.path}
-                        to={subitem.path}
-                        className="block text-sm text-stone-gray hover:text-copper py-1"
+        <div className="lg:hidden fixed inset-0 bg-white z-40 overflow-y-auto safe-bottom">
+          <div className="container mx-auto px-5">
+            <div className="flex items-center justify-between h-16 border-b border-gray-100">
+              <Link to="/" className="flex items-center">
+                <span className="font-serif text-xl font-normal text-copper">WS</span>
+                <span className="ml-1 font-serif text-lg font-light text-dark-slate">리빙솔루션</span>
+              </Link>
+              <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-dark-slate">
+                <X size={24} />
+              </button>
+            </div>
+
+            <nav className="py-8 flex flex-col justify-center min-h-[calc(100vh-200px)]">
+              <div className="space-y-6">
+                {menuItems.map((item) => (
+                  <div key={item.path}>
+                    {item.submenu ? (
+                      <button
+                        onClick={() => handleMobileMenuClick(item)}
+                        className={`w-full text-left text-2xl font-serif font-light py-2 transition-colors flex justify-between items-center ${
+                          location.pathname.startsWith(item.path) ? 'text-copper' : 'text-charcoal'
+                        }`}
                       >
-                        {subitem.name}
+                        {item.name}
+                        <ChevronDown size={20} className={`transition-transform ${mobileSubmenu === item.name ? 'rotate-180' : ''}`} />
+                      </button>
+                    ) : (
+                      <Link
+                        to={item.path}
+                        className={`block text-2xl font-serif font-light py-2 transition-colors ${
+                          location.pathname === item.path ? 'text-copper' : 'text-charcoal'
+                        }`}
+                      >
+                        {item.name}
                       </Link>
-                    ))}
+                    )}
+                    {item.submenu && mobileSubmenu === item.name && (
+                      <div className="mt-3 space-y-3 pl-6 border-l-2 border-copper">
+                        {item.submenu.map((subitem) => (
+                          <Link
+                            key={subitem.path}
+                            to={subitem.path}
+                            className="block text-lg text-stone-gray hover:text-copper py-1"
+                          >
+                            {subitem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                )}
+                ))}
               </div>
-            ))}
-            <a
-              href="tel:032-589-7744"
-              className="flex items-center space-x-2 text-copper font-normal py-2 border-t border-gray-100 mt-2 pt-4"
-            >
-              <Phone size={18} />
-              <span>032-589-7744</span>
-            </a>
-          </nav>
+            </nav>
+
+            <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-5 safe-bottom">
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href="tel:032-589-7744"
+                  className="flex items-center justify-center space-x-2 bg-copper text-white py-4 rounded-lg font-normal"
+                >
+                  <Phone size={20} />
+                  <span>전화하기</span>
+                </a>
+                <a
+                  href="http://pf.kakao.com/_pxoMRn/chat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-2 bg-yellow-400 text-charcoal py-4 rounded-lg font-normal"
+                >
+                  <MessageCircle size={20} />
+                  <span>카카오톡</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </header>

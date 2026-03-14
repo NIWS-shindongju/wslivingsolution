@@ -34,20 +34,20 @@ export default function Contact() {
 
   return (
     <div className="w-full">
-      <section className="relative h-96 flex items-center justify-center bg-charcoal">
+      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
         <div className="relative z-10 text-center text-white">
-          <h1 className="font-serif text-5xl md:text-6xl font-bold mb-4">견적문의</h1>
-          <p className="text-xl text-gray-300">
+          <h1 className="font-serif text-3xl md:text-5xl font-bold mb-4">견적문의</h1>
+          <p className="text-lg md:text-xl text-gray-300">
             어떤 공간이든 물어보세요.<br />현장에서 답을 찾아온 27년이 함께합니다.
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-cream">
-        <div className="container mx-auto px-4">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-cream">
+        <div className="container mx-auto">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2">
-              <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
+            <div className="lg:col-span-2 order-last md:order-first">
+              <div className="bg-white rounded-2xl shadow-xl p-5 md:p-8 lg:p-12">
                 <h2 className="font-serif text-3xl font-bold text-charcoal mb-8">견적 요청서</h2>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -62,7 +62,7 @@ export default function Contact() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
+                        className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
                         placeholder="홍길동"
                       />
                     </div>
@@ -76,7 +76,7 @@ export default function Contact() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
+                        className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
                         placeholder="회사명 (선택)"
                       />
                     </div>
@@ -93,7 +93,7 @@ export default function Contact() {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
+                        className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
                         placeholder="010-0000-0000"
                       />
                     </div>
@@ -107,7 +107,7 @@ export default function Contact() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
+                        className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
                         placeholder="example@email.com"
                       />
                     </div>
@@ -121,7 +121,7 @@ export default function Contact() {
                       name="category"
                       value={formData.category}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
+                      className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
                     >
                       <option value="">선택해주세요</option>
                       <option value="에코스텍">에코스텍</option>
@@ -145,7 +145,7 @@ export default function Contact() {
                         name="quantity"
                         value={formData.quantity}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
+                        className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
                         placeholder="예: 50㎡, 100장 등"
                       />
                     </div>
@@ -159,7 +159,7 @@ export default function Contact() {
                         name="deadline"
                         value={formData.deadline}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
+                        className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
                       />
                     </div>
                   </div>
@@ -173,7 +173,7 @@ export default function Contact() {
                       rows={6}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all resize-none"
+                      className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all resize-none"
                       placeholder="프로젝트 내용, 시공 위치, 특이사항 등을 자세히 적어주시면 더 정확한 견적을 드릴 수 있습니다."
                     ></textarea>
                   </div>
@@ -187,7 +187,7 @@ export default function Contact() {
                       name="files"
                       multiple
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
+                      className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-gray-300 focus:border-deepgreen focus:ring-2 focus:ring-deepgreen/20 outline-none transition-all"
                     />
                     <p className="text-xs text-gray-500 mt-2">도면, 참고 이미지 등을 첨부해주세요</p>
                   </div>
@@ -210,7 +210,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full bg-deepgreen hover:bg-deepgreen/90 text-white py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+                    className="w-full bg-deepgreen hover:bg-deepgreen/90 text-white py-3.5 md:py-4 text-base md:text-lg font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg"
                   >
                     견적 요청하기
                   </button>
@@ -218,8 +218,12 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="space-y-6 order-first md:order-last">
+              <a href="tel:032-589-7744" className="block bg-copper text-white text-center py-4 rounded-xl text-xl font-normal md:hidden mb-4">
+                📞 032-589-7744
+              </a>
+
+              <div className="bg-white rounded-2xl shadow-xl p-5 md:p-8">
                 <h3 className="font-serif text-2xl font-bold text-charcoal mb-6">연락처 정보</h3>
 
                 <div className="space-y-6">
@@ -282,7 +286,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-yellow-400 rounded-2xl shadow-xl p-8 text-center">
+              <div className="bg-yellow-400 rounded-2xl shadow-xl p-5 md:p-8 text-center">
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
                   <MessageCircle className="text-yellow-400" size={32} />
                 </div>
@@ -294,13 +298,19 @@ export default function Contact() {
                 </p>
                 <a
                   href="#"
-                  className="inline-block bg-charcoal hover:bg-charcoal/90 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+                  className="inline-block bg-charcoal hover:bg-charcoal/90 text-white px-6 py-3 rounded-lg font-semibold transition-all md:hidden mb-4"
+                >
+                  카카오톡으로 문의하기
+                </a>
+                <a
+                  href="#"
+                  className="hidden md:inline-block bg-charcoal hover:bg-charcoal/90 text-white px-6 py-3 rounded-lg font-semibold transition-all"
                 >
                   카카오톡으로 문의하기
                 </a>
               </div>
 
-              <div className="bg-deepgreen/10 border-l-4 border-deepgreen rounded-lg p-6">
+              <div className="bg-deepgreen/10 border-l-4 border-deepgreen rounded-lg p-5 md:p-6">
                 <p className="text-sm text-charcoal leading-relaxed">
                   동화기업 본사를 통해 문의하셔도 현장 상담은 저희가 담당합니다.
                 </p>
