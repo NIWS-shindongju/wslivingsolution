@@ -18,16 +18,16 @@ export default function Portfolio() {
   const categories = ['전체', '공공시설', '교육시설', '상업시설', '주거시설'];
 
   const projects: Project[] = [
-    { id: 1, title: '국회의사당', category: '공공시설', year: '2023', img: IMAGES.portfolio.parliament },
-    { id: 2, title: '국립중앙도서관', category: '공공시설', year: '2023', img: IMAGES.portfolio.nationalLibrary },
-    { id: 3, title: '철도공사 사무실', category: '상업시설', year: '2022', img: IMAGES.portfolio.railwayOffice },
-    { id: 4, title: '서울시 인재개발원', category: '공공시설', year: '2022', img: IMAGES.portfolio.seoulHR },
-    { id: 5, title: '연세대 체육관', category: '교육시설', year: '2023', img: IMAGES.portfolio.yonseiGym },
-    { id: 6, title: '두원공대', category: '교육시설', year: '2021', img: IMAGES.portfolio.doowonUniv },
-    { id: 7, title: '현대해상 연수원', category: '상업시설', year: '2022', img: IMAGES.portfolio.hyundaiTraining },
-    { id: 8, title: '동화 본사', category: '상업시설', year: '2023', img: IMAGES.portfolio.dongwhaOffice },
-    { id: 9, title: '상업공간 A', category: '상업시설', year: '2024', img: IMAGES.portfolio.commercialA },
-    { id: 10, title: '주거공간 A', category: '주거시설', year: '2024', img: IMAGES.portfolio.residentialA },
+    { id: 1, title: '아이코닉 이모션블랑 인테리어', category: '주거시설', year: '2024', img: IMAGES.portfolio.case1 },
+    { id: 2, title: '사하라라이트 벽+바닥 통일', category: '주거시설', year: '2024', img: IMAGES.portfolio.case2 },
+    { id: 3, title: '시그니월 광명 트리우스', category: '상업시설', year: '2023', img: IMAGES.portfolio.case3 },
+    { id: 4, title: '진그란데 스퀘어 이모션블랑', category: '주거시설', year: '2024', img: IMAGES.portfolio.case4 },
+    { id: 5, title: '시그니월 3패턴 혼합', category: '주거시설', year: '2023', img: IMAGES.portfolio.case5 },
+    { id: 6, title: '50평 오션뷰 시그니월', category: '주거시설', year: '2024', img: IMAGES.portfolio.case6 },
+    { id: 7, title: '디하임+듀오텍스쳐맥스', category: '주거시설', year: '2023', img: IMAGES.portfolio.case7 },
+    { id: 8, title: '18평 빌라 듀오스퀘어', category: '주거시설', year: '2023', img: IMAGES.portfolio.case8 },
+    { id: 9, title: '진 오리진 퓨어 베이지', category: '주거시설', year: '2024', img: IMAGES.portfolio.case9 },
+    { id: 10, title: '신성데코 시그니월+진그란데', category: '상업시설', year: '2024', img: IMAGES.portfolio.case10 },
   ];
 
   const filteredProjects = selectedCategory === '전체'
