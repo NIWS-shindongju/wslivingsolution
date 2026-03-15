@@ -2,6 +2,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import { getProductById, getProductsByCategory } from '../data/products';
+import { IMAGES } from '../constants/images';
 
 export default function ProductDetail() {
   const { productId } = useParams<{ productId: string }>();
@@ -42,13 +43,121 @@ export default function ProductDetail() {
     return 'bg-copper/10 text-copper';
   };
 
+  const getProductMainImage = (productName: string) => {
+    // Iconic Stone patterns
+    if (productName.includes('몬테 화이트')) return IMAGES.iconic.monteWhite;
+    if (productName.includes('이모션 블랑')) return IMAGES.iconic.emotionBlanc;
+    if (productName.includes('사하라 라이트')) return IMAGES.iconic.saharaLight;
+    if (productName.includes('슬레이트 모티프')) return IMAGES.iconic.slateMotif;
+    if (productName.includes('슬레이트 스틸')) return IMAGES.iconic.slateSteel;
+    if (productName.includes('포틀랜드 모티프')) return IMAGES.iconic.portlandMotif;
+    if (productName.includes('포틀랜드 스틸')) return IMAGES.iconic.portlandSteel;
+    if (productName.includes('아이코닉 스톤')) return IMAGES.iconic.collectionBanner;
+
+    // Jin series
+    if (productName.includes('진 오리진')) return IMAGES.unsplash.woodFlooring;
+    if (productName.includes('진 테라 맥스')) return IMAGES.unsplash.modernLiving2;
+    if (productName.includes('진 테라')) return IMAGES.unsplash.modernLiving;
+    if (productName.includes('진 헤링본')) return IMAGES.unsplash.woodFlooring;
+    if (productName.includes('진 그란데 스퀘어')) return IMAGES.jin.stoneRoom;
+    if (productName.includes('진 그란데')) return IMAGES.jin.grandeFlooring;
+    if (productName.includes('진 텍스쳐')) return IMAGES.jin.mixMatch1;
+
+    // Wall products
+    if (productName.includes('시그니월')) return IMAGES.jin.signiwall;
+    if (productName.includes('디자인월 그란데')) return IMAGES.unsplash.wallPanel;
+    if (productName.includes('디자인월')) return IMAGES.unsplash.stoneWall;
+    if (productName.includes('디하임')) return IMAGES.jin.dheim;
+
+    // Ecostec
+    if (productName.includes('에코스텍')) return IMAGES.ecostecBlog.spec1;
+    if (productName.includes('세이프월')) return IMAGES.unsplash.wallPanel;
+
+    // Default flooring
+    if (productName.includes('나투스')) return IMAGES.unsplash.woodFlooring;
+    if (productName.includes('바움')) return IMAGES.unsplash.woodFlooring;
+    if (productName.includes('클릭S')) return IMAGES.unsplash.woodFlooring;
+
+    return IMAGES.unsplash.woodFlooring;
+  };
+
+  const getGalleryImages = (productName: string) => {
+    const mainImage = getProductMainImage(productName);
+
+    // For Iconic Stone products, use different pattern images
+    if (productName.includes('아이코닉 스톤')) {
+      return [
+        IMAGES.iconic.collectionBanner,
+        IMAGES.iconic.monteWhite,
+        IMAGES.iconic.emotionBlanc,
+        IMAGES.iconic.saharaLight
+      ];
+    }
+
+    // For specific Iconic Stone patterns
+    if (productName.includes('몬테 화이트')) {
+      return [IMAGES.iconic.monteWhite, IMAGES.iconic.hero, IMAGES.iconic.emotionBlanc, IMAGES.iconic.saharaLight];
+    }
+    if (productName.includes('이모션 블랑')) {
+      return [IMAGES.iconic.emotionBlanc, IMAGES.iconic.monteWhite, IMAGES.iconic.hero, IMAGES.iconic.saharaLight];
+    }
+    if (productName.includes('사하라 라이트')) {
+      return [IMAGES.iconic.saharaLight, IMAGES.iconic.emotionBlanc, IMAGES.iconic.monteWhite, IMAGES.iconic.hero];
+    }
+    if (productName.includes('슬레이트 모티프')) {
+      return [IMAGES.iconic.slateMotif, IMAGES.iconic.slateSteel, IMAGES.iconic.portlandMotif, IMAGES.iconic.hero];
+    }
+    if (productName.includes('슬레이트 스틸')) {
+      return [IMAGES.iconic.slateSteel, IMAGES.iconic.slateMotif, IMAGES.iconic.portlandSteel, IMAGES.iconic.hero];
+    }
+    if (productName.includes('포틀랜드 모티프')) {
+      return [IMAGES.iconic.portlandMotif, IMAGES.iconic.portlandSteel, IMAGES.iconic.slateMotif, IMAGES.iconic.hero];
+    }
+    if (productName.includes('포틀랜드 스틸')) {
+      return [IMAGES.iconic.portlandSteel, IMAGES.iconic.portlandMotif, IMAGES.iconic.slateSteel, IMAGES.iconic.hero];
+    }
+
+    // For Jin Grande series
+    if (productName.includes('진 그란데')) {
+      return [IMAGES.jin.grandeFlooring, IMAGES.jin.stoneRoom, IMAGES.jin.pointRoom, IMAGES.jin.moodRoom];
+    }
+
+    // For Signiwall
+    if (productName.includes('시그니월')) {
+      return [IMAGES.jin.signiwall, IMAGES.jin.pointRoom, IMAGES.jin.moodRoom, IMAGES.jin.mixMatch1];
+    }
+
+    // For Dheim
+    if (productName.includes('디하임')) {
+      return [IMAGES.jin.dheim, IMAGES.jin.mixMatch1, IMAGES.jin.mixMatch2, IMAGES.jin.moodRoom];
+    }
+
+    // For Ecostec
+    if (productName.includes('에코스텍')) {
+      return [
+        IMAGES.ecostecBlog.spec1,
+        IMAGES.ecostecBlog.spec2,
+        IMAGES.ecostecBlog.pattern1,
+        IMAGES.ecostecBlog.pattern2
+      ];
+    }
+
+    // Default: use main image with related images
+    return [
+      mainImage,
+      IMAGES.unsplash.modernLiving,
+      IMAGES.unsplash.modernLiving2,
+      IMAGES.unsplash.officeInterior
+    ];
+  };
+
+  const mainImage = getProductMainImage(product.name);
+  const galleryImages = getGalleryImages(product.name);
+
   return (
     <div className="w-full">
       <section className="relative h-[50vh] md:h-[70vh] flex items-center justify-center bg-dark-slate">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate">
-          <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-sm">
-            [{product.image}]
-          </div>
+        <div className="absolute inset-0" style={{backgroundImage: `url(${mainImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
           <div className="absolute inset-0 bg-gradient-to-t from-dark-slate/90 via-dark-slate/50 to-transparent"></div>
         </div>
 
@@ -82,19 +191,29 @@ export default function ProductDetail() {
         <div className="container mx-auto px-5 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <div className="mb-6 rounded-xl overflow-hidden bg-gray-100 h-56 md:h-96 flex items-center justify-center text-gray-500 text-sm p-8 text-center">
-                [{product.galleryImages[selectedImage] || product.image}]
+              <div className="mb-6 rounded-xl overflow-hidden bg-gray-100">
+                <img
+                  src={galleryImages[selectedImage]}
+                  alt={`${product.name} - 이미지 ${selectedImage + 1}`}
+                  className="w-full h-56 md:h-96 object-cover"
+                  loading="lazy"
+                />
               </div>
               <div className="grid grid-cols-4 gap-2 md:gap-4">
-                {product.galleryImages.slice(0, 4).map((img, i) => (
+                {galleryImages.slice(0, 4).map((img, i) => (
                   <button
                     key={i}
                     onClick={() => setSelectedImage(i)}
-                    className={`aspect-square rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center text-xs text-gray-400 p-1 md:p-2 transition-all ${
+                    className={`aspect-square rounded-lg overflow-hidden transition-all ${
                       selectedImage === i ? 'ring-2 ring-copper' : 'hover:ring-2 ring-gray-300'
                     }`}
                   >
-                    [{i + 1}]
+                    <img
+                      src={img}
+                      alt={`${product.name} 썸네일 ${i + 1}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </button>
                 ))}
               </div>
@@ -172,8 +291,13 @@ export default function ProductDetail() {
                   to={`/${related.category}/${related.id}`}
                   className="group bg-white rounded-xl overflow-hidden hover-lift min-w-[240px] snap-center flex-shrink-0"
                 >
-                  <div className="h-48 bg-gray-200 flex items-center justify-center text-sm text-gray-500 p-4 text-center relative overflow-hidden">
-                    [{related.image}]
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={getProductMainImage(related.name)}
+                      alt={related.name}
+                      className="w-full h-48 object-cover"
+                      loading="lazy"
+                    />
                     <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all"></div>
                   </div>
                   <div className="p-6">
@@ -197,8 +321,13 @@ export default function ProductDetail() {
                   to={`/${related.category}/${related.id}`}
                   className="group bg-white rounded-xl overflow-hidden hover-lift"
                 >
-                  <div className="h-48 bg-gray-200 flex items-center justify-center text-sm text-gray-500 p-4 text-center relative overflow-hidden">
-                    [{related.image}]
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={getProductMainImage(related.name)}
+                      alt={related.name}
+                      className="w-full h-48 object-cover"
+                      loading="lazy"
+                    />
                     <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all"></div>
                   </div>
                   <div className="p-6">

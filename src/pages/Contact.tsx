@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Phone, Mail, Clock, MapPin, MessageCircle } from 'lucide-react';
+import { IMAGES } from '../constants/images';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -34,7 +35,8 @@ export default function Contact() {
 
   return (
     <div className="w-full">
-      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
+      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal" style={{backgroundImage: `url(${IMAGES.unsplash.contactHero})`}}>
+        <div className="absolute inset-0 bg-charcoal/60"></div>
         <div className="relative z-10 text-center text-white">
           <h1 className="font-serif text-3xl md:text-5xl font-bold mb-4">견적문의</h1>
           <p className="text-lg md:text-xl text-gray-300">

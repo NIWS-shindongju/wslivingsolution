@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { getProductsByCategory } from '../data/products';
+import { IMAGES } from '../constants/images';
 
 export default function Flooring() {
   const flooringProducts = getProductsByCategory('flooring');
@@ -15,10 +16,25 @@ export default function Flooring() {
     return 'bg-copper/10 text-copper';
   };
 
+  const getProductImage = (productName: string) => {
+    if (productName.includes('진 오리진')) return IMAGES.unsplash.woodFlooring;
+    if (productName.includes('진 테라 맥스')) return IMAGES.unsplash.modernLiving2;
+    if (productName.includes('진 테라')) return IMAGES.unsplash.modernLiving;
+    if (productName.includes('진 헤링본')) return IMAGES.unsplash.woodFlooring;
+    if (productName.includes('진 그란데 스퀘어')) return IMAGES.jin.stoneRoom;
+    if (productName.includes('진 그란데')) return IMAGES.jin.grandeFlooring;
+    if (productName.includes('진 텍스쳐')) return IMAGES.jin.mixMatch1;
+    if (productName.includes('아이코닉 스톤')) return IMAGES.iconic.collectionBanner;
+    if (productName.includes('나투스')) return IMAGES.unsplash.woodFlooring;
+    if (productName.includes('바움')) return IMAGES.unsplash.woodFlooring;
+    if (productName.includes('클릭S')) return IMAGES.unsplash.woodFlooring;
+    return IMAGES.unsplash.woodFlooring;
+  };
+
   return (
     <div className="w-full">
-      <section className="relative h-[60vh] md:h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate">
+      <section className="relative h-[60vh] md:h-screen flex items-center justify-center" style={{backgroundImage: `url(${IMAGES.jin.pointRoom})`}}>
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate opacity-70">
           <div className="absolute inset-0 bg-gradient-to-r from-dark-slate/90 to-dark-slate/50"></div>
         </div>
 
@@ -56,8 +72,13 @@ export default function Flooring() {
                 to={`/flooring/${product.id}`}
                 className="group bg-warm-ivory rounded-xl overflow-hidden hover-lift"
               >
-                <div className="h-32 md:h-64 bg-gray-200 flex items-center justify-center text-xs md:text-sm text-gray-500 p-2 md:p-4 text-center relative overflow-hidden">
-                  [{product.image}]
+                <div className="relative overflow-hidden">
+                  <img
+                    src={getProductImage(product.name)}
+                    alt={product.name}
+                    className="w-full h-32 md:h-64 object-cover"
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
                   </div>

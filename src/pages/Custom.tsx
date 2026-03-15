@@ -1,27 +1,32 @@
 import { Link } from 'react-router-dom';
 import { Cog, Drill, Zap, Disc } from 'lucide-react';
+import { IMAGES } from '../constants/images';
 
 export default function Custom() {
   const equipment = [
     {
       name: 'CNC Router',
       icon: Cog,
-      desc: '정밀 목재 가공 및 타공 작업'
+      desc: '정밀 목재 가공 및 타공 작업',
+      image: IMAGES.unsplash.cncWoodMachine
     },
     {
       name: 'CNC 선반',
       icon: Drill,
-      desc: '회전체 정밀 가공'
+      desc: '회전체 정밀 가공',
+      image: IMAGES.unsplash.cncFactory
     },
     {
       name: 'MCT (머시닝센터)',
       icon: Zap,
-      desc: '복합 정밀 가공'
+      desc: '복합 정밀 가공',
+      image: IMAGES.unsplash.cncWoodMachine
     },
     {
       name: '레이저 가공기',
       icon: Disc,
-      desc: '섬세한 커팅 및 각인'
+      desc: '섬세한 커팅 및 각인',
+      image: IMAGES.unsplash.laserCutter
     }
   ];
 
@@ -37,15 +42,18 @@ export default function Custom() {
   const materials = [
     {
       name: '목재',
-      items: ['MDF', '합판', '원목']
+      items: ['MDF', '합판', '원목'],
+      image: IMAGES.unsplash.woodMaterial
     },
     {
       name: '금속',
-      items: ['알루미늄', 'SUS(스테인리스)']
+      items: ['알루미늄', 'SUS(스테인리스)'],
+      image: IMAGES.unsplash.metalMaterial
     },
     {
       name: '플라스틱',
-      items: ['PEEK', 'POM', 'UPE 등']
+      items: ['PEEK', 'POM', 'UPE 등'],
+      image: null
     }
   ];
 
@@ -59,11 +67,8 @@ export default function Custom() {
 
   return (
     <div className="w-full">
-      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
+      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal" style={{backgroundImage: `url(${IMAGES.unsplash.cncFactory})`}}>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 to-charcoal"></div>
-        <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-sm">
-          [김포 공장 CNC 가공 현장]
-        </div>
         <div className="relative z-10 text-center text-white px-5">
           <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold mb-4">목재 맞춤가공</h1>
           <p className="text-sm md:text-xl text-gray-300">김포 자체 공장에서, 어떤 형태든 깎아냅니다</p>
@@ -83,10 +88,8 @@ export default function Custom() {
               const Icon = item.icon;
               return (
                 <div key={index} className="bg-white rounded-xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="h-28 md:h-48 bg-gray-200 rounded-lg flex items-center justify-center text-xs text-gray-500 mb-6">
-                    [{item.name} 장비 사진]
-                  </div>
-                  <div className="w-14 h-14 bg-deepgreen/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <img src={item.image} alt={`${item.name} 목재 가공 장비`} className="w-full h-28 md:h-48 object-cover" loading="lazy" />
+                  <div className="w-14 h-14 bg-deepgreen/10 rounded-full flex items-center justify-center mb-4 mx-auto mt-6">
                     <Icon className="text-deepgreen" size={28} />
                   </div>
                   <h3 className="font-serif text-xl font-bold text-charcoal text-center mb-2">
@@ -134,16 +137,23 @@ export default function Custom() {
 
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {materials.map((category, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-lg">
-                <h3 className="font-serif text-2xl font-bold text-charcoal text-center mb-6">
-                  {category.name}
-                </h3>
-                <div className="space-y-3">
-                  {category.items.map((item, idx) => (
-                    <div key={idx} className="bg-cream p-4 rounded-lg text-center text-charcoal font-medium">
-                      {item}
-                    </div>
-                  ))}
+              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg">
+                {category.image ? (
+                  <img src={category.image} alt={`${category.name} 가공 소재`} className="w-full h-48 object-cover" loading="lazy" />
+                ) : (
+                  <div className="w-full h-48 bg-gradient-to-br from-gray-300 to-gray-400"></div>
+                )}
+                <div className="p-8">
+                  <h3 className="font-serif text-2xl font-bold text-charcoal text-center mb-6">
+                    {category.name}
+                  </h3>
+                  <div className="space-y-3">
+                    {category.items.map((item, idx) => (
+                      <div key={idx} className="bg-cream p-4 rounded-lg text-center text-charcoal font-medium">
+                        {item}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

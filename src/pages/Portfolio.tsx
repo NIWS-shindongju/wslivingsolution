@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import { IMAGES } from '../constants/images';
 
 interface Project {
   id: number;
@@ -27,7 +28,7 @@ export default function Portfolio() {
       material: '디자인월',
       location: '서울특별시 영등포구',
       description: '대한민국 국회의사당 리모델링 프로젝트에 디자인월 납품 및 시공. 국가를 대표하는 공간에 프리미엄 벽장재를 적용하여 품격 있는 공간을 완성했습니다.',
-      image: '국회의사당 디자인월 시공'
+      image: IMAGES.unsplash.parliament
     },
     {
       id: 2,
@@ -37,7 +38,7 @@ export default function Portfolio() {
       material: '에코스텍',
       location: '서울특별시 서초구',
       description: '국립중앙도서관 디지털도서관 신축 시 에코스텍 흡음 패널 납품 및 시공. 도서관의 조용하고 쾌적한 환경 조성에 기여했습니다.',
-      image: '국립중앙디지털도서관 에코스텍 시공'
+      image: IMAGES.unsplash.library
     },
     {
       id: 3,
@@ -47,7 +48,7 @@ export default function Portfolio() {
       material: '에코스텍',
       location: '대전광역시',
       description: '대전철도청 사무 공간에 에코스텍 흡음 패널 납품. 쾌적한 업무 환경 조성.',
-      image: '대전철도청 에코스텍 시공'
+      image: IMAGES.wsindus.ecostecOffice1
     },
     {
       id: 4,
@@ -57,7 +58,7 @@ export default function Portfolio() {
       material: '에코스텍',
       location: '서울특별시',
       description: '서울시 인재개발원 교육 공간에 에코스텍 납품 및 시공. 교육 환경의 음향 품질 개선.',
-      image: '서울시 인재개발원 에코스텍 시공'
+      image: IMAGES.wsindus.ecostecComplete
     },
     {
       id: 5,
@@ -67,7 +68,7 @@ export default function Portfolio() {
       material: '에코스텍',
       location: '인천광역시 연수구',
       description: '연세대학교 송도캠퍼스 실내 농구장에 에코스텍 시공. 체육관 특유의 반향음 제어로 쾌적한 운동 환경 조성.',
-      image: '연세대학교 농구장 에코스텍 시공'
+      image: IMAGES.unsplash.gymnasium
     },
     {
       id: 6,
@@ -77,7 +78,7 @@ export default function Portfolio() {
       material: '에코스텍',
       location: '경기도 파주시',
       description: '두원공과대학교 파주캠퍼스 강의실 및 다목적 공간에 에코스텍 납품 및 시공.',
-      image: '두원공대 파주캠퍼스 에코스텍 시공'
+      image: IMAGES.unsplash.universityHall
     },
     {
       id: 7,
@@ -87,7 +88,7 @@ export default function Portfolio() {
       material: '에코스텍',
       location: '경기도',
       description: '현대해상화재보험 연수원에 에코스텍 납품 및 시공. 우성리빙솔루션의 첫 대형 프로젝트 중 하나.',
-      image: '현대해상 연수원 에코스텍 시공'
+      image: IMAGES.unsplash.conferenceRoom
     },
     {
       id: 8,
@@ -97,7 +98,7 @@ export default function Portfolio() {
       material: '에코스텍',
       location: '서울특별시 영등포구',
       description: '에코스텍 제조사인 동화기업 본사 회의실에 적용. 제조사가 자사 사옥에 선택한 시공 파트너.',
-      image: '동화기업 회의실 에코스텍 시공'
+      image: IMAGES.wsindus.ecostecPanel
     },
     {
       id: 9,
@@ -107,7 +108,7 @@ export default function Portfolio() {
       material: '디자인월',
       location: '서울특별시',
       description: '고급 상업 공간에 디자인월 시공 사례.',
-      image: '상업공간 디자인월 시공'
+      image: IMAGES.wsindus.photobooth1
     },
     {
       id: 10,
@@ -117,7 +118,7 @@ export default function Portfolio() {
       material: '동화자연마루',
       location: '경기도',
       description: '프리미엄 주거 공간에 동화자연마루 시공 사례.',
-      image: '주거공간 마루 시공'
+      image: IMAGES.unsplash.modernLiving
     }
   ];
 
@@ -127,7 +128,8 @@ export default function Portfolio() {
 
   return (
     <div className="w-full">
-      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
+      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal" style={{backgroundImage: `url(${IMAGES.unsplash.conferenceRoom})`}}>
+        <div className="absolute inset-0 bg-charcoal/60"></div>
         <div className="relative z-10 text-center text-white">
           <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold mb-4">시공사례</h1>
           <p className="text-sm md:text-xl text-gray-300">27년간 현장에서 쌓은 기록</p>
@@ -163,10 +165,8 @@ export default function Portfolio() {
                 onClick={() => setSelectedProject(project)}
                 className="group cursor-pointer bg-cream rounded-xl overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-2"
               >
-                <div className="relative h-48 md:h-64 bg-gray-200 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center text-sm text-gray-500 p-4 text-center">
-                    [{project.image}]
-                  </div>
+                <div className="relative h-48 md:h-64 overflow-hidden">
+                  <img src={project.image} alt={`${project.title} 시공사례`} className="w-full h-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-charcoal/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-6">
                     <h3 className="font-serif text-2xl font-bold mb-2">{project.title}</h3>
                     <div className="flex items-center space-x-3 text-deepgreen text-sm font-semibold">
@@ -213,8 +213,8 @@ export default function Portfolio() {
             </div>
 
             <div className="p-8">
-              <div className="h-48 md:h-96 bg-gray-200 rounded-xl flex items-center justify-center text-sm text-gray-500 mb-8">
-                [{selectedProject.image}]
+              <div className="h-48 md:h-96 rounded-xl overflow-hidden mb-8">
+                <img src={selectedProject.image} alt={`${selectedProject.title} 시공사례`} className="w-full h-full object-cover" />
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">

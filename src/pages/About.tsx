@@ -1,4 +1,5 @@
 import { Award, CheckCircle, Target } from 'lucide-react';
+import { IMAGES } from '../constants/images';
 
 export default function About() {
   const timeline = [
@@ -18,11 +19,8 @@ export default function About() {
 
   return (
     <div className="w-full">
-      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
+      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal" style={{backgroundImage: `url(${IMAGES.unsplash.aboutFactory})`}}>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 to-charcoal"></div>
-        <div className="absolute inset-0 flex items-center justify-center text-gray-600 text-sm md:text-base">
-          [김포 공장 전경 또는 작업 현장 파노라마]
-        </div>
         <div className="relative z-10 text-center text-white px-5">
           <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold mb-4">우성이야기</h1>
           <p className="text-sm md:text-xl text-gray-300">우성산업 → 우성인더스 → 우성리빙솔루션, 27년의 여정</p>
@@ -54,8 +52,8 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="md:order-1 md:flex-1 w-full h-56 md:h-96 bg-gray-200 rounded-2xl flex items-center justify-center text-sm text-gray-500">
-              [우성산업 창업 당시 또는 초기 시공 현장 사진]
+            <div className="md:order-1 md:flex-1">
+              <img src={IMAGES.unsplash.warehouse} alt="우성인더스 공장 전경" className="w-full h-56 md:h-96 object-cover rounded-lg" loading="lazy" />
             </div>
           </div>
         </div>
@@ -96,7 +94,7 @@ export default function About() {
           <div className="max-w-5xl mx-auto">
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:flex-shrink-0">
-                <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-200 rounded-2xl flex items-center justify-center text-sm text-gray-500 mb-4 mx-auto md:mx-0">
+                <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-200 rounded-2xl flex items-center justify-center text-sm text-gray-500 mb-4 mx-auto md:mx-0 border-2 border-copper">
                   [대표 신만식 프로필 사진]
                 </div>
                 <div className="text-center md:text-left">
@@ -190,9 +188,7 @@ export default function About() {
               <p className="text-sm md:text-base text-gray-700 mb-6">
                 경기도 김포시 통진읍 가현로 201-56
               </p>
-              <div className="h-56 md:h-64 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">
-                [김포 공장 지도]
-              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165!2d126.58!3d37.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zIOqyveq4sOuPhCDqsIDtmIzkqazsiJwg6rCA7ZiE66GcIDIwMS01Ng!5e0!3m2!1sko!2skr!4v1234567890" className="w-full h-56 md:h-64 rounded-lg border-0" loading="lazy" title="김포 공장 위치"></iframe>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-lg">
@@ -202,9 +198,7 @@ export default function About() {
               <p className="text-sm md:text-base text-gray-700 mb-6">
                 인천광역시 동구 방축로 37번길 30, 1동 121호(송현동)
               </p>
-              <div className="h-56 md:h-64 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">
-                [인천 사무실 지도]
-              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165!2d126.63!3d37.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zIOyduOyynCDrgqjsgrDqtawg67Cp7LaV66GcIDPrsojtmIQgMzA!5e0!3m2!1sko!2skr!4v1234567890" className="w-full h-56 md:h-64 rounded-lg border-0" loading="lazy" title="인천 사무실 위치"></iframe>
             </div>
           </div>
         </div>

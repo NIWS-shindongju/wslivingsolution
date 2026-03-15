@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { getProductsByCategory } from '../data/products';
+import { IMAGES } from '../constants/images';
 
 export default function Ecostec() {
   const ecostecProducts = getProductsByCategory('ecostec');
@@ -15,10 +16,25 @@ export default function Ecostec() {
     return 'bg-copper/10 text-copper';
   };
 
+  const getProductImage = (productName: string) => {
+    if (productName.includes('에코스텍')) return IMAGES.ecostecBlog.spec1;
+    if (productName.includes('세이프월')) return IMAGES.unsplash.wallPanel;
+    return IMAGES.ecostecBlog.spec1;
+  };
+
+  const applicationSpaces = [
+    { name: '회의실', image: IMAGES.unsplash.conferenceRoom, description: '명료한 음성 전달' },
+    { name: '강당', image: IMAGES.unsplash.auditorium, description: '최적의 음향 환경' },
+    { name: '도서관', image: IMAGES.unsplash.library, description: '조용한 독서 공간' },
+    { name: '체육관', image: IMAGES.unsplash.gymnasium, description: '소음 감소' },
+    { name: '사무실', image: IMAGES.unsplash.officeInterior, description: '업무 집중도 향상' },
+    { name: '교회', image: IMAGES.unsplash.church, description: '울림 제어' },
+  ];
+
   return (
     <div className="w-full">
-      <section className="relative h-[60vh] md:h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate">
+      <section className="relative h-[60vh] md:h-screen flex items-center justify-center" style={{backgroundImage: `url(${IMAGES.wsindus.ecostecComplete})`}}>
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate opacity-70">
           <div className="absolute inset-0 bg-gradient-to-r from-dark-slate/90 to-dark-slate/50"></div>
         </div>
 
@@ -56,8 +72,13 @@ export default function Ecostec() {
                 to={`/ecostec/${product.id}`}
                 className="group bg-warm-ivory rounded-xl overflow-hidden hover-lift"
               >
-                <div className="h-64 md:h-80 bg-gray-200 flex items-center justify-center text-sm text-gray-500 p-4 text-center relative overflow-hidden">
-                  [{product.image}]
+                <div className="relative overflow-hidden">
+                  <img
+                    src={getProductImage(product.name)}
+                    alt={product.name}
+                    className="w-full h-64 md:h-80 object-cover"
+                    loading="lazy"
+                  />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal">자세히 보기</span>
                   </div>
@@ -87,6 +108,37 @@ export default function Ecostec() {
 
       <section className="py-14 md:py-20 lg:py-24 bg-warm-ivory">
         <div className="container mx-auto px-5 md:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-light text-charcoal mb-6">
+              적용 공간
+            </h2>
+            <p className="text-base md:text-lg text-stone-gray font-light">
+              다양한 공간에서 최적의 음향 환경을 제공합니다
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+            {applicationSpaces.map((space, i) => (
+              <div key={i} className="group bg-white rounded-xl overflow-hidden hover-lift">
+                <div className="relative overflow-hidden aspect-[4/3]">
+                  <img
+                    src={space.image}
+                    alt={space.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-slate/80 to-transparent flex flex-col justify-end p-4">
+                    <h3 className="text-white font-light text-lg md:text-xl mb-1">{space.name}</h3>
+                    <p className="text-warm-ivory text-xs md:text-sm font-light">{space.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 md:py-20 lg:py-24 bg-white">
+        <div className="container mx-auto px-5 md:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-light text-charcoal mb-6">
               27년간 쌓아온 현장 경험
@@ -99,19 +151,19 @@ export default function Ecostec() {
               까다로운 관공서·교육기관의 시공 실적을 보유하고 있습니다.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-white rounded-lg p-6 md:p-8">
+              <div className="bg-warm-ivory rounded-lg p-6 md:p-8">
                 <div className="text-2xl md:text-3xl font-serif text-copper mb-2">2005</div>
                 <div className="text-sm text-charcoal">첫 시공 이래</div>
               </div>
-              <div className="bg-white rounded-lg p-6 md:p-8">
+              <div className="bg-warm-ivory rounded-lg p-6 md:p-8">
                 <div className="text-2xl md:text-3xl font-serif text-copper mb-2">20+</div>
                 <div className="text-sm text-charcoal">년 경험</div>
               </div>
-              <div className="bg-white rounded-lg p-6 md:p-8">
+              <div className="bg-warm-ivory rounded-lg p-6 md:p-8">
                 <div className="text-2xl md:text-3xl font-serif text-copper mb-2">100+</div>
                 <div className="text-sm text-charcoal">시공 실적</div>
               </div>
-              <div className="bg-white rounded-lg p-6 md:p-8">
+              <div className="bg-warm-ivory rounded-lg p-6 md:p-8">
                 <div className="text-2xl md:text-3xl font-serif text-copper mb-2">1위</div>
                 <div className="text-sm text-charcoal">시공 건수</div>
               </div>
