@@ -1,10 +1,65 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { getProductsByCategory } from '../data/products';
 import { IMAGES } from '../constants/images';
 
 export default function Wall() {
-  const wallProducts = getProductsByCategory('wall');
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const target = e.currentTarget;
+    target.style.display = 'none';
+    const parent = target.parentElement;
+    if (parent) {
+      parent.style.background = 'linear-gradient(135deg, #d4c5b0 0%, #b8a898 50%, #9c8b7a 100%)';
+    }
+  };
+
+  const wallProducts = [
+    {
+      id: 'signiwall',
+      name: '시그니월',
+      type: '초대형 빅슬랩 벽장재',
+      description: '1,010×2,460mm 아이코닉 스톤 패턴',
+      imgSrc: IMAGES.products.signiwall,
+      alt: '시그니월 벽재',
+      badges: ['NEW 2025', 'PREMIUM']
+    },
+    {
+      id: 'designwall',
+      name: '디자인월',
+      type: '입체무늬 벽장재',
+      description: '프리미엄 벽면 인테리어',
+      imgSrc: IMAGES.products.designwall,
+      alt: '디자인월 벽재',
+      badges: ['BEST']
+    },
+    {
+      id: 'designwall-grande',
+      name: '디자인월 그란데',
+      type: '대형 벽장재',
+      description: '넓은 공간을 위한 대형 패널',
+      imgSrc: IMAGES.products.designwallGrande,
+      alt: '디자인월 그란데 벽재',
+      badges: ['NEW']
+    },
+    {
+      id: 'dheim',
+      name: '디하임',
+      type: '가구 마감재',
+      description: '친환경 E0 보드 LPM',
+      imgSrc: IMAGES.products.dheim,
+      alt: '디하임 가구재',
+      badges: ['NEW 2024', 'ECO']
+    },
+  ];
+
+  const iconicStonePatterns = [
+    { key: 'monteWhite', name: '몬테화이트', isNew: true },
+    { key: 'emotionBlanc', name: '이모션블랑', isNew: true },
+    { key: 'saharaLight', name: '사하라라이트', isNew: false },
+    { key: 'slateMotif', name: '슬레이트모티프', isNew: true },
+    { key: 'slateSteel', name: '슬레이트스틸', isNew: false },
+    { key: 'portlandMotif', name: '포틀랜드모티프', isNew: true },
+    { key: 'portlandSteel', name: '포틀랜드스틸', isNew: false },
+  ];
 
   const getBadgeStyle = (badge: string) => {
     if (badge === 'NEW' || badge === 'NEW 2024' || badge === 'NEW 2025') {
@@ -16,22 +71,18 @@ export default function Wall() {
     return 'bg-copper/10 text-copper';
   };
 
-  const getProductImage = (productName: string) => {
-    if (productName.includes('시그니월')) return IMAGES.jin.signiwall;
-    if (productName.includes('디자인월 그란데')) return IMAGES.unsplash.wallPanel;
-    if (productName.includes('디자인월')) return IMAGES.unsplash.stoneWall;
-    if (productName.includes('디하임')) return IMAGES.jin.dheim;
-    return IMAGES.unsplash.stoneWall;
-  };
-
   return (
     <div className="w-full">
-      <section className="relative h-[60vh] md:h-screen flex items-center justify-center" style={{backgroundImage: `url(${IMAGES.jin.signiwall})`}}>
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate opacity-70">
-          <div className="absolute inset-0 bg-gradient-to-r from-dark-slate/90 to-dark-slate/50"></div>
-        </div>
-
-        <div className="relative z-10 container mx-auto px-5 md:px-6 lg:px-8">
+      <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
+        <img
+          src={IMAGES.heroes.wall}
+          alt="동화자연마루 벽재"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          onError={handleImageError}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+        <div className="relative z-10 container mx-auto px-5 md:px-6 lg:px-8 h-full flex items-center">
           <div className="max-w-3xl">
             <div className="inline-block bg-copper/20 border border-copper text-copper px-4 py-2 rounded-full text-xs md:text-sm font-normal mb-6">
               WALL & FURNITURE
@@ -58,7 +109,7 @@ export default function Wall() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {wallProducts.map((product) => (
               <Link
                 key={product.id}
@@ -67,10 +118,11 @@ export default function Wall() {
               >
                 <div className="relative overflow-hidden">
                   <img
-                    src={getProductImage(product.name)}
-                    alt={product.name}
-                    className="w-full h-32 md:h-64 object-cover"
+                    src={product.imgSrc}
+                    alt={product.alt}
+                    className="w-full h-48 md:h-64 object-cover rounded-t-xl"
                     loading="lazy"
+                    onError={handleImageError}
                   />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal text-xs md:text-sm">자세히 보기</span>
@@ -88,7 +140,7 @@ export default function Wall() {
                   <h3 className="font-serif text-sm md:text-xl font-light text-charcoal mb-2 group-hover:text-copper transition-colors">
                     {product.name}
                   </h3>
-                  <p className="text-stone-gray mb-4 text-xs md:text-sm line-clamp-2">{product.tagline}</p>
+                  <p className="text-stone-gray mb-4 text-xs md:text-sm line-clamp-2">{product.description}</p>
                   <div className="flex items-center text-copper font-normal text-xs md:text-sm">
                     자세히 <ArrowRight size={16} className="ml-1 md:size-5" />
                   </div>
@@ -110,83 +162,26 @@ export default function Wall() {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
-            <div className="group relative overflow-hidden rounded-lg aspect-square">
-              <img
-                src={IMAGES.iconic.monteWhite}
-                alt="몬테 화이트"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-slate/90 to-transparent p-4">
-                <p className="text-white text-sm font-light">몬테 화이트</p>
+            {iconicStonePatterns.map((pattern) => (
+              <div key={pattern.key} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="relative h-52 md:h-64 overflow-hidden">
+                  <img
+                    src={IMAGES.iconic[pattern.key as keyof typeof IMAGES.iconic]}
+                    alt={`아이코닉 스톤 ${pattern.name} 패턴`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    onError={handleImageError}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  {pattern.isNew && (
+                    <span className="absolute top-3 right-3 bg-copper text-white text-xs px-2 py-1 rounded-full font-medium">NEW</span>
+                  )}
+                  <div className="absolute bottom-3 left-3">
+                    <h3 className="text-white text-lg font-bold">{pattern.name}</h3>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg aspect-square">
-              <img
-                src={IMAGES.iconic.emotionBlanc}
-                alt="이모션 블랑"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-slate/90 to-transparent p-4">
-                <p className="text-white text-sm font-light">이모션 블랑</p>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg aspect-square">
-              <img
-                src={IMAGES.iconic.saharaLight}
-                alt="사하라 라이트"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-slate/90 to-transparent p-4">
-                <p className="text-white text-sm font-light">사하라 라이트</p>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg aspect-square">
-              <img
-                src={IMAGES.iconic.slateMotif}
-                alt="슬레이트 모티프"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-slate/90 to-transparent p-4">
-                <p className="text-white text-sm font-light">슬레이트 모티프</p>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg aspect-square">
-              <img
-                src={IMAGES.iconic.slateSteel}
-                alt="슬레이트 스틸"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-slate/90 to-transparent p-4">
-                <p className="text-white text-sm font-light">슬레이트 스틸</p>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg aspect-square">
-              <img
-                src={IMAGES.iconic.portlandMotif}
-                alt="포틀랜드 모티프"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-slate/90 to-transparent p-4">
-                <p className="text-white text-sm font-light">포틀랜드 모티프</p>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden rounded-lg aspect-square">
-              <img
-                src={IMAGES.iconic.portlandSteel}
-                alt="포틀랜드 스틸"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-slate/90 to-transparent p-4">
-                <p className="text-white text-sm font-light">포틀랜드 스틸</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

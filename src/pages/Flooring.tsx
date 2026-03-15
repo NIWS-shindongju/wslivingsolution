@@ -1,44 +1,56 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { getProductsByCategory } from '../data/products';
 import { IMAGES } from '../constants/images';
 
 export default function Flooring() {
-  const flooringProducts = getProductsByCategory('flooring');
-
-  const getBadgeStyle = (badge: string) => {
-    if (badge === 'NEW' || badge === 'NEW 2024' || badge === 'NEW 2025') {
-      return 'bg-copper text-white';
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const target = e.currentTarget;
+    target.style.display = 'none';
+    const parent = target.parentElement;
+    if (parent) {
+      parent.style.background = 'linear-gradient(135deg, #d4c5b0 0%, #b8a898 50%, #9c8b7a 100%)';
     }
-    if (badge === 'BEST' || badge === 'PREMIUM') {
-      return 'bg-dark-slate text-white';
-    }
-    return 'bg-copper/10 text-copper';
   };
 
-  const getProductImage = (productName: string) => {
-    if (productName.includes('진 오리진')) return IMAGES.unsplash.woodFlooring;
-    if (productName.includes('진 테라 맥스')) return IMAGES.unsplash.modernLiving2;
-    if (productName.includes('진 테라')) return IMAGES.unsplash.modernLiving;
-    if (productName.includes('진 헤링본')) return IMAGES.unsplash.woodFlooring;
-    if (productName.includes('진 그란데 스퀘어')) return IMAGES.jin.stoneRoom;
-    if (productName.includes('진 그란데')) return IMAGES.jin.grandeFlooring;
-    if (productName.includes('진 텍스쳐')) return IMAGES.jin.mixMatch1;
-    if (productName.includes('아이코닉 스톤')) return IMAGES.iconic.collectionBanner;
-    if (productName.includes('나투스')) return IMAGES.unsplash.woodFlooring;
-    if (productName.includes('바움')) return IMAGES.unsplash.woodFlooring;
-    if (productName.includes('클릭S')) return IMAGES.unsplash.woodFlooring;
-    return IMAGES.unsplash.woodFlooring;
-  };
+  const iconicStonePatterns = [
+    { key: 'monteWhite', name: '몬테화이트', isNew: true },
+    { key: 'emotionBlanc', name: '이모션블랑', isNew: true },
+    { key: 'saharaLight', name: '사하라라이트', isNew: false },
+    { key: 'slateMotif', name: '슬레이트모티프', isNew: true },
+    { key: 'slateSteel', name: '슬레이트스틸', isNew: false },
+    { key: 'portlandMotif', name: '포틀랜드모티프', isNew: true },
+    { key: 'portlandSteel', name: '포틀랜드스틸', isNew: false },
+  ];
+
+  const jinSeriesProducts = [
+    { id: 'jin-origin', name: '진 오리진', imgSrc: IMAGES.products.jinOrigin, alt: '진 오리진 바닥재', type: '원목강마루' },
+    { id: 'jin-tera', name: '진 테라', imgSrc: IMAGES.products.jinTera, alt: '진 테라 바닥재', type: '광폭 강마루' },
+    { id: 'jin-tera-max', name: '진 테라 맥스', imgSrc: IMAGES.products.jinTeraMax, alt: '진 테라 맥스 바닥재', type: '초광폭 강마루' },
+    { id: 'jin-herringbone', name: '진 헤링본', imgSrc: IMAGES.products.jinHerringbone, alt: '진 헤링본 바닥재', type: '헤링본 패턴' },
+    { id: 'jin-grande', name: '진 그란데', imgSrc: IMAGES.products.jinGrande, alt: '진 그란데 바닥재', type: '타일형 강마루' },
+    { id: 'jin-grande-square', name: '진 그란데 스퀘어', imgSrc: IMAGES.products.jinGrandeSquare, alt: '진 그란데 스퀘어 바닥재', type: '정사각 타일형' },
+    { id: 'jin-texture', name: '진 텍스처', imgSrc: IMAGES.products.jinTexture, alt: '진 텍스처 바닥재', type: '엠보싱 마감' },
+  ];
+
+  const otherFlooringProducts = [
+    { id: 'natus', name: '나투스', imgSrc: IMAGES.products.natus, alt: '나투스 바닥재', type: '원목강마루' },
+    { id: 'baum', name: '바움', imgSrc: IMAGES.products.baum, alt: '바움 바닥재', type: '프리미엄 원목' },
+    { id: 'click-s', name: '클릭S', imgSrc: IMAGES.products.clickS, alt: '클릭S 바닥재', type: '강화마루' },
+    { id: 'duo-texture', name: '듀오 텍스처', imgSrc: IMAGES.products.duoTexture, alt: '듀오 텍스처 바닥재', type: '강화마루' },
+  ];
 
   return (
     <div className="w-full">
-      <section className="relative h-[60vh] md:h-screen flex items-center justify-center" style={{backgroundImage: `url(${IMAGES.jin.pointRoom})`}}>
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate opacity-70">
-          <div className="absolute inset-0 bg-gradient-to-r from-dark-slate/90 to-dark-slate/50"></div>
-        </div>
-
-        <div className="relative z-10 container mx-auto px-5 md:px-6 lg:px-8">
+      <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
+        <img
+          src={IMAGES.heroes.flooring}
+          alt="동화자연마루 바닥재"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          onError={handleImageError}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+        <div className="relative z-10 container mx-auto px-5 md:px-6 lg:px-8 h-full flex items-center">
           <div className="max-w-3xl">
             <div className="inline-block bg-copper/20 border border-copper text-copper px-4 py-2 rounded-full text-xs md:text-sm font-normal mb-4 md:mb-6">
               FLOORING
@@ -58,15 +70,96 @@ export default function Flooring() {
         <div className="container mx-auto px-5 md:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-light text-charcoal mb-2 md:mb-4">
-              모든 바닥재 제품
+              아이코닉 스톤 컬렉션
             </h2>
             <p className="text-base md:text-lg lg:text-xl text-stone-gray font-light">
-              강마루 · 원목마루 · 강화마루 풀라인업
+              천연 스톤의 아름다움을 담은 7가지 패턴
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {iconicStonePatterns.map((pattern) => (
+              <div key={pattern.key} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="relative h-52 md:h-64 overflow-hidden">
+                  <img
+                    src={IMAGES.iconic[pattern.key as keyof typeof IMAGES.iconic]}
+                    alt={`아이코닉 스톤 ${pattern.name} 패턴`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    onError={handleImageError}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  {pattern.isNew && (
+                    <span className="absolute top-3 right-3 bg-copper text-white text-xs px-2 py-1 rounded-full font-medium">NEW</span>
+                  )}
+                  <div className="absolute bottom-3 left-3">
+                    <h3 className="text-white text-lg font-bold">{pattern.name}</h3>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 md:py-20 lg:py-24 bg-warm-ivory">
+        <div className="container mx-auto px-5 md:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-light text-charcoal mb-2 md:mb-4">
+              진(Jin) 시리즈
+            </h2>
+            <p className="text-base md:text-lg lg:text-xl text-stone-gray font-light">
+              프리미엄 강마루의 정점
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            {flooringProducts.map((product) => (
+            {jinSeriesProducts.map((product) => (
+              <Link
+                key={product.id}
+                to={`/flooring/${product.id}`}
+                className="group bg-white rounded-xl overflow-hidden hover-lift"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={product.imgSrc}
+                    alt={product.alt}
+                    className="w-full h-48 md:h-64 object-cover rounded-t-xl"
+                    loading="lazy"
+                    onError={handleImageError}
+                  />
+                  <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
+                  </div>
+                </div>
+                <div className="p-3 md:p-6">
+                  <div className="text-xs text-copper mb-1 md:mb-2">{product.type}</div>
+                  <h3 className="font-serif text-sm md:text-xl font-light text-charcoal mb-2 group-hover:text-copper transition-colors">
+                    {product.name}
+                  </h3>
+                  <div className="flex items-center text-copper font-normal text-xs md:text-sm">
+                    자세히 <ArrowRight size={14} className="ml-1 md:hidden" /><ArrowRight size={18} className="ml-1 hidden md:inline" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 md:py-20 lg:py-24 bg-white">
+        <div className="container mx-auto px-5 md:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-light text-charcoal mb-2 md:mb-4">
+              기타 바닥재
+            </h2>
+            <p className="text-base md:text-lg lg:text-xl text-stone-gray font-light">
+              다양한 공간에 맞는 선택
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            {otherFlooringProducts.map((product) => (
               <Link
                 key={product.id}
                 to={`/flooring/${product.id}`}
@@ -74,28 +167,21 @@ export default function Flooring() {
               >
                 <div className="relative overflow-hidden">
                   <img
-                    src={getProductImage(product.name)}
-                    alt={product.name}
-                    className="w-full h-32 md:h-64 object-cover"
+                    src={product.imgSrc}
+                    alt={product.alt}
+                    className="w-full h-48 md:h-64 object-cover rounded-t-xl"
                     loading="lazy"
+                    onError={handleImageError}
                   />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
                   </div>
                 </div>
                 <div className="p-3 md:p-6">
-                  <div className="flex flex-wrap gap-1 md:gap-2 mb-2 md:mb-3">
-                    {product.badges.slice(0, 2).map((badge, i) => (
-                      <span key={i} className={`px-2 py-1 rounded-full text-xs ${getBadgeStyle(badge)}`}>
-                        {badge}
-                      </span>
-                    ))}
-                  </div>
                   <div className="text-xs text-copper mb-1 md:mb-2">{product.type}</div>
-                  <h3 className="font-serif text-sm md:text-xl font-light text-charcoal mb-1 md:mb-2 group-hover:text-copper transition-colors line-clamp-1">
+                  <h3 className="font-serif text-sm md:text-xl font-light text-charcoal mb-2 group-hover:text-copper transition-colors">
                     {product.name}
                   </h3>
-                  <p className="text-stone-gray mb-2 md:mb-4 text-xs md:text-sm line-clamp-2">{product.tagline}</p>
                   <div className="flex items-center text-copper font-normal text-xs md:text-sm">
                     자세히 <ArrowRight size={14} className="ml-1 md:hidden" /><ArrowRight size={18} className="ml-1 hidden md:inline" />
                   </div>

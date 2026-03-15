@@ -157,7 +157,30 @@ export default function ProductDetail() {
   return (
     <div className="w-full">
       <section className="relative h-[50vh] md:h-[70vh] flex items-center justify-center bg-dark-slate">
-        <div className="absolute inset-0" style={{backgroundImage: `url(${mainImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div className="absolute inset-0">
+          <img
+            src={mainImage}
+            alt={`동화자연마루 ${product.name} 제품 이미지`}
+            className="w-full h-full object-cover"
+            loading="eager"
+            onError={(e) => {
+              const target = e.currentTarget;
+              target.style.display = 'none';
+              const parent = target.parentElement;
+              if (parent) {
+                parent.style.background = 'linear-gradient(135deg, #d4c5b0 0%, #b8a898 50%, #9c8b7a 100%)';
+                parent.style.display = 'flex';
+                parent.style.alignItems = 'center';
+                parent.style.justifyContent = 'center';
+                if (!parent.querySelector('.fallback-text')) {
+                  const span = document.createElement('span');
+                  span.className = 'fallback-text text-white/70 text-lg font-medium';
+                  span.textContent = product.name;
+                  parent.appendChild(span);
+                }
+              }
+            }}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-dark-slate/90 via-dark-slate/50 to-transparent"></div>
         </div>
 
@@ -217,6 +240,23 @@ export default function ProductDetail() {
                   </button>
                 ))}
               </div>
+              {product.galleryImages && product.galleryImages.length > 0 && (
+                <div className="flex gap-2 mt-3 overflow-x-auto">
+                  {product.galleryImages.map((img, i) => (
+                    <img
+                      key={i}
+                      src={img}
+                      alt={`${product.name} 갤러리 이미지 ${i + 1}`}
+                      className="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-copper transition"
+                      loading="lazy"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        target.style.display = 'none';
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
 
             <div>
@@ -291,12 +331,23 @@ export default function ProductDetail() {
                   to={`/${related.category}/${related.id}`}
                   className="group bg-white rounded-xl overflow-hidden hover-lift min-w-[240px] snap-center flex-shrink-0"
                 >
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden h-48 bg-gradient-to-br from-warm-ivory to-stone-gray/20">
                     <img
                       src={getProductMainImage(related.name)}
                       alt={related.name}
                       className="w-full h-48 object-cover"
                       loading="lazy"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent && !parent.querySelector('.fallback-text')) {
+                          const span = document.createElement('span');
+                          span.className = 'fallback-text absolute inset-0 flex items-center justify-center text-charcoal/40 text-sm font-medium';
+                          span.textContent = related.name;
+                          parent.appendChild(span);
+                        }
+                      }}
                     />
                     <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all"></div>
                   </div>
@@ -321,12 +372,23 @@ export default function ProductDetail() {
                   to={`/${related.category}/${related.id}`}
                   className="group bg-white rounded-xl overflow-hidden hover-lift"
                 >
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden h-48 bg-gradient-to-br from-warm-ivory to-stone-gray/20">
                     <img
                       src={getProductMainImage(related.name)}
                       alt={related.name}
                       className="w-full h-48 object-cover"
                       loading="lazy"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent && !parent.querySelector('.fallback-text')) {
+                          const span = document.createElement('span');
+                          span.className = 'fallback-text absolute inset-0 flex items-center justify-center text-charcoal/40 text-sm font-medium';
+                          span.textContent = related.name;
+                          parent.appendChild(span);
+                        }
+                      }}
                     />
                     <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all"></div>
                   </div>

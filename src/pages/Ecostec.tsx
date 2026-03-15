@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Building2, Theater, BookOpen, Dumbbell, Briefcase, Church } from 'lucide-react';
 import { getProductsByCategory } from '../data/products';
 import { IMAGES } from '../constants/images';
 
@@ -17,23 +17,30 @@ export default function Ecostec() {
   };
 
   const getProductImage = (productName: string) => {
-    if (productName.includes('에코스텍')) return IMAGES.ecostecBlog.spec1;
-    if (productName.includes('세이프월')) return IMAGES.unsplash.wallPanel;
-    return IMAGES.ecostecBlog.spec1;
+    if (productName.includes('에코스텍')) return IMAGES.products.ecostec;
+    if (productName.includes('세이프월')) return IMAGES.products.safewall;
+    return IMAGES.products.ecostec;
   };
 
-  const applicationSpaces = [
-    { name: '회의실', image: IMAGES.unsplash.conferenceRoom, description: '명료한 음성 전달' },
-    { name: '강당', image: IMAGES.unsplash.auditorium, description: '최적의 음향 환경' },
-    { name: '도서관', image: IMAGES.unsplash.library, description: '조용한 독서 공간' },
-    { name: '체육관', image: IMAGES.unsplash.gymnasium, description: '소음 감소' },
-    { name: '사무실', image: IMAGES.unsplash.officeInterior, description: '업무 집중도 향상' },
-    { name: '교회', image: IMAGES.unsplash.church, description: '울림 제어' },
+  const spaces = [
+    { icon: Building2, title: '회의실', image: IMAGES.spaces.conferenceRoom },
+    { icon: Theater, title: '강당', image: IMAGES.spaces.auditorium },
+    { icon: BookOpen, title: '도서관', image: IMAGES.spaces.library },
+    { icon: Dumbbell, title: '체육관', image: IMAGES.spaces.gymnasium },
+    { icon: Briefcase, title: '사무실', image: IMAGES.spaces.office },
+    { icon: Church, title: '교회', image: IMAGES.spaces.church },
   ];
 
   return (
     <div className="w-full">
-      <section className="relative h-[60vh] md:h-screen flex items-center justify-center" style={{backgroundImage: `url(${IMAGES.wsindus.ecostecComplete})`}}>
+      <section className="relative h-[60vh] md:h-screen flex items-center justify-center">
+        <div className="absolute inset-0">
+          <img
+            src={IMAGES.heroes.ecostec}
+            alt="에코스텍 흡음 패널"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate opacity-70">
           <div className="absolute inset-0 bg-gradient-to-r from-dark-slate/90 to-dark-slate/50"></div>
         </div>
@@ -78,6 +85,10 @@ export default function Ecostec() {
                     alt={product.name}
                     className="w-full h-64 md:h-80 object-cover"
                     loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = IMAGES.products.ecostec;
+                    }}
                   />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal">자세히 보기</span>
@@ -117,18 +128,23 @@ export default function Ecostec() {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
-            {applicationSpaces.map((space, i) => (
-              <div key={i} className="group bg-white rounded-xl overflow-hidden hover-lift">
-                <div className="relative overflow-hidden aspect-[4/3]">
+            {spaces.map((space) => (
+              <div key={space.title} className="group">
+                <div className="relative h-40 md:h-48 overflow-hidden rounded-xl">
                   <img
                     src={space.image}
-                    alt={space.name}
-                    className="w-full h-full object-cover"
+                    alt={`${space.title} 인테리어`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = IMAGES.spaces.office;
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-slate/80 to-transparent flex flex-col justify-end p-4">
-                    <h3 className="text-white font-light text-lg md:text-xl mb-1">{space.name}</h3>
-                    <p className="text-warm-ivory text-xs md:text-sm font-light">{space.description}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute bottom-3 left-3 text-white">
+                    <space.icon className="w-8 h-8 mb-2" />
+                    <h3 className="font-bold text-lg">{space.title}</h3>
                   </div>
                 </div>
               </div>

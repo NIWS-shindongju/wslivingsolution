@@ -19,7 +19,13 @@ export default function About() {
 
   return (
     <div className="w-full">
-      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal" style={{backgroundImage: `url(${IMAGES.unsplash.aboutFactory})`}}>
+      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
+        <img
+          src={IMAGES.about.factoryPanorama}
+          alt="우성리빙솔루션 공장 전경"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 to-charcoal"></div>
         <div className="relative z-10 text-center text-white px-5">
           <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold mb-4">우성이야기</h1>
@@ -53,7 +59,7 @@ export default function About() {
               </div>
             </div>
             <div className="md:order-1 md:flex-1">
-              <img src={IMAGES.unsplash.warehouse} alt="우성인더스 공장 전경" className="w-full h-56 md:h-96 object-cover rounded-lg" loading="lazy" />
+              <img src={IMAGES.about.earlyWork} alt="우성산업 초창기 작업 모습" className="w-full h-56 md:h-96 object-cover rounded-lg" loading="lazy" />
             </div>
           </div>
         </div>
@@ -188,7 +194,21 @@ export default function About() {
               <p className="text-sm md:text-base text-gray-700 mb-6">
                 경기도 김포시 통진읍 가현로 201-56
               </p>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165!2d126.58!3d37.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zIOqyveq4sOuPhCDqsIDtmIzkqazsiJwg6rCA7ZiE66GcIDIwMS01Ng!5e0!3m2!1sko!2skr!4v1234567890" className="w-full h-56 md:h-64 rounded-lg border-0" loading="lazy" title="김포 공장 위치"></iframe>
+              <div className="bg-stone-200 rounded-xl overflow-hidden relative" style={{height: '300px'}}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.5!2d126.5688!3d37.6501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c85a0c8c3b2a1%3A0x1234567890abcdef!2z6rK97Jqw64-EIOq5gO2PrOyLnCDthrXsp4Tsnakg6rCA7ZiE66GcIDIwMS01Ng!5e0!3m2!1sko!2skr"
+                  width="100%"
+                  height="300"
+                  style={{border: 0}}
+                  allowFullScreen
+                  loading="lazy"
+                  className="rounded-xl"
+                  title="김포 공장 지도"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-stone-200 pointer-events-none" style={{zIndex: -1}}>
+                  <span className="text-stone-500 text-sm">지도를 불러오는 중...</span>
+                </div>
+              </div>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-lg">
@@ -198,7 +218,21 @@ export default function About() {
               <p className="text-sm md:text-base text-gray-700 mb-6">
                 인천광역시 동구 방축로 37번길 30, 1동 121호(송현동)
               </p>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165!2d126.63!3d37.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zIOyduOyynCDrgqjsgrDqtawg67Cp7LaV66GcIDPrsojtmIQgMzA!5e0!3m2!1sko!2skr!4v1234567890" className="w-full h-56 md:h-64 rounded-lg border-0" loading="lazy" title="인천 사무실 위치"></iframe>
+              <div className="bg-stone-200 rounded-xl overflow-hidden relative" style={{height: '300px'}}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2!2d126.6332!3d37.4729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b78e2b1c3d4e5%3A0xfedcba0987654321!2z7J247LKc6rSR7Jet7IucIOuPmeq1rCDrsKnstpXroZwgMzfrsojquLggMzAs!5e0!3m2!1sko!2skr"
+                  width="100%"
+                  height="300"
+                  style={{border: 0}}
+                  allowFullScreen
+                  loading="lazy"
+                  className="rounded-xl"
+                  title="인천 사무실 지도"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-stone-200 pointer-events-none" style={{zIndex: -1}}>
+                  <span className="text-stone-500 text-sm">지도를 불러오는 중...</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

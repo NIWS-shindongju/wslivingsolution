@@ -4,30 +4,10 @@ import { IMAGES } from '../constants/images';
 
 export default function Custom() {
   const equipment = [
-    {
-      name: 'CNC Router',
-      icon: Cog,
-      desc: '정밀 목재 가공 및 타공 작업',
-      image: IMAGES.unsplash.cncWoodMachine
-    },
-    {
-      name: 'CNC 선반',
-      icon: Drill,
-      desc: '회전체 정밀 가공',
-      image: IMAGES.unsplash.cncFactory
-    },
-    {
-      name: 'MCT (머시닝센터)',
-      icon: Zap,
-      desc: '복합 정밀 가공',
-      image: IMAGES.unsplash.cncWoodMachine
-    },
-    {
-      name: '레이저 가공기',
-      icon: Disc,
-      desc: '섬세한 커팅 및 각인',
-      image: IMAGES.unsplash.laserCutter
-    }
+    { name: 'CNC Router', image: IMAGES.equipment.cncRouter, desc: '목재 정밀 가공' },
+    { name: 'CNC 선반', image: IMAGES.equipment.cncLathe, desc: '원형 가공' },
+    { name: 'MCT', image: IMAGES.equipment.mct, desc: '밀링 가공' },
+    { name: 'Laser Cutter', image: IMAGES.equipment.laserCutter, desc: '레이저 정밀 절단' },
   ];
 
   const capabilities = [
@@ -43,12 +23,12 @@ export default function Custom() {
     {
       name: '목재',
       items: ['MDF', '합판', '원목'],
-      image: IMAGES.unsplash.woodMaterial
+      image: IMAGES.materials.wood
     },
     {
       name: '금속',
       items: ['알루미늄', 'SUS(스테인리스)'],
-      image: IMAGES.unsplash.metalMaterial
+      image: IMAGES.materials.metal
     },
     {
       name: '플라스틱',
@@ -67,7 +47,14 @@ export default function Custom() {
 
   return (
     <div className="w-full">
-      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal" style={{backgroundImage: `url(${IMAGES.unsplash.cncFactory})`}}>
+      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
+        <div className="absolute inset-0">
+          <img
+            src={IMAGES.heroes.custom}
+            alt="맞춤 가공 서비스"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 to-charcoal"></div>
         <div className="relative z-10 text-center text-white px-5">
           <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold mb-4">목재 맞춤가공</h1>
@@ -84,23 +71,26 @@ export default function Custom() {
           </div>
 
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-            {equipment.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div key={index} className="bg-white rounded-xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow">
-                  <img src={item.image} alt={`${item.name} 목재 가공 장비`} className="w-full h-28 md:h-48 object-cover" loading="lazy" />
-                  <div className="w-14 h-14 bg-deepgreen/10 rounded-full flex items-center justify-center mb-4 mx-auto mt-6">
-                    <Icon className="text-deepgreen" size={28} />
-                  </div>
-                  <h3 className="font-serif text-xl font-bold text-charcoal text-center mb-2">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-gray-600 text-center">
-                    {item.desc}
-                  </p>
-                </div>
-              );
-            })}
+            {equipment.map((item, index) => (
+              <div key={index} className="bg-white rounded-xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <img
+                  src={item.image}
+                  alt={`${item.name} 목재 가공 장비`}
+                  className="w-full h-28 md:h-48 object-cover rounded-lg"
+                  loading="lazy"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = IMAGES.equipment.cncRouter;
+                  }}
+                />
+                <h3 className="font-serif text-xl font-bold text-charcoal text-center mb-2 mt-6">
+                  {item.name}
+                </h3>
+                <p className="text-sm text-gray-600 text-center">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -139,7 +129,16 @@ export default function Custom() {
             {materials.map((category, index) => (
               <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg">
                 {category.image ? (
-                  <img src={category.image} alt={`${category.name} 가공 소재`} className="w-full h-48 object-cover" loading="lazy" />
+                  <img
+                    src={category.image}
+                    alt={`${category.name} 가공 소재`}
+                    className="w-full h-48 object-cover"
+                    loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = IMAGES.materials.wood;
+                    }}
+                  />
                 ) : (
                   <div className="w-full h-48 bg-gradient-to-br from-gray-300 to-gray-400"></div>
                 )}

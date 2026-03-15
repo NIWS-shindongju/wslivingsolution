@@ -35,7 +35,13 @@ export default function Contact() {
 
   return (
     <div className="w-full">
-      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal" style={{backgroundImage: `url(${IMAGES.unsplash.contactHero})`}}>
+      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
+        <img
+          src={IMAGES.heroes.contact}
+          alt="우성리빙솔루션 견적문의"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
         <div className="absolute inset-0 bg-charcoal/60"></div>
         <div className="relative z-10 text-center text-white">
           <h1 className="font-serif text-3xl md:text-5xl font-bold mb-4">견적문의</h1>
