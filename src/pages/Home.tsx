@@ -1,23 +1,23 @@
 import { Link } from 'react-router-dom';
 import { Calendar, Handshake, Building2, ArrowRight, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import SafeImage from '../components/SafeImage';
 import { IMAGES } from '../constants/images';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
 
-  const portfolioSlides = [
-    { title: '국회의사당', year: '2023', material: '에코스텍', imgSrc: IMAGES.portfolio.parliament },
-    { title: '국립중앙디지털도서관', year: '2023', material: '에코스텍 + 동화마루', imgSrc: IMAGES.portfolio.nationalLibrary },
-    { title: '서울시 인재개발원', year: '2022', material: '에코스텍', imgSrc: IMAGES.portfolio.seoulHR },
-    { title: '연세대학교 농구장', year: '2023', material: '동화마루 진', imgSrc: IMAGES.portfolio.yonseiGym },
-    { title: '현대해상 연수원', year: '2022', material: '디자인월', imgSrc: IMAGES.portfolio.hyundaiTraining },
-    { title: '두원공대', year: '2021', material: '에코스텍', imgSrc: IMAGES.portfolio.doowonUniv },
+  const slides = [
+    { img: IMAGES.casestudies.case1_emotionBlanc33py, title: '이모션블랑 33평 원룸', year: '2024', material: '아이코닉 스톤' },
+    { img: IMAGES.casestudies.case2_saharaLight, title: '사하라라이트 시공', year: '2024', material: '진 그란데' },
+    { img: IMAGES.casestudies.case3_signiwall, title: '시그니월 시공', year: '2023', material: '시그니월' },
+    { img: IMAGES.casestudies.case4_grandSquare805, title: '진 그란데 스퀘어 805', year: '2023', material: '진 시리즈' },
+    { img: IMAGES.casestudies.case5_miniInterior, title: '미니 인테리어', year: '2023', material: '동화마루' },
   ];
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % portfolioSlides.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + portfolioSlides.length) % portfolioSlides.length);
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.touches[0].clientX);
@@ -36,24 +36,14 @@ export default function Home() {
     }
   };
 
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const target = e.currentTarget;
-    target.style.display = 'none';
-    const parent = target.parentElement;
-    if (parent) {
-      parent.style.background = 'linear-gradient(135deg, #d4c5b0 0%, #b8a898 50%, #9c8b7a 100%)';
-    }
-  };
-
   return (
     <div className="w-full">
-      <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
-        <img
+      <section className="relative h-[500px] md:h-[500px] overflow-hidden">
+        <SafeImage
           src={IMAGES.heroes.home}
-          alt="우성리빙솔루션 메인 배경"
-          className="absolute inset-0 w-full h-full object-cover"
+          alt="동화자연마루 아이코닉 스톤 컬렉션"
+          className="absolute inset-0 w-full h-full"
           loading="eager"
-          onError={handleImageError}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         <div className="relative z-10 container mx-auto px-5 md:px-6 lg:px-8 h-full flex items-center">
@@ -96,12 +86,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             <div className="bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-40 md:h-48 overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.products.jinGrande}
-                  alt="동화자연마루 진 그란데 제품 이미지"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  onError={handleImageError}
+                  alt="진 그란데 이모션블랑 바닥재"
+                  className="w-full h-full"
                 />
               </div>
               <div className="p-5 md:p-8 border-l-4 border-copper">
@@ -117,12 +105,10 @@ export default function Home() {
 
             <div className="bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-40 md:h-48 overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.products.signiwall}
-                  alt="동화자연마루 시그니월 제품 이미지"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  onError={handleImageError}
+                  alt="시그니월 벽장재"
+                  className="w-full h-full"
                 />
               </div>
               <div className="p-5 md:p-8 border-l-4 border-copper">
@@ -138,12 +124,10 @@ export default function Home() {
 
             <div className="bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-40 md:h-48 overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.products.ecostec}
-                  alt="에코스텍 흡음재 제품 이미지"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  onError={handleImageError}
+                  alt="에코스텍 흡음판넬"
+                  className="w-full h-full"
                 />
               </div>
               <div className="p-5 md:p-8 border-l-4 border-copper">
@@ -170,12 +154,10 @@ export default function Home() {
           <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-5 px-5 scrollbar-hide md:grid md:grid-cols-3 md:gap-8">
             <Link to="/flooring/iconic-stone" className="min-w-[260px] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink group bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-64 relative overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.products.jinGrande}
                   alt="진 그란데 스퀘어 이모션블랑 패턴"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  onError={handleImageError}
+                  className="w-full h-full"
                 />
                 <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all" />
               </div>
@@ -191,12 +173,10 @@ export default function Home() {
 
             <Link to="/wall/signiwall" className="min-w-[260px] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink group bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-64 relative overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.products.signiwall}
                   alt="시그니월 몬테화이트 시공"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  onError={handleImageError}
+                  className="w-full h-full"
                 />
                 <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all" />
               </div>
@@ -212,12 +192,10 @@ export default function Home() {
 
             <Link to="/wall/dheim" className="min-w-[260px] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink group bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-64 relative overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.products.dheim}
                   alt="디하임 LPM 가구 도어"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  onError={handleImageError}
+                  className="w-full h-full"
                 />
                 <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all" />
               </div>
@@ -243,12 +221,10 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             <Link to="/ecostec/ecostec" className="group bg-white rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-56 relative overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.products.ecostec}
-                  alt="에코스텍 흡음재 제품 이미지"
-                  className="w-full h-full object-cover rounded-t-xl"
-                  loading="lazy"
-                  onError={handleImageError}
+                  alt="에코스텍 흡음재"
+                  className="w-full h-full rounded-t-xl"
                 />
                 <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
@@ -267,12 +243,10 @@ export default function Home() {
 
             <Link to="/ecostec/safewall" className="group bg-white rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-56 relative overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.products.safewall}
-                  alt="세이프월 방음벽재 제품 이미지"
-                  className="w-full h-full object-cover rounded-t-xl"
-                  loading="lazy"
-                  onError={handleImageError}
+                  alt="세이프월 방음벽재"
+                  className="w-full h-full rounded-t-xl"
                 />
                 <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
@@ -291,12 +265,10 @@ export default function Home() {
 
             <Link to="/wall/designwall" className="group bg-white rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-56 relative overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.products.designwall}
-                  alt="디자인월 인테리어 벽재 제품 이미지"
-                  className="w-full h-full object-cover rounded-t-xl"
-                  loading="lazy"
-                  onError={handleImageError}
+                  alt="디자인월 인테리어 벽재"
+                  className="w-full h-full rounded-t-xl"
                 />
                 <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
@@ -315,12 +287,10 @@ export default function Home() {
 
             <Link to="/flooring" className="group bg-white rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-56 relative overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.products.jinGrande}
-                  alt="동화자연마루 바닥재 제품 이미지"
-                  className="w-full h-full object-cover rounded-t-xl"
-                  loading="lazy"
-                  onError={handleImageError}
+                  alt="동화자연마루 바닥재"
+                  className="w-full h-full rounded-t-xl"
                 />
                 <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
@@ -339,12 +309,10 @@ export default function Home() {
 
             <Link to="/wall/dheim" className="group bg-white rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-56 relative overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.products.dheim}
-                  alt="동화 디하임 벽재 제품 이미지"
-                  className="w-full h-full object-cover rounded-t-xl"
-                  loading="lazy"
-                  onError={handleImageError}
+                  alt="동화 디하임 도어"
+                  className="w-full h-full rounded-t-xl"
                 />
                 <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
@@ -363,12 +331,10 @@ export default function Home() {
 
             <Link to="/custom" className="group bg-white rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-56 relative overflow-hidden">
-                <img
+                <SafeImage
                   src={IMAGES.materials.wood}
                   alt="목재 가공 소재"
-                  className="w-full h-full object-cover rounded-t-xl"
-                  loading="lazy"
-                  onError={handleImageError}
+                  className="w-full h-full rounded-t-xl"
                 />
                 <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
@@ -401,17 +367,15 @@ export default function Home() {
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
-              <img
-                src={portfolioSlides[currentSlide].imgSrc}
-                alt={`${portfolioSlides[currentSlide].title} 시공 사례`}
-                className="w-full h-full object-cover"
-                loading="lazy"
-                onError={handleImageError}
+              <SafeImage
+                src={slides[currentSlide].img}
+                alt={`${slides[currentSlide].title} 시공 사례`}
+                className="w-full h-full"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">{portfolioSlides[currentSlide].title}</h3>
-                <p className="text-sm md:text-base text-white/90">{portfolioSlides[currentSlide].year} · {portfolioSlides[currentSlide].material}</p>
+                <h3 className="text-2xl md:text-3xl font-bold mb-2">{slides[currentSlide].title}</h3>
+                <p className="text-sm md:text-base text-white/90">{slides[currentSlide].year} · {slides[currentSlide].material}</p>
               </div>
             </div>
 
@@ -431,7 +395,7 @@ export default function Home() {
             </button>
 
             <div className="flex justify-center mt-6 space-x-2">
-              {portfolioSlides.map((_, index) => (
+              {slides.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}

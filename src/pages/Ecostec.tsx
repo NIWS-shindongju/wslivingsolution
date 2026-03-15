@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Theater, BookOpen, Dumbbell, Briefcase, Church } from 'lucide-react';
 import { getProductsByCategory } from '../data/products';
 import { IMAGES } from '../constants/images';
+import SafeImage from '../components/SafeImage';
 
 export default function Ecostec() {
   const ecostecProducts = getProductsByCategory('ecostec');
@@ -35,10 +36,11 @@ export default function Ecostec() {
     <div className="w-full">
       <section className="relative h-[60vh] md:h-screen flex items-center justify-center">
         <div className="absolute inset-0">
-          <img
+          <SafeImage
             src={IMAGES.heroes.ecostec}
             alt="에코스텍 흡음 패널"
-            className="w-full h-full object-cover"
+            className="w-full h-full"
+            loading="eager"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate opacity-70">
@@ -80,15 +82,10 @@ export default function Ecostec() {
                 className="group bg-warm-ivory rounded-xl overflow-hidden hover-lift"
               >
                 <div className="relative overflow-hidden">
-                  <img
+                  <SafeImage
                     src={getProductImage(product.name)}
                     alt={product.name}
-                    className="w-full h-64 md:h-80 object-cover"
-                    loading="lazy"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = IMAGES.products.ecostec;
-                    }}
+                    className="w-full h-40 md:h-48"
                   />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal">자세히 보기</span>
@@ -130,16 +127,11 @@ export default function Ecostec() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
             {spaces.map((space) => (
               <div key={space.title} className="group">
-                <div className="relative h-40 md:h-48 overflow-hidden rounded-xl">
-                  <img
+                <div className="relative h-48 md:h-64 overflow-hidden rounded-xl">
+                  <SafeImage
                     src={space.image}
                     alt={`${space.title} 인테리어`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = IMAGES.spaces.office;
-                    }}
+                    className="w-full h-full group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3 text-white">

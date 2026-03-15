@@ -1,4 +1,5 @@
 import { Award, CheckCircle, Target } from 'lucide-react';
+import SafeImage from '../components/SafeImage';
 import { IMAGES } from '../constants/images';
 
 export default function About() {
@@ -19,12 +20,13 @@ export default function About() {
 
   return (
     <div className="w-full">
-      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
-        <img
-          src={IMAGES.about.factoryPanorama}
-          alt="우성리빙솔루션 공장 전경"
-          className="absolute inset-0 w-full h-full object-cover"
+      <section className="relative h-[300px] md:h-[500px] flex items-center justify-center bg-charcoal">
+        <SafeImage
+          src={IMAGES.heroes.about}
+          alt="우성리빙솔루션 회사 소개"
+          className="absolute inset-0 w-full h-full"
           loading="eager"
+          fallbackText="우성리빙솔루션"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 to-charcoal"></div>
         <div className="relative z-10 text-center text-white px-5">
@@ -59,13 +61,41 @@ export default function About() {
               </div>
             </div>
             <div className="md:order-1 md:flex-1">
-              <img src={IMAGES.about.earlyWork} alt="우성산업 초창기 작업 모습" className="w-full h-56 md:h-96 object-cover rounded-lg" loading="lazy" />
+              <SafeImage
+                src={IMAGES.about.earlyWork}
+                alt="우성산업 초창기 작업 모습"
+                className="w-full h-48 md:h-64 rounded-lg"
+                fallbackText="우성산업 초창기"
+              />
             </div>
           </div>
         </div>
       </section>
 
       <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-white">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="md:flex-1">
+              <SafeImage
+                src={IMAGES.about.factoryPanorama}
+                alt="우성리빙솔루션 공장 전경"
+                className="w-full h-64 md:h-80 rounded-lg"
+                fallbackText="김포 공장 전경"
+              />
+            </div>
+            <div className="md:flex-1">
+              <SafeImage
+                src={IMAGES.about.teamwork}
+                alt="우성리빙솔루션 팀워크"
+                className="w-full h-48 md:h-56 rounded-lg"
+                fallbackText="우성 팀워크"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-cream">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
@@ -78,7 +108,7 @@ export default function About() {
             {timeline.map((item, index) => (
               <div key={index} className="relative pl-8 pb-12 border-l-2 border-deepgreen/30 last:pb-0">
                 <div className="absolute -left-3 top-0 w-6 h-6 bg-deepgreen rounded-full border-4 border-white"></div>
-                <div className="bg-cream p-6 rounded-lg">
+                <div className="bg-white p-6 rounded-lg">
                   <div className="font-serif text-2xl font-bold text-deepgreen mb-2">{item.year}</div>
                   <div className="text-lg font-semibold text-charcoal mb-1">{item.title}</div>
                   {item.desc && <div className="text-sm md:text-base text-gray-600">{item.desc}</div>}
@@ -89,7 +119,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-cream">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-white">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
@@ -110,7 +140,7 @@ export default function About() {
               </div>
 
               <div className="flex items-center">
-                <div className="bg-white p-8 rounded-2xl shadow-lg">
+                <div className="bg-cream p-8 rounded-2xl shadow-lg">
                   <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
                     안녕하십니까. 우성리빙솔루션 대표이사 신만식입니다.
                   </p>
@@ -130,7 +160,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-white">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-cream">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
@@ -139,7 +169,7 @@ export default function About() {
           </div>
 
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-cream p-8 rounded-2xl">
+            <div className="bg-white p-8 rounded-2xl">
               <div className="w-16 h-16 bg-deepgreen/10 rounded-full flex items-center justify-center mb-6">
                 <Award className="text-deepgreen" size={32} />
               </div>
@@ -151,7 +181,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-cream p-8 rounded-2xl">
+            <div className="bg-white p-8 rounded-2xl">
               <div className="w-16 h-16 bg-deepgreen/10 rounded-full flex items-center justify-center mb-6">
                 <CheckCircle className="text-deepgreen" size={32} />
               </div>
@@ -163,7 +193,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-cream p-8 rounded-2xl">
+            <div className="bg-white p-8 rounded-2xl">
               <div className="w-16 h-16 bg-deepgreen/10 rounded-full flex items-center justify-center mb-6">
                 <Target className="text-deepgreen" size={32} />
               </div>
@@ -178,7 +208,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-cream">
+      <section className="py-14 md:py-20 lg:py-24 px-5 md:px-6 lg:px-8 bg-white">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
@@ -187,51 +217,47 @@ export default function About() {
           </div>
 
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="bg-cream p-8 rounded-2xl shadow-lg">
               <h3 className="font-serif text-2xl font-bold text-charcoal mb-4">
                 김포 공장 (제조·가공)
               </h3>
               <p className="text-sm md:text-base text-gray-700 mb-6">
                 경기도 김포시 통진읍 가현로 201-56
               </p>
-              <div className="bg-stone-200 rounded-xl overflow-hidden relative" style={{height: '300px'}}>
+              <div className="relative bg-stone-200 rounded-xl overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center text-stone-500 text-sm">지도를 불러오는 중...</div>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.5!2d126.5688!3d37.6501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c85a0c8c3b2a1%3A0x1234567890abcdef!2z6rK97Jqw64-EIOq5gO2PrOyLnCDthrXsp4Tsnakg6rCA7ZiE66GcIDIwMS01Ng!5e0!3m2!1sko!2skr"
+                  className="relative z-10 rounded-xl"
                   width="100%"
                   height="300"
                   style={{border: 0}}
                   allowFullScreen
                   loading="lazy"
-                  className="rounded-xl"
                   title="김포 공장 지도"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-stone-200 pointer-events-none" style={{zIndex: -1}}>
-                  <span className="text-stone-500 text-sm">지도를 불러오는 중...</span>
-                </div>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="bg-cream p-8 rounded-2xl shadow-lg">
               <h3 className="font-serif text-2xl font-bold text-charcoal mb-4">
                 인천 사무실 (영업·상담)
               </h3>
               <p className="text-sm md:text-base text-gray-700 mb-6">
                 인천광역시 동구 방축로 37번길 30, 1동 121호(송현동)
               </p>
-              <div className="bg-stone-200 rounded-xl overflow-hidden relative" style={{height: '300px'}}>
+              <div className="relative bg-stone-200 rounded-xl overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center text-stone-500 text-sm">지도를 불러오는 중...</div>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.2!2d126.6332!3d37.4729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b78e2b1c3d4e5%3A0xfedcba0987654321!2z7J247LKc6rSR7Jet7IucIOuPmeq1rCDrsKnstpXroZwgMzfrsojquLggMzAs!5e0!3m2!1sko!2skr"
+                  className="relative z-10 rounded-xl"
                   width="100%"
                   height="300"
                   style={{border: 0}}
                   allowFullScreen
                   loading="lazy"
-                  className="rounded-xl"
                   title="인천 사무실 지도"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-stone-200 pointer-events-none" style={{zIndex: -1}}>
-                  <span className="text-stone-500 text-sm">지도를 불러오는 중...</span>
-                </div>
               </div>
             </div>
           </div>

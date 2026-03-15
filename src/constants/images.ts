@@ -1,130 +1,139 @@
-export const IMAGES = {
+// ========================================
+// 동화자연마루 유튜브 썸네일 (공개 URL, 핫링크 가능)
+// ========================================
+const YT = (id: string) => `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
 
-  /* ============================================
-     아이코닉 스톤 컬렉션 — 패턴 견본 이미지
-     (Unsplash 대리석/스톤 텍스처로 대체)
-     ============================================ */
-  iconic: {
-    // 컬렉션 배너 (넓은 스톤 인테리어 공간)
-    collectionBanner: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80",
-    // 개별 패턴 → 색감이 유사한 대리석 텍스처
-    monteWhite:     "https://images.unsplash.com/photo-1633451095735-b4602981dbaf?w=800&q=80",   // 흰 대리석 텍스처
-    emotionBlanc:   "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",   // 밝은 베이지 마블
-    saharaLight:    "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",     // 베이지 스톤
-    slateMotif:     "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=800&q=80",   // 화이트 물결 텍스처
-    slateSteel:     "https://images.unsplash.com/photo-1557683316-973673baf926?w=800&q=80",     // 차분한 그레이 텍스처
-    portlandMotif:  "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&q=80",     // 크림빛 스톤 패턴
-    portlandSteel:  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",   // 부드러운 석재
+export const IMAGES = {
+  // ─── 히어로 배경 ───
+  heroes: {
+    // 동화 아이코닉 스톤 컬렉션 공식 영상 썸네일
+    home: YT('uyjzIFzD_cM'),        // 이모션블랑 바닥·벽·가구 원씬
+    flooring: YT('Hy6CQdOq6xI'),    // 진그란데 스퀘어 이모션블랑 ft.셀핀
+    wall: YT('aUPrKboFULU'),        // 시그니월 이모션블랑 시공 현장
+    ecostec: '',                     // 에코스텍 전용 영상 없음 → fallback
+    custom: '',                      // 우성인더스 맞춤가공 → fallback
+    portfolio: YT('uyjzIFzD_cM'),   // 시공사례 배경
+    about: '',                       // 회사소개 → fallback
+    contact: '',                     // 연락처 → fallback
+    estimate: YT('NqNr_fMOZo4'),    // 견적 페이지
   },
 
-  /* ============================================
-     제품 카테고리별 대표 이미지
-     ============================================ */
-  products: {
-    // 바닥재 — 진(Jin) 시리즈
-    jinOrigin:        "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&q=80",   // 클래식 우드 바닥
-    jinTera:          "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",   // 광폭 우드 거실
-    jinTeraMax:       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",   // 넓은 원목 거실
-    jinHerringbone:   "https://images.unsplash.com/photo-1697107103744-19cfac2e3849?w=800&q=80",   // 헤링본 패턴 바닥
-    jinGrande:        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",   // 타일형 밝은 바닥 거실
-    jinGrandeSquare:  "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80",   // 정사각 타일 바닥
-    jinTexture:       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",   // 텍스처 우드 바닥
+  // ─── 아이코닉 스톤 컬렉션 7종 패턴 ───
+  // 패턴별 전용 이미지가 유튜브에서 추출 불가하므로,
+  // 동화 공식 제품 페이지 URL을 주석으로 남기고 fallback 처리.
+  // 사용자가 직접 greendongwha.com에서 우클릭 → 이미지 URL 복사 후 교체할 것.
+  iconic: {
+    collectionBanner: YT('uyjzIFzD_cM'),  // 컬렉션 배너
+    monteWhite: '',      // https://www.greendongwha.com/product/detail/2599
+    emotionBlanc: '',    // https://www.greendongwha.com/product/detail/2085
+    saharaLight: '',     // https://www.greendongwha.com/product/detail/2086
+    slateMotif: '',      // https://www.greendongwha.com/product/detail/2883
+    slateSteel: '',      // https://www.greendongwha.com/product/detail/2884
+    portlandMotif: '',   // https://www.greendongwha.com/product/detail/2881
+    portlandSteel: '',   // https://www.greendongwha.com/product/detail/2882
+  },
 
-    // 바닥재 — 기타
-    natus:            "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",   // 원목 따뜻한 톤 거실
-    baum:             "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&q=80",   // 프리미엄 원목 인테리어
-    clickS:           "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",     // 밝은 톤 강화마루 방
-    duoTexture:       "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&q=80",   // 모던 우드 바닥
+  // ─── 동화 제품 카테고리별 대표 이미지 ───
+  products: {
+    // 진 시리즈
+    jinGrande: YT('NqNr_fMOZo4'),       // 진 그란데 스퀘어 이모션블랑 공간
+    jinGrandeSquare: YT('Hy6CQdOq6xI'), // 진 그란데 스퀘어 ft.셀핀
+    jinOrigin: '',                       // https://www.greendongwha.com/product/brand/jin/
+    jinHerringbone: '',                  // https://www.greendongwha.com/product/detail/2169
+    jinTera: '',                         // https://www.greendongwha.com/product/detail/2094
+    jinTeraMax: '',                      // https://www.greendongwha.com/product/detail/2346
+    jinTexture: '',                      // https://www.greendongwha.com/product/detail/2347
 
     // 벽재
-    signiwall:        "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",   // 대형 벽 패널 인테리어
-    designwall:       "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=80",   // 모던 벽면 마감
-    designwallGrande: "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800&q=80",   // 넓은 벽 패널 공간
-    dheim:            "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",     // 가구 도어 + 주방
+    signiwall: YT('aUPrKboFULU'),       // 시그니월 이모션블랑
+    designwall: '',                      // https://www.greendongwha.com/product/detail/2560
+    designwallGrande: '',                // https://www.greendongwha.com/product/detail/2561
+    dheim: '',                           // https://www.greendongwha.com/product/detail/2570
 
     // 기능성 벽재
-    ecostec:          "https://images.unsplash.com/photo-1580820726687-b72203e7b380?w=800&q=80",   // 강당/공연장 내부
-    safewall:         "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",   // 깔끔한 상업 벽면
+    ecostec: '',                         // https://www.greendongwha.com/product/detail/2460
+    safewall: '',                        // https://www.greendongwha.com/product/detail/2478
+
+    // 기타 바닥재
+    natus: '',                           // https://www.greendongwha.com/product/brand/natus/
+    baum: '',                            // https://www.greendongwha.com/product/detail/2206
+    clickS: '',                          // https://www.greendongwha.com/product/brand/click-s/
+    duoTexture: '',                      // https://www.greendongwha.com/product/detail/2348
 
     // 원자재
-    mdfPbPlywood:     "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",     // 목재 원자재 클로즈업
+    mdfPbPlywood: '',                    // 목재 원자재
   },
 
-  /* ============================================
-     적용 공간 이미지 (에코스텍 페이지 등)
-     ============================================ */
-  spaces: {
-    conferenceRoom:   "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    auditorium:       "https://images.unsplash.com/photo-1580820726687-b72203e7b380?w=800&q=80",
-    library:          "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&q=80",
-    gymnasium:        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
-    office:           "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80",
-    church:           "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&q=80",
+  // ─── 동화 시공사례 (유튜브 썸네일 활용) ───
+  casestudies: {
+    case1_emotionBlanc33py: YT('uyjzIFzD_cM'),   // 이모션블랑 33평 원룸
+    case2_saharaLight: YT('NqNr_fMOZo4'),         // 사하라라이트 공간
+    case3_signiwall: YT('aUPrKboFULU'),           // 시그니월 시공
+    case4_grandSquare805: YT('Hy6CQdOq6xI'),      // 진그란데 스퀘어 805
+    case5_miniInterior: YT('3hBeE2quYA4'),        // 미니 인테리어 시공
   },
 
-  /* ============================================
-     히어로 / 배경 이미지
-     ============================================ */
-  heroes: {
-    home:             "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80",  // 밝은 모던 인테리어
-    about:            "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1920&q=80",  // 제조 공장 내부
-    flooring:         "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=80",  // 우드 바닥 거실
-    wall:             "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1920&q=80",  // 벽 패널 인테리어
-    ecostec:          "https://images.unsplash.com/photo-1580820726687-b72203e7b380?w=1920&q=80",  // 강당 내부
-    custom:           "https://images.unsplash.com/photo-1565439043023-423fd8d8aa58?w=1920&q=80",  // CNC 공장
-    portfolio:        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80",  // 모던 사무공간
-    contact:          "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80",  // 빌딩 외관
-    estimate:         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",  // 밝은 거실
+  // ─── 우성인더스 자체 이미지 ───
+  // wsindus.com 이미지는 해당 페이지에서 직접 추출해야 함.
+  // 아래 URL은 우성인더스 웹사이트 페이지 참조용 (이미지 직접 URL 교체 필요).
+  wsindus: {
+    factoryExterior: '',   // http://wsindus.com/ 메인 이미지
+    palletRack: '',        // http://wsindus.com/bbs/board.php?bo_table=community01
+    photobooth: '',        // http://wsindus.com/way_page/pdt03.php
+    ballBearing: '',       // http://wsindus.com/way_page/pdt02.php
+    angleRack: '',         // http://wsindus.com/way_page/business03.php
+    cncRouter: '',         // 우성인더스 블로그에서 추출
+    officeEcostec: '',     // https://m.blog.naver.com/wsindus1/222647977106 (에코스텍 사무실 시공)
   },
 
-  /* ============================================
-     맞춤가공 (Custom) 페이지 장비
-     ============================================ */
-  equipment: {
-    cncRouter:        "https://images.unsplash.com/photo-1565439043023-423fd8d8aa58?w=800&q=80",
-    cncLathe:         "https://images.unsplash.com/photo-1565439043023-423fd8d8aa58?w=800&q=80",
-    mct:              "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80",
-    laserCutter:      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
-  },
-
-  /* ============================================
-     소재 이미지
-     ============================================ */
-  materials: {
-    wood:             "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
-    metal:            "https://images.unsplash.com/photo-1535813547-99c456a41d4a?w=800&q=80",   // 스테인리스·금속
-    plastic:          "https://images.unsplash.com/photo-1565439043023-423fd8d8aa58?w=800&q=80",
-  },
-
-  /* ============================================
-     포트폴리오 프로젝트
-     ============================================ */
+  // ─── 포트폴리오 프로젝트 ───
   portfolio: {
-    parliament:       "https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=800&q=80",   // 국회 건물
-    nationalLibrary:  "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&q=80", // 도서관 내부
-    railwayOffice:    "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80", // 사무공간
-    seoulHR:          "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80", // 오피스 인테리어
-    yonseiGym:        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80", // 체육관
-    doowonUniv:       "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80", // 대학교
-    hyundaiTraining:  "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=800&q=80", // 연수원 회의실
-    dongwhaOffice:    "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80", // 고급 회의실
-    commercialA:      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80", // 상업 공간
-    residentialA:     "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80", // 주거 공간
+    parliament: '',             // 국회의사당 시공
+    nationalLibrary: '',        // 국립중앙도서관
+    railwayOffice: '',          // 철도공사 사무실
+    seoulHR: '',                // 서울시 인재개발원
+    yonseiGym: '',              // 연세대 체육관
+    doowonUniv: '',             // 두원공대
+    hyundaiTraining: '',        // 현대해상 연수원
+    dongwhaOffice: '',          // 동화 본사
+    commercialA: YT('uyjzIFzD_cM'),  // 상업공간 사례
+    residentialA: YT('NqNr_fMOZo4'), // 주거공간 사례
   },
 
-  /* ============================================
-     About 페이지
-     ============================================ */
+  // ─── 적용 공간 이미지 (에코스텍 페이지 등) ───
+  spaces: {
+    conferenceRoom: '',
+    auditorium: '',
+    library: '',
+    gymnasium: '',
+    office: '',
+    church: '',
+  },
+
+  // ─── 장비 이미지 ───
+  equipment: {
+    cncRouter: '',
+    cncLathe: '',
+    mct: '',
+    laserCutter: '',
+  },
+
+  // ─── 소재 이미지 ───
+  materials: {
+    wood: '',
+    metal: '',
+    plastic: '',
+  },
+
+  // ─── About 페이지 ───
   about: {
-    factoryPanorama:  "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200&q=80", // 공장 전경
-    earlyWork:        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80",     // 창고/초기 작업장
-    teamwork:         "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80",   // 팀워크
+    factoryPanorama: '',   // 우성인더스 김포 공장 전경 (wsindus.com에서 직접 추출)
+    earlyWork: '',         // 초기 사업 사진 (있으면 추가)
+    teamwork: '',          // 팀워크 사진
   },
 
-  /* ============================================
-     기타 유틸리티
-     ============================================ */
+  // ─── 기타 유틸리티 ───
   misc: {
-    marbleTexture:    "https://images.unsplash.com/photo-1633451095735-b4602981dbaf?w=400&q=80",  // 마블 텍스처 (작은 용도)
+    marbleTexture: '',     // 마블 텍스처
   },
-};
+} as const;

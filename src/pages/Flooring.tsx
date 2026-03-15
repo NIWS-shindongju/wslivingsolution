@@ -1,18 +1,10 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import SafeImage from '../components/SafeImage';
 import { IMAGES } from '../constants/images';
 
 export default function Flooring() {
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const target = e.currentTarget;
-    target.style.display = 'none';
-    const parent = target.parentElement;
-    if (parent) {
-      parent.style.background = 'linear-gradient(135deg, #d4c5b0 0%, #b8a898 50%, #9c8b7a 100%)';
-    }
-  };
-
-  const iconicStonePatterns = [
+  const patterns = [
     { key: 'monteWhite', name: '몬테화이트', isNew: true },
     { key: 'emotionBlanc', name: '이모션블랑', isNew: true },
     { key: 'saharaLight', name: '사하라라이트', isNew: false },
@@ -41,13 +33,12 @@ export default function Flooring() {
 
   return (
     <div className="w-full">
-      <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
-        <img
+      <section className="relative h-[500px] md:h-[500px] overflow-hidden">
+        <SafeImage
           src={IMAGES.heroes.flooring}
-          alt="동화자연마루 바닥재"
-          className="absolute inset-0 w-full h-full object-cover"
+          alt="동화자연마루 아이코닉 스톤 컬렉션"
+          className="absolute inset-0 w-full h-full"
           loading="eager"
-          onError={handleImageError}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         <div className="relative z-10 container mx-auto px-5 md:px-6 lg:px-8 h-full flex items-center">
@@ -78,22 +69,20 @@ export default function Flooring() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {iconicStonePatterns.map((pattern) => (
-              <div key={pattern.key} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
-                <div className="relative h-52 md:h-64 overflow-hidden">
-                  <img
-                    src={IMAGES.iconic[pattern.key as keyof typeof IMAGES.iconic]}
-                    alt={`아이코닉 스톤 ${pattern.name} 패턴`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    onError={handleImageError}
+            {patterns.map((p) => (
+              <div key={p.key} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="relative h-48 md:h-64 overflow-hidden">
+                  <SafeImage
+                    src={IMAGES.iconic[p.key as keyof typeof IMAGES.iconic]}
+                    alt={`아이코닉 스톤 ${p.name} 패턴`}
+                    className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  {pattern.isNew && (
+                  {p.isNew && (
                     <span className="absolute top-3 right-3 bg-copper text-white text-xs px-2 py-1 rounded-full font-medium">NEW</span>
                   )}
                   <div className="absolute bottom-3 left-3">
-                    <h3 className="text-white text-lg font-bold">{pattern.name}</h3>
+                    <h3 className="text-white text-lg font-bold">{p.name}</h3>
                   </div>
                 </div>
               </div>
@@ -121,12 +110,10 @@ export default function Flooring() {
                 className="group bg-white rounded-xl overflow-hidden hover-lift"
               >
                 <div className="relative overflow-hidden">
-                  <img
+                  <SafeImage
                     src={product.imgSrc}
                     alt={product.alt}
-                    className="w-full h-48 md:h-64 object-cover rounded-t-xl"
-                    loading="lazy"
-                    onError={handleImageError}
+                    className="w-full h-48 md:h-56 rounded-t-xl"
                   />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
@@ -166,12 +153,10 @@ export default function Flooring() {
                 className="group bg-warm-ivory rounded-xl overflow-hidden hover-lift"
               >
                 <div className="relative overflow-hidden">
-                  <img
+                  <SafeImage
                     src={product.imgSrc}
                     alt={product.alt}
-                    className="w-full h-48 md:h-64 object-cover rounded-t-xl"
-                    loading="lazy"
-                    onError={handleImageError}
+                    className="w-full h-40 md:h-48 rounded-t-xl"
                   />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>

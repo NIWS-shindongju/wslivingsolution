@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Phone, Mail, Clock, MapPin, MessageCircle } from 'lucide-react';
+import SafeImage from '../components/SafeImage';
 import { IMAGES } from '../constants/images';
 
 export default function Contact() {
@@ -35,12 +36,13 @@ export default function Contact() {
 
   return (
     <div className="w-full">
-      <section className="relative h-48 md:h-96 flex items-center justify-center bg-charcoal">
-        <img
+      <section className="relative h-[300px] md:h-[500px] flex items-center justify-center bg-charcoal">
+        <SafeImage
           src={IMAGES.heroes.contact}
           alt="우성리빙솔루션 견적문의"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full"
           loading="eager"
+          fallbackText="견적 문의"
         />
         <div className="absolute inset-0 bg-charcoal/60"></div>
         <div className="relative z-10 text-center text-white">
