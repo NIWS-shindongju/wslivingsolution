@@ -18,16 +18,16 @@ export default function Portfolio() {
   const categories = ['전체', '공공시설', '교육시설', '상업시설', '주거시설'];
 
   const projects: Project[] = [
-    { id: 1, title: '아이코닉 이모션블랑 인테리어', category: '주거시설', year: '2024', img: IMAGES.portfolio.case1 },
-    { id: 2, title: '사하라라이트 벽+바닥 통일', category: '주거시설', year: '2024', img: IMAGES.portfolio.case2 },
-    { id: 3, title: '시그니월 광명 트리우스', category: '상업시설', year: '2023', img: IMAGES.portfolio.case3 },
-    { id: 4, title: '진그란데 스퀘어 이모션블랑', category: '주거시설', year: '2024', img: IMAGES.portfolio.case4 },
-    { id: 5, title: '시그니월 3패턴 혼합', category: '주거시설', year: '2023', img: IMAGES.portfolio.case5 },
-    { id: 6, title: '50평 오션뷰 시그니월', category: '주거시설', year: '2024', img: IMAGES.portfolio.case6 },
-    { id: 7, title: '디하임+듀오텍스쳐맥스', category: '주거시설', year: '2023', img: IMAGES.portfolio.case7 },
-    { id: 8, title: '18평 빌라 듀오스퀘어', category: '주거시설', year: '2023', img: IMAGES.portfolio.case8 },
-    { id: 9, title: '진 오리진 퓨어 베이지', category: '주거시설', year: '2024', img: IMAGES.portfolio.case9 },
-    { id: 10, title: '신성데코 시그니월+진그란데', category: '상업시설', year: '2024', img: IMAGES.portfolio.case10 },
+    { id: 1, title: '이모션블랑 33평 거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case1 },
+    { id: 2, title: '이모션블랑 거실 다른 각도', category: '주거시설', year: '2024', img: IMAGES.portfolio.case2 },
+    { id: 3, title: '이모션블랑 바닥 클로즈업', category: '주거시설', year: '2024', img: IMAGES.portfolio.case3 },
+    { id: 4, title: '주방 인테리어', category: '주거시설', year: '2024', img: IMAGES.portfolio.case4 },
+    { id: 5, title: '주방 다른 각도', category: '주거시설', year: '2024', img: IMAGES.portfolio.case5 },
+    { id: 6, title: '아일랜드 주방', category: '주거시설', year: '2024', img: IMAGES.portfolio.case6 },
+    { id: 7, title: '시그니월 벽면', category: '주거시설', year: '2024', img: IMAGES.portfolio.case7 },
+    { id: 8, title: '따뜻한 간접조명 거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case8 },
+    { id: 9, title: '화이트 인테리어', category: '주거시설', year: '2024', img: IMAGES.portfolio.case9 },
+    { id: 10, title: '벽+바닥 통일 시공', category: '주거시설', year: '2024', img: IMAGES.portfolio.case10 },
   ];
 
   const filteredProjects = selectedCategory === '전체'

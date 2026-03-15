@@ -125,8 +125,8 @@ export default function Home() {
             <div className="bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-40 md:h-48 overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.duoSquare}
-                  alt="듀오 스퀘어 타일마루"
+                  src={IMAGES.products.dheim}
+                  alt="디하임 가구 도어재"
                   className="w-full h-full"
                 />
               </div>
