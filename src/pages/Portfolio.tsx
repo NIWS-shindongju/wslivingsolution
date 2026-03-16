@@ -18,16 +18,16 @@ export default function Portfolio() {
   const categories = ['전체', '공공시설', '교육시설', '상업시설', '주거시설'];
 
   const projects: Project[] = [
-    { id: 1, title: '이모션블랑 33평 거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case1 },
-    { id: 2, title: '이모션블랑 거실 다른 각도', category: '주거시설', year: '2024', img: IMAGES.portfolio.case2 },
-    { id: 3, title: '이모션블랑 바닥 클로즈업', category: '주거시설', year: '2024', img: IMAGES.portfolio.case3 },
-    { id: 4, title: '주방 인테리어', category: '주거시설', year: '2024', img: IMAGES.portfolio.case4 },
-    { id: 5, title: '주방 다른 각도', category: '주거시설', year: '2024', img: IMAGES.portfolio.case5 },
-    { id: 6, title: '아일랜드 주방', category: '주거시설', year: '2024', img: IMAGES.portfolio.case6 },
-    { id: 7, title: '시그니월 벽면', category: '주거시설', year: '2024', img: IMAGES.portfolio.case7 },
-    { id: 8, title: '따뜻한 간접조명 거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case8 },
-    { id: 9, title: '화이트 인테리어', category: '주거시설', year: '2024', img: IMAGES.portfolio.case9 },
-    { id: 10, title: '벽+바닥 통일 시공', category: '주거시설', year: '2024', img: IMAGES.portfolio.case10 },
+    { id: 1, title: '진 그란데 이모션블랑 신혼집 거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case1_emotionBlanc_livingroom },
+    { id: 2, title: '이모션블랑 주방 인테리어', category: '주거시설', year: '2024', img: IMAGES.portfolio.case2_emotionBlanc_kitchen },
+    { id: 3, title: '이모션블랑 밝은 거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case3_emotionBlanc_bright },
+    { id: 4, title: '사하라라이트 현관+거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case4_saharaLight_entrance },
+    { id: 5, title: '사하라라이트 75평 거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case5_saharaLight_livingroom },
+    { id: 6, title: '사하라라이트 선반 인테리어', category: '주거시설', year: '2024', img: IMAGES.portfolio.case6_saharaLight_shelf },
+    { id: 7, title: '사하라라이트 벽바닥 통일 시공', category: '주거시설', year: '2024', img: IMAGES.portfolio.case7_saharaLight_wallfloor },
+    { id: 8, title: '이모션블랑 미니멀 화이트', category: '주거시설', year: '2024', img: IMAGES.portfolio.case8_emotionBlanc_minimal },
+    { id: 9, title: '이모션블랑 마루 클로즈업', category: '주거시설', year: '2024', img: IMAGES.portfolio.case9_emotionBlanc_closeup },
+    { id: 10, title: '사하라라이트 친환경 시공', category: '주거시설', year: '2024', img: IMAGES.portfolio.case10_saharaLight_eco },
   ];
 
   const filteredProjects = selectedCategory === '전체'

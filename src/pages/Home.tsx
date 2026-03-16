@@ -9,11 +9,10 @@ export default function Home() {
   const [touchStart, setTouchStart] = useState(0);
 
   const slides = [
-    { img: IMAGES.casestudies.case1_emotionBlanc33py, title: '이모션블랑 33평 원룸', year: '2024', material: '아이코닉 스톤' },
-    { img: IMAGES.casestudies.case2_saharaLight, title: '사하라라이트 시공', year: '2024', material: '진 그란데' },
-    { img: IMAGES.casestudies.case3_signiwall, title: '시그니월 시공', year: '2023', material: '시그니월' },
-    { img: IMAGES.casestudies.case4_grandSquare805, title: '진 그란데 스퀘어 805', year: '2023', material: '진 시리즈' },
-    { img: IMAGES.casestudies.case5_miniInterior, title: '미니 인테리어', year: '2023', material: '동화마루' },
+    { img: IMAGES.portfolio.case1_emotionBlanc_livingroom, title: '진 그란데 이모션블랑 신혼집 거실', year: '2024', material: '아이코닉 스톤' },
+    { img: IMAGES.portfolio.case5_saharaLight_livingroom, title: '사하라라이트 75평 거실', year: '2024', material: '진 그란데' },
+    { img: IMAGES.portfolio.case7_saharaLight_wallfloor, title: '사하라라이트 벽바닥 통일 시공', year: '2024', material: '아이코닉 스톤' },
+    { img: IMAGES.portfolio.case8_emotionBlanc_minimal, title: '이모션블랑 미니멀 화이트', year: '2024', material: '아이코닉 스톤' },
   ];
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
