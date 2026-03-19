@@ -15,27 +15,27 @@ export default function Flooring() {
   ];
 
   const jinSeriesProducts = [
-    { id: 'jin-origin', name: '진 오리진', imgSrc: IMAGES.saharaLight_75_entrance, alt: '진 오리진 바닥재', type: '원목강마루' },
-    { id: 'jin-tera', name: '진 테라', imgSrc: IMAGES.saharaLight_75_hallway, alt: '진 테라 바닥재', type: '광폭 강마루' },
-    { id: 'jin-tera-max', name: '진 테라 맥스', imgSrc: IMAGES.saharaLight_75_whiteBeige, alt: '진 테라 맥스 바닥재', type: '초광폭 강마루' },
-    { id: 'jin-herringbone', name: '진 헤링본', imgSrc: IMAGES.emotionBlanc_newlywed_kitchenView, alt: '진 헤링본 바닥재', type: '헤링본 패턴' },
-    { id: 'jin-grande', name: '진 그란데', imgSrc: IMAGES.emotionBlanc_newlywed_bright, alt: '진 그란데 바닥재', type: '타일형 강마루' },
-    { id: 'jin-grande-square', name: '진 그란데 스퀘어', imgSrc: IMAGES.emotionBlanc_minimal_tilelike, alt: '진 그란데 스퀘어 바닥재', type: '정사각 타일형' },
-    { id: 'jin-texture', name: '진 텍스처', imgSrc: IMAGES.emotionBlanc_minimal_durability, alt: '진 텍스처 바닥재', type: '엠보싱 마감' },
+    { id: 'jin-origin', name: '진 오리진', imgSrc: "", alt: '진 오리진 바닥재', type: '원목강마루', fallbackText: '진 오리진' },
+    { id: 'jin-tera', name: '진 테라', imgSrc: "", alt: '진 테라 바닥재', type: '광폭 강마루', fallbackText: '진 테라' },
+    { id: 'jin-tera-max', name: '진 테라 맥스', imgSrc: "", alt: '진 테라 맥스 바닥재', type: '초광폭 강마루', fallbackText: '진 테라 맥스' },
+    { id: 'jin-herringbone', name: '진 헤링본', imgSrc: "", alt: '진 헤링본 바닥재', type: '헤링본 패턴', fallbackText: '진 헤링본' },
+    { id: 'jin-grande', name: '진 그란데', imgSrc: "", alt: '진 그란데 바닥재', type: '타일형 강마루', fallbackText: '진 그란데' },
+    { id: 'jin-grande-square', name: '진 그란데 스퀘어', imgSrc: "", alt: '진 그란데 스퀘어 바닥재', type: '정사각 타일형', fallbackText: '진 그란데 스퀘어' },
+    { id: 'jin-texture', name: '진 텍스처', imgSrc: "", alt: '진 텍스처 바닥재', type: '엠보싱 마감', fallbackText: '진 텍스처' },
   ];
 
   const otherFlooringProducts = [
-    { id: 'natus', name: '나투스', imgSrc: IMAGES.saharaLight_75_entrance, alt: '나투스 바닥재', type: '원목강마루' },
-    { id: 'baum', name: '바움', imgSrc: IMAGES.saharaLight_75_shelf, alt: '바움 바닥재', type: '프리미엄 원목' },
-    { id: 'click-s', name: '클릭S', imgSrc: IMAGES.saharaLight_75_comfort, alt: '클릭S 바닥재', type: '강화마루' },
-    { id: 'duo-texture', name: '듀오 텍스처', imgSrc: IMAGES.designWall_saharaLight_daylight, alt: '듀오 텍스처 바닥재', type: '강화마루' },
+    { id: 'natus', name: '나투스', imgSrc: "", alt: '나투스 바닥재', type: '원목강마루', fallbackText: '나투스' },
+    { id: 'baum', name: '바움', imgSrc: "", alt: '바움 바닥재', type: '프리미엄 원목', fallbackText: '바움' },
+    { id: 'click-s', name: '클릭S', imgSrc: "", alt: '클릭S 바닥재', type: '강화마루', fallbackText: '클릭S' },
+    { id: 'duo-texture', name: '듀오 텍스처', imgSrc: "", alt: '듀오 텍스처 바닥재', type: '강화마루', fallbackText: '듀오 텍스처' },
   ];
 
   return (
     <div className="w-full">
       <section className="relative h-[500px] md:h-[500px] overflow-hidden">
         <SafeImage
-          src={IMAGES.saharaLight_75_livingroom}
+          src={IMAGES.iconic.collectionBanner}
           alt="동화자연마루 아이코닉 스톤 컬렉션"
           className="absolute inset-0 w-full h-full"
           loading="eager"
@@ -93,14 +93,6 @@ export default function Flooring() {
 
       <section className="py-14 md:py-20 lg:py-24 bg-warm-ivory">
         <div className="container mx-auto px-5 md:px-6 lg:px-8">
-          <div className="mb-8 md:mb-12 rounded-xl overflow-hidden">
-            <SafeImage
-              src={IMAGES.jinSeriesLineup_banner}
-              alt="진 시리즈 라인업"
-              className="w-full h-auto"
-            />
-          </div>
-
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-light text-charcoal mb-2 md:mb-4">
               진(Jin) 시리즈
@@ -122,6 +114,7 @@ export default function Flooring() {
                     src={product.imgSrc}
                     alt={product.alt}
                     className="w-full h-48 md:h-56 rounded-t-xl"
+                    fallbackText={product.fallbackText || product.name}
                   />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
@@ -165,6 +158,7 @@ export default function Flooring() {
                     src={product.imgSrc}
                     alt={product.alt}
                     className="w-full h-40 md:h-48 rounded-t-xl"
+                    fallbackText={product.fallbackText || product.name}
                   />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
