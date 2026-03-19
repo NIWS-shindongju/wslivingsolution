@@ -120,31 +120,49 @@ export default function About() {
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-8">
-              <div className="md:flex-shrink-0">
-                <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-200 rounded-2xl flex items-center justify-center text-sm text-gray-500 mb-4 mx-auto md:mx-0 border-2 border-copper">
-                  [대표 신만식 프로필 사진]
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+              <div className="md:flex-shrink-0 text-center md:text-left">
+                <div className="w-32 h-32 md:w-48 md:h-48 bg-gradient-to-br from-stone-200 to-stone-300 rounded-2xl flex items-center justify-center text-sm text-stone-500 mb-4 mx-auto md:mx-0 border-2 border-copper">
+                  대표 프로필 사진
                 </div>
-                <div className="text-center md:text-left">
-                  <div className="font-serif text-2xl font-bold text-charcoal mb-1">신만식</div>
-                  <div className="text-sm md:text-base text-gray-600">대표이사</div>
-                </div>
+                <div className="font-serif text-2xl font-bold text-charcoal mb-1">신만식</div>
+                <div className="text-sm text-stone-gray">대표이사 · (주)우성인더스</div>
               </div>
 
               <div className="flex items-center">
-                <div className="bg-cream p-8 rounded-2xl shadow-lg">
-                  <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
-                    안녕하십니까. 우성동화 대표이사 신만식입니다.
+                <div className="bg-cream p-6 md:p-10 rounded-2xl shadow-lg">
+                  <p className="text-base md:text-lg text-charcoal leading-relaxed mb-5 font-light">
+                    안녕하십니까. 우성동화 대표 신만식입니다.
                   </p>
                   <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
-                    [대표 인사말 내용이 들어갈 자리입니다. 실제 대표님의 메시지로 교체해 주세요.]
+                    1997년, 인천의 작은 목재 가공소에서 톱밥을 뒤집어쓰며 시작했습니다.
+                    가진 건 기술 하나뿐이었지만, "만든 사람이 부끄럽지 않은 결과물을 내자"는
+                    원칙 하나로 여기까지 왔습니다.
                   </p>
                   <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
-                    1997년 우성산업을 시작한 이래, 27년간 한결같이 목재와 인테리어 자재 분야에서 최선을 다해왔습니다.
+                    1999년 동화기업 공식 대리점을 시작한 이후, 에코스텍이라는 당시 생소한
+                    흡음 패널을 현장에 가장 먼저, 가장 많이 시공한 곳이 저희였습니다.
+                    국립도서관, 서울시 인재개발원, 연세대학교, 국회의사당 — 실수가 허용되지 않는
+                    현장을 27년간 다녀왔습니다.
                   </p>
-                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                    앞으로도 현장 최우선의 자세로, 고객 여러분께 최상의 품질과 서비스를 제공하겠습니다. 감사합니다.
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
+                    지금은 동화기업 본사가 소비자 현장 상담까지 저희에게 맡기고 있습니다.
+                    제조사가 "현장은 우성에게 물어보라"고 할 만큼의 신뢰는,
+                    화려한 말이 아니라 묵묵한 현장의 결과물이 만들어준 것입니다.
                   </p>
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
+                    우성동화는 자재만 파는 곳이 아닙니다. 어떤 제품이 이 공간에 맞는지 상담하고,
+                    견적을 내고, 자재를 납품하고, 직접 시공하고, 끝까지 책임지는 곳입니다.
+                    중간 과정을 남에게 맡기지 않습니다. 그래서 결과가 다릅니다.
+                  </p>
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-6">
+                    이름은 우성산업에서 우성인더스로, 다시 우성동화로 바뀌었지만
+                    원칙은 처음 그대로입니다 — <span className="font-semibold text-charcoal">현장에서 직접 해보고, 결과물로 말한다.</span>
+                  </p>
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                    <div className="w-10 h-[2px] bg-copper"></div>
+                    <span className="text-sm text-copper font-normal">우성동화 대표이사 신만식</span>
+                  </div>
                 </div>
               </div>
             </div>
