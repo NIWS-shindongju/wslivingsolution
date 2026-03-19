@@ -351,6 +351,16 @@ export default function ProductDetail() {
               견적 문의하기
             </Link>
           </div>
+          <p className="mt-6">
+            <a
+              href="https://www.greendongwha.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-400 hover:text-white underline transition-colors"
+            >
+              동화자연마루 공식 홈페이지에서 상세 스펙 확인 →
+            </a>
+          </p>
         </div>
       </section>
     </div>

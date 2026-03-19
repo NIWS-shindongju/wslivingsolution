@@ -176,20 +176,67 @@ export default function Home() {
             </h2>
           </div>
           <div className="max-w-4xl mx-auto">
-            <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ paddingBottom: '56.25%' }}>
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/fhRXBCCrvgM?rel=0&modestbranding=1"
-                title="동화자연마루 아이코닉 스톤 컬렉션 총정리"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
+            <a
+              href="https://www.youtube.com/watch?v=fhRXBCCrvgM"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block w-full overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+            >
+              <img
+                src="https://img.youtube.com/vi/fhRXBCCrvgM/maxresdefault.jpg"
+                alt="동화자연마루 아이코닉 스톤 컬렉션 총정리 영상"
+                className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500"
               />
-            </div>
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
+                  <svg className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <p className="text-white text-sm md:text-base font-light">
+                  신제품 아이코닉 스톤 컬렉션 총정리 — 색감 맛집 동화자연마루가 작정하고 만든 역대급 라인업
+                </p>
+              </div>
+            </a>
             <p className="text-center text-xs text-stone-gray mt-4">
-              영상 출처: 동화자연마루 공식 유튜브 채널
+              영상 출처: <a href="https://www.youtube.com/@green_dongwha" target="_blank" rel="noopener noreferrer" className="underline hover:text-copper transition-colors">동화자연마루 공식 유튜브 채널</a>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 동화자연마루 공식 홈페이지 안내 */}
+      <section className="py-12 md:py-16 bg-warm-ivory">
+        <div className="container mx-auto px-5 md:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-sm text-center">
+            <p className="text-xs text-copper mb-3 tracking-widest uppercase font-normal">제조사 공식 정보</p>
+            <h3 className="text-xl md:text-2xl font-serif font-light text-dark-slate mb-4">
+              제품 상세 스펙과 시공 사례가 더 궁금하시다면
+            </h3>
+            <p className="text-sm md:text-base text-stone-gray font-light mb-6 leading-relaxed">
+              동화자연마루 공식 홈페이지에서 전 제품 카탈로그, 패턴별 상세 사양,<br className="hidden md:block" />
+              인테리어 시공 사례, 쇼룸 안내 등을 확인하실 수 있습니다.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="https://www.greendongwha.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-dark-slate hover:bg-charcoal text-white px-6 py-3 rounded-lg text-sm font-normal transition-all"
+              >
+                동화자연마루 공식 홈페이지
+              </a>
+              <a
+                href="https://www.greendongwha.com/product/brand/iconic/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-warm-ivory hover:bg-stone-200 text-charcoal border border-gray-300 px-6 py-3 rounded-lg text-sm font-normal transition-all"
+              >
+                아이코닉 스톤 컬렉션 상세보기
+              </a>
+            </div>
           </div>
         </div>
       </section>
