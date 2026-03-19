@@ -18,16 +18,16 @@ export default function Portfolio() {
   const categories = ['전체', '공공시설', '교육시설', '상업시설', '주거시설'];
 
   const projects: Project[] = [
-    { id: 1, title: '진 그란데 이모션블랑 신혼집 거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case1_emotionBlanc_livingroom },
-    { id: 2, title: '이모션블랑 주방 인테리어', category: '주거시설', year: '2024', img: IMAGES.portfolio.case2_emotionBlanc_kitchen },
-    { id: 3, title: '이모션블랑 밝은 거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case3_emotionBlanc_bright },
-    { id: 4, title: '사하라라이트 현관+거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case4_saharaLight_entrance },
-    { id: 5, title: '사하라라이트 75평 거실', category: '주거시설', year: '2024', img: IMAGES.portfolio.case5_saharaLight_livingroom },
-    { id: 6, title: '사하라라이트 선반 인테리어', category: '주거시설', year: '2024', img: IMAGES.portfolio.case6_saharaLight_shelf },
-    { id: 7, title: '사하라라이트 벽바닥 통일 시공', category: '주거시설', year: '2024', img: IMAGES.portfolio.case7_saharaLight_wallfloor },
-    { id: 8, title: '이모션블랑 미니멀 화이트', category: '주거시설', year: '2024', img: IMAGES.portfolio.case8_emotionBlanc_minimal },
-    { id: 9, title: '이모션블랑 마루 클로즈업', category: '주거시설', year: '2024', img: IMAGES.portfolio.case9_emotionBlanc_closeup },
-    { id: 10, title: '사하라라이트 친환경 시공', category: '주거시설', year: '2024', img: IMAGES.portfolio.case10_saharaLight_eco },
+    { id: 1, title: '진 그란데 이모션블랑 신혼집 거실', category: '주거시설', year: '2024', img: IMAGES.emotionBlanc_newlywed_livingroom },
+    { id: 2, title: '이모션블랑 주방 인테리어', category: '주거시설', year: '2024', img: IMAGES.emotionBlanc_newlywed_kitchenView },
+    { id: 3, title: '이모션블랑 밝은 거실', category: '주거시설', year: '2024', img: IMAGES.emotionBlanc_newlywed_bright },
+    { id: 4, title: '사하라라이트 현관+거실', category: '주거시설', year: '2024', img: IMAGES.saharaLight_75_entrance },
+    { id: 5, title: '사하라라이트 75평 거실', category: '주거시설', year: '2024', img: IMAGES.saharaLight_75_livingroom },
+    { id: 6, title: '디자인월+사하라라이트 주방', category: '주거시설', year: '2024', img: IMAGES.designWall_saharaLight_kitchen },
+    { id: 7, title: '디자인월 아트월 거실', category: '주거시설', year: '2024', img: IMAGES.designWall_saharaLight_artwall },
+    { id: 8, title: '사하라라이트 벽바닥 통일', category: '주거시설', year: '2024', img: IMAGES.saharaLight_wallFloor_living },
+    { id: 9, title: '이모션블랑 미니멀 화이트', category: '주거시설', year: '2024', img: IMAGES.emotionBlanc_minimal_livingroom },
+    { id: 10, title: '에코스텍 홈스튜디오', category: '주거시설', year: '2024', img: IMAGES.ecostec_studioAfter },
   ];
 
   const filteredProjects = selectedCategory === '전체'
@@ -39,7 +39,7 @@ export default function Portfolio() {
       <section className="relative h-[300px] md:h-[500px] flex items-center justify-center bg-charcoal">
         <div className="absolute inset-0">
           <SafeImage
-            src={IMAGES.heroes.portfolio}
+            src={IMAGES.iconic_overview}
             alt="시공 사례"
             className="w-full h-full"
             loading="eager"

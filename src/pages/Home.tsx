@@ -9,10 +9,10 @@ export default function Home() {
   const [touchStart, setTouchStart] = useState(0);
 
   const slides = [
-    { img: IMAGES.portfolio.case1_emotionBlanc_livingroom, title: '진 그란데 이모션블랑 신혼집 거실', year: '2024', material: '아이코닉 스톤' },
-    { img: IMAGES.portfolio.case5_saharaLight_livingroom, title: '사하라라이트 75평 거실', year: '2024', material: '진 그란데' },
-    { img: IMAGES.portfolio.case7_saharaLight_wallfloor, title: '사하라라이트 벽바닥 통일 시공', year: '2024', material: '아이코닉 스톤' },
-    { img: IMAGES.portfolio.case8_emotionBlanc_minimal, title: '이모션블랑 미니멀 화이트', year: '2024', material: '아이코닉 스톤' },
+    { img: IMAGES.emotionBlanc_newlywed_bright, title: '진 그란데 이모션블랑 신혼집 거실', year: '2024', material: '아이코닉 스톤' },
+    { img: IMAGES.saharaLight_75_livingroom, title: '사하라라이트 75평 거실', year: '2024', material: '진 그란데' },
+    { img: IMAGES.designWall_saharaLight_artwall, title: '사하라라이트 벽바닥 통일 시공', year: '2024', material: '아이코닉 스톤' },
+    { img: IMAGES.emotionBlanc_minimal_livingroom, title: '이모션블랑 미니멀 화이트', year: '2024', material: '아이코닉 스톤' },
   ];
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -39,7 +39,7 @@ export default function Home() {
     <div className="w-full">
       <section className="relative h-[500px] md:h-[500px] overflow-hidden">
         <SafeImage
-          src={IMAGES.heroes.home}
+          src={IMAGES.emotionBlanc_newlywed_expanded}
           alt="동화자연마루 아이코닉 스톤 컬렉션"
           className="absolute inset-0 w-full h-full"
           loading="eager"
@@ -86,7 +86,7 @@ export default function Home() {
             <div className="bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-40 md:h-48 overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.jinGrande}
+                  src={IMAGES.jinGrande_productBanner}
                   alt="진 그란데 이모션블랑 바닥재"
                   className="w-full h-full"
                 />
@@ -105,7 +105,7 @@ export default function Home() {
             <div className="bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-40 md:h-48 overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.signiwall}
+                  src={IMAGES.iconic_wallExample}
                   alt="시그니월 벽장재"
                   className="w-full h-full"
                 />
@@ -124,7 +124,7 @@ export default function Home() {
             <div className="bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-40 md:h-48 overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.dheim}
+                  src={IMAGES.iconic_furnitureExample}
                   alt="디하임 가구 도어재"
                   className="w-full h-full"
                 />
@@ -154,7 +154,7 @@ export default function Home() {
             <Link to="/flooring/iconic-stone" className="min-w-[260px] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink group bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-64 relative overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.jinGrande}
+                  src={IMAGES.iconic_floorExample}
                   alt="진 그란데 스퀘어 이모션블랑 패턴"
                   className="w-full h-full"
                 />
@@ -173,7 +173,7 @@ export default function Home() {
             <Link to="/wall/signiwall" className="min-w-[260px] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink group bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-64 relative overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.signiwall}
+                  src={IMAGES.iconic_wallExample}
                   alt="시그니월 몬테화이트 시공"
                   className="w-full h-full"
                 />
@@ -192,7 +192,7 @@ export default function Home() {
             <Link to="/wall/dheim" className="min-w-[260px] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink group bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-64 relative overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.dheim}
+                  src={IMAGES.iconic_furnitureExample}
                   alt="디하임 LPM 가구 도어"
                   className="w-full h-full"
                 />
@@ -221,7 +221,7 @@ export default function Home() {
             <Link to="/ecostec/ecostec" className="group bg-white rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-56 relative overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.ecostec}
+                  src={IMAGES.ecostec_studioAfter}
                   alt="에코스텍 흡음재"
                   className="w-full h-full rounded-t-xl"
                 />
@@ -243,7 +243,7 @@ export default function Home() {
             <Link to="/ecostec/safewall" className="group bg-white rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-56 relative overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.safewall}
+                  src={IMAGES.wsindus_ecostec_spec}
                   alt="세이프월 방음벽재"
                   className="w-full h-full rounded-t-xl"
                 />
@@ -265,7 +265,7 @@ export default function Home() {
             <Link to="/wall/designwall" className="group bg-white rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-56 relative overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.designwall}
+                  src={IMAGES.designWall_saharaLight_kitchen}
                   alt="디자인월 인테리어 벽재"
                   className="w-full h-full rounded-t-xl"
                 />
@@ -287,7 +287,7 @@ export default function Home() {
             <Link to="/flooring" className="group bg-white rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-56 relative overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.jinGrande}
+                  src={IMAGES.saharaLight_75_livingroom}
                   alt="동화자연마루 바닥재"
                   className="w-full h-full rounded-t-xl"
                 />
@@ -309,7 +309,7 @@ export default function Home() {
             <Link to="/wall/dheim" className="group bg-white rounded-xl overflow-hidden hover-lift">
               <div className="h-48 md:h-56 relative overflow-hidden">
                 <SafeImage
-                  src={IMAGES.products.dheim}
+                  src={IMAGES.iconic_furnitureExample}
                   alt="동화 디하임 도어"
                   className="w-full h-full rounded-t-xl"
                 />
@@ -329,12 +329,10 @@ export default function Home() {
             </Link>
 
             <Link to="/custom" className="group bg-white rounded-xl overflow-hidden hover-lift">
-              <div className="h-48 md:h-56 relative overflow-hidden">
-                <SafeImage
-                  src={IMAGES.materials.wood}
-                  alt="목재 가공 소재"
-                  className="w-full h-full rounded-t-xl"
-                />
+              <div className="h-48 md:h-56 relative overflow-hidden bg-gradient-to-br from-slate-200 to-slate-400">
+                <div className="w-full h-full flex items-center justify-center text-slate-600 text-sm font-medium">
+                  목재 가공 소재
+                </div>
                 <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <span className="text-white font-normal text-xs md:text-base">자세히 보기</span>
                 </div>

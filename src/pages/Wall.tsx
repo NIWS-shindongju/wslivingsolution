@@ -10,7 +10,7 @@ export default function Wall() {
       name: '시그니월',
       type: '초대형 빅슬랩 벽장재',
       description: '1,010×2,460mm 아이코닉 스톤 패턴',
-      imgSrc: IMAGES.products.signiwall,
+      imgSrc: IMAGES.iconic_wallExample,
       alt: '시그니월 벽재',
       badges: ['NEW 2025', 'PREMIUM']
     },
@@ -19,7 +19,7 @@ export default function Wall() {
       name: '디자인월',
       type: '입체무늬 벽장재',
       description: '프리미엄 벽면 인테리어',
-      imgSrc: IMAGES.products.designwall,
+      imgSrc: IMAGES.designWall_saharaLight_kitchen,
       alt: '디자인월 벽재',
       badges: ['BEST']
     },
@@ -28,7 +28,7 @@ export default function Wall() {
       name: '디자인월 그란데',
       type: '대형 벽장재',
       description: '넓은 공간을 위한 대형 패널',
-      imgSrc: IMAGES.products.designwallGrande,
+      imgSrc: IMAGES.designWall_saharaLight_artwall,
       alt: '디자인월 그란데 벽재',
       badges: ['NEW']
     },
@@ -37,7 +37,7 @@ export default function Wall() {
       name: '디하임',
       type: '가구 마감재',
       description: '친환경 E0 보드 LPM',
-      imgSrc: IMAGES.products.dheim,
+      imgSrc: IMAGES.iconic_furnitureExample,
       alt: '디하임 가구재',
       badges: ['NEW 2024', 'ECO']
     },
@@ -67,7 +67,7 @@ export default function Wall() {
     <div className="w-full">
       <section className="relative h-[500px] md:h-[500px] overflow-hidden">
         <SafeImage
-          src={IMAGES.heroes.wall}
+          src={IMAGES.designWall_saharaLight_artwall}
           alt="동화자연마루 아이코닉 스톤 컬렉션"
           className="absolute inset-0 w-full h-full"
           loading="eager"

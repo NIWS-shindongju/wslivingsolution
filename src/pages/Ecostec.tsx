@@ -18,18 +18,18 @@ export default function Ecostec() {
   };
 
   const getProductImage = (productName: string) => {
-    if (productName.includes('에코스텍')) return IMAGES.products.ecostec;
-    if (productName.includes('세이프월')) return IMAGES.products.safewall;
-    return IMAGES.products.ecostec;
+    if (productName.includes('에코스텍')) return IMAGES.ecostec_studioAfter;
+    if (productName.includes('세이프월')) return IMAGES.wsindus_ecostec_spec;
+    return IMAGES.ecostec_studioAfter;
   };
 
   const spaces = [
-    { icon: Building2, title: '회의실', image: IMAGES.spaces.conferenceRoom },
-    { icon: Theater, title: '강당', image: IMAGES.spaces.auditorium },
-    { icon: BookOpen, title: '도서관', image: IMAGES.spaces.library },
-    { icon: Dumbbell, title: '체육관', image: IMAGES.spaces.gymnasium },
-    { icon: Briefcase, title: '사무실', image: IMAGES.spaces.office },
-    { icon: Church, title: '교회', image: IMAGES.spaces.church },
+    { icon: Building2, title: '회의실', image: IMAGES.wsindus_ecostec_office1 },
+    { icon: Theater, title: '강당', image: IMAGES.ecostec_studioAfter },
+    { icon: BookOpen, title: '도서관', image: IMAGES.ecostec_studioProcess },
+    { icon: Dumbbell, title: '체육관', image: IMAGES.wsindus_ecostec_office2 },
+    { icon: Briefcase, title: '사무실', image: IMAGES.wsindus_ecostec_office1 },
+    { icon: Church, title: '교회', image: IMAGES.ecostec_studioAfter },
   ];
 
   return (
@@ -37,7 +37,7 @@ export default function Ecostec() {
       <section className="relative h-[60vh] md:h-screen flex items-center justify-center">
         <div className="absolute inset-0">
           <SafeImage
-            src={IMAGES.heroes.ecostec}
+            src={IMAGES.ecostec_studioAfter}
             alt="에코스텍 흡음 패널"
             className="w-full h-full"
             loading="eager"

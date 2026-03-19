@@ -15,27 +15,27 @@ export default function Flooring() {
   ];
 
   const jinSeriesProducts = [
-    { id: 'jin-origin', name: '진 오리진', imgSrc: IMAGES.products.jinOrigin, alt: '진 오리진 바닥재', type: '원목강마루' },
-    { id: 'jin-tera', name: '진 테라', imgSrc: IMAGES.products.jinTera, alt: '진 테라 바닥재', type: '광폭 강마루' },
-    { id: 'jin-tera-max', name: '진 테라 맥스', imgSrc: IMAGES.products.jinTeraMax, alt: '진 테라 맥스 바닥재', type: '초광폭 강마루' },
-    { id: 'jin-herringbone', name: '진 헤링본', imgSrc: IMAGES.products.jinHerringbone, alt: '진 헤링본 바닥재', type: '헤링본 패턴' },
-    { id: 'jin-grande', name: '진 그란데', imgSrc: IMAGES.products.jinGrande, alt: '진 그란데 바닥재', type: '타일형 강마루' },
-    { id: 'jin-grande-square', name: '진 그란데 스퀘어', imgSrc: IMAGES.products.jinGrandeSquare, alt: '진 그란데 스퀘어 바닥재', type: '정사각 타일형' },
-    { id: 'jin-texture', name: '진 텍스처', imgSrc: IMAGES.products.jinTexture, alt: '진 텍스처 바닥재', type: '엠보싱 마감' },
+    { id: 'jin-origin', name: '진 오리진', imgSrc: IMAGES.emotionBlanc_newlywed_livingroom, alt: '진 오리진 바닥재', type: '원목강마루' },
+    { id: 'jin-tera', name: '진 테라', imgSrc: IMAGES.saharaLight_75_livingroom, alt: '진 테라 바닥재', type: '광폭 강마루' },
+    { id: 'jin-tera-max', name: '진 테라 맥스', imgSrc: IMAGES.saharaLight_75_whiteBeige, alt: '진 테라 맥스 바닥재', type: '초광폭 강마루' },
+    { id: 'jin-herringbone', name: '진 헤링본', imgSrc: IMAGES.emotionBlanc_newlywed_bright, alt: '진 헤링본 바닥재', type: '헤링본 패턴' },
+    { id: 'jin-grande', name: '진 그란데', imgSrc: IMAGES.jinGrande_productBanner, alt: '진 그란데 바닥재', type: '타일형 강마루' },
+    { id: 'jin-grande-square', name: '진 그란데 스퀘어', imgSrc: IMAGES.iconic_floorExample, alt: '진 그란데 스퀘어 바닥재', type: '정사각 타일형' },
+    { id: 'jin-texture', name: '진 텍스처', imgSrc: IMAGES.emotionBlanc_minimal_livingroom, alt: '진 텍스처 바닥재', type: '엠보싱 마감' },
   ];
 
   const otherFlooringProducts = [
-    { id: 'natus', name: '나투스', imgSrc: IMAGES.products.natus, alt: '나투스 바닥재', type: '원목강마루' },
-    { id: 'baum', name: '바움', imgSrc: IMAGES.products.baum, alt: '바움 바닥재', type: '프리미엄 원목' },
-    { id: 'click-s', name: '클릭S', imgSrc: IMAGES.products.clickS, alt: '클릭S 바닥재', type: '강화마루' },
-    { id: 'duo-texture', name: '듀오 텍스처', imgSrc: IMAGES.products.duoTexture, alt: '듀오 텍스처 바닥재', type: '강화마루' },
+    { id: 'natus', name: '나투스', imgSrc: IMAGES.saharaLight_75_entrance, alt: '나투스 바닥재', type: '원목강마루' },
+    { id: 'baum', name: '바움', imgSrc: IMAGES.saharaLight_75_shelf, alt: '바움 바닥재', type: '프리미엄 원목' },
+    { id: 'click-s', name: '클릭S', imgSrc: IMAGES.saharaLight_75_comfort, alt: '클릭S 바닥재', type: '강화마루' },
+    { id: 'duo-texture', name: '듀오 텍스처', imgSrc: IMAGES.designWall_saharaLight_daylight, alt: '듀오 텍스처 바닥재', type: '강화마루' },
   ];
 
   return (
     <div className="w-full">
       <section className="relative h-[500px] md:h-[500px] overflow-hidden">
         <SafeImage
-          src={IMAGES.heroes.flooring}
+          src={IMAGES.saharaLight_75_livingroom}
           alt="동화자연마루 아이코닉 스톤 컬렉션"
           className="absolute inset-0 w-full h-full"
           loading="eager"
