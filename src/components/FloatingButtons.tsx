@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MessageCircle, Phone } from 'lucide-react';
+import { MessageCircle, Phone, ShoppingCart } from 'lucide-react';
 
 export default function FloatingButtons() {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,6 +29,16 @@ export default function FloatingButtons() {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
       }`}
     >
+      <a
+        href="https://smartstore.naver.com/wsindus"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-12 h-12 md:w-14 md:h-14 bg-[#03C75A] hover:bg-[#02b351] rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110"
+        aria-label="스마트스토어"
+      >
+        <ShoppingCart size={isMobile ? 22 : 24} className="text-white" />
+      </a>
+
       <a
         href="#"
         className="hidden md:flex w-12 h-12 md:w-14 md:h-14 bg-yellow-400 hover:bg-yellow-500 rounded-full items-center justify-center shadow-xl transition-all hover:scale-110"

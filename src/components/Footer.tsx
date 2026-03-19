@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <div className="flex items-baseline mb-4 justify-center md:justify-start">
               <span className="font-serif text-2xl font-normal text-copper">WS</span>
-              <span className="ml-1 font-serif text-xl font-light text-white">리빙솔루션</span>
+              <span className="ml-1 font-serif text-xl font-light text-white">동화</span>
             </div>
             <p className="text-sm text-gray-400 mb-3 font-light">
               동화기업이 현장을 맡긴<br />27년의 파트너
@@ -48,7 +48,7 @@ export default function Footer() {
           <div>
             <h3 className="font-serif text-lg font-light mb-6 text-white">연락처</h3>
             <div className="text-sm text-gray-400 space-y-2 font-light">
-              <p className="font-normal text-white">주식회사 우성인더스 | 우성리빙솔루션</p>
+              <p className="font-normal text-white">주식회사 우성인더스 | 브랜드: 우성동화</p>
               <p>대표: 신만식</p>
               <p>사업자등록번호: 626-86-02954</p>
               <p className="font-normal text-copper mt-4 text-sm md:text-base">032-589-7744</p>
@@ -65,8 +65,12 @@ export default function Footer() {
                   wsindus@wsindus.com
                 </a>
               </p>
+              <p className="mt-3 text-xs">
+                <span className="text-white">wsdongwha.com</span>
+              </p>
             </div>
-            <a href="tel:032-589-7744" className="block bg-copper text-white text-center py-4 rounded-lg text-lg font-normal mt-4 md:hidden">032-589-7744 전화하기</a>
+            <a href="https://smartstore.naver.com/wsindus" target="_blank" rel="noopener noreferrer" className="block bg-[#03C75A] hover:bg-[#02b351] text-white text-center py-4 rounded-lg text-lg font-normal mt-4 md:hidden transition-colors">스마트스토어 바로가기</a>
+            <a href="tel:032-589-7744" className="block bg-copper text-white text-center py-4 rounded-lg text-lg font-normal mt-2 md:hidden">032-589-7744 전화하기</a>
           </div>
         </div>
 
@@ -93,7 +97,7 @@ export default function Footer() {
 
             <div className="text-center md:text-right">
               <p className="text-xs text-gray-500 font-light">
-                © 2026 우성리빙솔루션. All Rights Reserved.
+                © 2026 우성동화. All Rights Reserved.
               </p>
               <div className="flex justify-center md:justify-end space-x-4 mt-1 text-xs text-gray-600">
                 <a href="#" className="hover:text-copper transition-colors">개인정보취급방침</a>

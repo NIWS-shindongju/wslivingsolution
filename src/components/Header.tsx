@@ -134,6 +134,15 @@ export default function Header() {
                 )}
               </div>
             ))}
+
+            <a
+              href="https://smartstore.naver.com/wsindus"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#03C75A] text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#02b351] transition-colors"
+            >
+              스마트스토어
+            </a>
           </nav>
 
           <div className={`hidden lg:flex items-center space-x-2 font-normal transition-colors ${

@@ -229,6 +229,11 @@ export default function Contact() {
             </div>
 
             <div className="space-y-6 order-first md:order-last">
+              <a href="https://smartstore.naver.com/wsindus" target="_blank" rel="noopener noreferrer"
+                className="block bg-[#03C75A] text-white text-center py-4 rounded-xl text-lg font-bold mb-4 hover:bg-[#02b351] transition-colors">
+                🛒 네이버 스마트스토어에서 바로 구매
+              </a>
+
               <a href="tel:032-589-7744" className="block bg-copper text-white text-center py-4 rounded-xl text-xl font-normal md:hidden mb-4">
                 📞 032-589-7744
               </a>

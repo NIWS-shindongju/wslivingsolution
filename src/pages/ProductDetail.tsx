@@ -374,12 +374,22 @@ export default function ProductDetail() {
           <p className="text-gray-400 mb-8 font-light">
             27년 경험의 전문가가 최적의 솔루션을 제안해드립니다
           </p>
-          <Link
-            to="/contact"
-            className="inline-block bg-copper hover:bg-copper-dark text-white px-8 md:px-10 py-3.5 md:py-4 text-base md:text-lg rounded-lg transition-all"
-          >
-            견적 문의하기
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://smartstore.naver.com/wsindus"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#03C75A] hover:bg-[#02b351] text-white px-8 py-4 rounded-lg text-lg transition-all text-center"
+            >
+              스마트스토어에서 구매
+            </a>
+            <Link
+              to="/contact"
+              className="inline-block bg-copper hover:bg-copper-dark text-white px-8 py-4 rounded-lg text-lg transition-all text-center"
+            >
+              견적 문의하기
+            </Link>
+          </div>
         </div>
       </section>
     </div>
