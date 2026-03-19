@@ -36,7 +36,7 @@ export default function Products() {
                     에코스텍 (ECOSTEC)
                   </h2>
                   <p className="text-gray-700 leading-relaxed mb-6">
-                    NRC 1.0급 흡음 인테리어 패널. 회의실, 강당, 도서관, 체육관 등 소음 제어가 필요한 공간에 최적. 우성리빙솔루션은 2005년부터 에코스텍을 시공해온 국내 최장수 시공 파트너입니다.
+                    NRC 1.0급 흡음 인테리어 패널. 회의실, 강당, 도서관, 체육관 등 소음 제어가 필요한 공간에 최적. 우성동화는 2005년부터 에코스텍을 시공해온 국내 최장수 시공 파트너입니다.
                   </p>
                   <Link
                     to="/ecostec"
