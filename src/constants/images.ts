@@ -138,10 +138,10 @@ export const IMAGES = {
   iconic_monteWhite: "https://sspark.genspark.ai/cfimages?u1=L7VrOH6OSkh9oQdiMHmJ%2BZJRFbcCE4oKYiJ%2FgFbMj8WNFGsPGnpEDjb3xU6hBzP1oOY3aFolxFbVu6bOlEJuxbdWfKLXaRifJnkc2nf7m1lEaKPg%2FgLx&u2=4TTKD37T3pwjjLl2&width=1024",
   iconic_emotionBlanc: "https://sspark.genspark.ai/cfimages?u1=sfhwcOHjQid%2BKwJRFQLF3u6UEhQFCshMBn8TiJwmjqWi4zWoAZ%2FVBjCORIgIzZh0CdEBCcaG2wVcGq3dPyaT5gSvmF%2FLM%2FxZLqLfLuVhb29DVHG7YWOw&u2=V0l7B4tLHdW9Iutj&width=1024",
   iconic_saharaLight: "https://sspark.genspark.ai/cfimages?u1=nDYVHBDC8g53f5ufdah2MaVWQ9NlKCqJO7qwYw5iPGGYCNlrEwmDnDYWPWmpefR4XoLtZuIUc4INu3FXh4%2Btm%2F6LOD0hBKv69iVXOSGzLiU8Xa%2F6Oy5s&u2=v7APFcShpXWuzWdL&width=1024",
-  iconic_slateMotif: "https://sspark.genspark.ai/cfimages?u1=9daGJcI3WyGXlE6%2BpL31EYL3u%2BrQ53q9IQh4MLH8%2FlMq0OGFmpH%2BbMONMzEvvj0LDLsNIsCamzXl7HJO5UzDi%2Fb%2Fg0d6nvHvJ0Vb3mJVXcFCKv%2BJ7iHaH&u2=CaO%2F5LKzHdHpRcwV&width=1024",
-  iconic_slateSteel: "https://sspark.genspark.ai/cfimages?u1=8A5blL6IEjbR6RcZ1OJ1L%2FrGM3dxHN%2F14r2LuclFhFT3%2FzqVlzXD3JNOeNFQ%2F0HoJTfTlx%2F%2B%2FaZ%2Fse9jBr5j73%2FCbOC6GBYJnkpz5NflexFOSYKORbY&u2=9e9Y9GOTnk2hn5WZ&width=1024",
-  iconic_portlandMotif: "https://sspark.genspark.ai/cfimages?u1=Nr0%2FIfX%2BfyKtPATQgQ6HwSHlq%2FwtTZl%2FKcFg33%2F0Q7GKD27LB88G3i3XaXyoTbkdIMNkfhHJOMTXcvPwZ%2FAv%2F7L1qLjp52%2Bi6cKHFfwHhFR3C%2FCNq4U0&u2=b6k4VgJHgVnxwj3m&width=1024",
-  iconic_portlandSteel: "https://sspark.genspark.ai/cfimages?u1=Nr0%2FIfX%2BfyKtPATQgQ0O3%2FZFp%2FwtTZl%2FKcFg33%2F0Q7GKD27LB88G3i3XaXyoTbkdIMNkfhHJOMTXcvPwZ%2FAv%2F7L1qLjp52%2Bi6cKHFfwHhFR3C%2FCNq4U0&u2=b6k4VgJHgVnxwj3m&width=1024",
+  iconic_slateMotif: "",
+  iconic_slateSteel: "",
+  iconic_portlandMotif: "",
+  iconic_portlandSteel: "",
   iconic_floorExample: "https://sspark.genspark.ai/cfimages?u1=Q7595GHS8TOZ4RCz1%2BmEhC0nkHSnoLCVmtqf9JaPLbN3%2B%2FkzDCHiay68vhF8CPrebyBgy9J3MIifQGUBv1f7ivo6nvVN%2Bsh1WGPssxI1RkPA0zXmBrnJDL5%2Fwf4k%2FQ%3D%3D&u2=N%2BrbGV1vZ9hCW%2Bnv&width=1024",
   iconic_wallExample: "https://sspark.genspark.ai/cfimages?u1=hkyMUsbyHbvACwTCMLS%2BHPYvsF%2FUHCg2AdTdHHBKxMsaGGqrhFNjdbOZ2PiLPIEvxwTpoG803uqp45khETUwufGo3kCJpKnMVbd9wfA3dBbbDPqfgtZoVqMl&u2=cvvnlcqP6vg2fgWi&width=1024",
   iconic_furnitureExample: "https://sspark.genspark.ai/cfimages?u1=TbmevO0bNt3%2BEEIGa%2FoeN%2FfPbF0%2FUGVcNOljJkyX5BPqBgqMA0ecphL6K3pGe0fnHYWzHSyvhKruVSCfWuTkaY0Zw3%2FgQYJbYcBWJjuK5Xg9fY%2FiZ43ncXOsUcz1S%2BE%3D&u2=8ctThVuWag5RNKkg&width=1024",
@@ -166,5 +166,42 @@ export const IMAGES = {
   wsindus_photobooth_exterior: "https://sspark.genspark.ai/cfimages?u1=m9DxH%2FnYhKaxjzwPcDdcttl7%2BjAEIlLyDpnlWNJwmkAP836CeMqoofjPL0%2Fe6q8gj7uqdCQMQvirKqCGtKRhQfDLU7ktwRXmMA62eEcCNTNZtoXRO6FcYIt5noKMSLvnuNm06%2BifsbzLHyt8xZDRKhG8B1DrtvDwec5nkVghpBSRayzViLuqLujNbf5bQr%2FpyOIO2Wjt%2BHjUHTBcEV1uVHJs4y6uNiihUrFfTyraqr%2FcB5BKwQOG1DEEV5BgmQgubnpVo5nyK6%2FuMcIkZXbgtESk7EJcktoLqOifnJ0e0yTtnmuogpjKBaI9sQ%3D%3D&u2=olOUxcuzgAB1qFcd&width=1024",
   wsindus_photobooth_interior: "https://sspark.genspark.ai/cfimages?u1=v%2FWUacXJ1gqhImYhJvKD%2FXUR3GdTHS8yvQPJrfsM2Pwt1et%2FFPVHbdUvRG3AfvtZpTvVKpqGPEzpGdSVCApgecz5Zo%2Bhes752LyHUVIHFLK6J%2B4xghjdQzQg4blmDoYqKBLIMUoP7w8ZgWDwvV%2BPIkoF5dL8A7fUuFmK4qqzZI%2Bu2cvH9xHGAB4dGq5Rh3fD0fS19g6asY%2BUFD3waLvMJ2K4L9PM8Yibco2kLTdQus1MPRiIiH8iOtg7exTcLBddtBMp3XRCEOBK%2F2JW3kwHKPH5jKcGbqWfE4Tyqw8ERZ1PkqsTeipshLMsYQ%3D%3D&u2=%2BkCQj3YxkVISCreb&width=1024",
   wsindus_photobooth_packing: "https://sspark.genspark.ai/cfimages?u1=lcTvzd%2FIjiDK70MSpcT%2FSKHQEiDdJInM4vlg8Dekpvjkq4KQZPQ6siSr%2Fcd9ab0GAjUF3KHWuI0VpmOCPBARjSEQ9PC%2FSeVL7qZyYbhXCOK9EX90TMnkfQGVAjBj7EJ86b0yW1EfvKRUKEyIzdYc%2Bw4sXtkPe%2BL94LHeeRU9zsa7Rj9L15JSdcFA%2F14iwKGNLTTNYfQABgZQCBdNgPv0tDg99bagKd4ufpXByy5heepyJh2bEh0njX0XfVL1lWVe0ujBxw0q4%2BTGGYITJmBKB816ASsXO495eR1%2BVxlRMcAx%2Fn6bqoSXTuUgTA%3D%3D&u2=LhdGaeiQW2Hc0sYY&width=1024",
+
+  // ═══════════════════════════════════════
+  // K. 진 시리즈 라인업 및 브랜드 리뉴얼
+  // ═══════════════════════════════════════
+
+  jinSeriesLineup_banner: "https://sspark.genspark.ai/cfimages?u1=x0xQ1ciBTMRJh0Z4G5TZA%2FNPV5FPFKNYYmpq%2FfLQYhzT8IbAjEDWzxRl3lVJnl3G%2F03AW7sRuwS4V3XmVgNGhtY9cTbf4NULg%2BjU1w%3D%3D&u2=gMuiFP8YvKoV6Nqd&width=1024",
+  jinBrandRenewal_banner: "https://sspark.genspark.ai/cfimages?u1=x0xQ1ciBTMRJh0Z4G5TZA%2FNPV5FPFKNYYmpq%2FfLQYhzT8IbAjEDWzxRl3lVJnl3G%2F03AW7sRuwS4V3XmVgNGhtY9cTbf4NULg%2BjU1w%3D%3D&u2=gMuiFP8YvKoV6Nqd&width=1024",
+
+  // ═══════════════════════════════════════
+  // L. 제품별 대표 이미지 맵핑 (products object)
+  // ═══════════════════════════════════════
+
+  products: {
+    // 진 그란데 시리즈
+    emotionBlanc: "https://sspark.genspark.ai/cfimages?u1=i9mfiIbbyictnEsvQwDcWBKbt7JNM%2FxhrxfDz0fXv0AodVFhsxDGeAm9oHesRhl6rQQTzj%2Bu84fmnzNd6rebSSY%2FROSjua1uVvUWH5SdQ2NF5GrW2s0%2BBulUu5dNLLYhpTefDSOcRfJbi2mqD%2BO6lXc4EsaMDAGssQ8PiC0gkpQwia5w7Vt3rNEorkB3vVbcFx%2BJegvikmacexwjKyyYAxW%2BO0C%2Bffp79MozqZRtd6oGBYa8Thz2hjckrvmeDmGDK0%2FSHc9hFF6QtBydDd1gvuy2FYJJpUPF82gMwEna9Bd8ECG2izkKrufh%2BXkG2UjihlBMtoxsTb8l2K6QGL7TZWjhzh7glahdTmysE4lKcEhoIZgsam29kyn2TIxqege%2F%2BGC6wXlRgaJJualSRCGFxnxbJtNA%2FQ%3D%3D&u2=za4hQlYk6RfSGnIZ&width=1024",
+    saharaLight: "https://sspark.genspark.ai/cfimages?u1=WusfkrxOYsKYYCGC%2FnZH8hl90f3Iei%2FbY4p1rfc2zdgtoJTu9%2FZMAJtouvW%2BH7papALPTG7sEixX7AZ3ZwrELJ0yAMKMgku3zu64Ko2%2FQkDbZ7af6I8N%2FU0uXsRLaW%2FjuggmKK4nt%2BusU%2BriEn%2BAWWdA7mD71vhhkDIZDQQSNNQZn%2FvtMltfUV8WAk6RcGV4wHB2HEboyeA7zrt6a5d0PmhckW4WQgsXNz5ppN2bVykiL2poSz5YBjbtWlz1HVXvQJofU7174AGEzD9dYD9NwvFak1w49v9vwaU%3D&u2=S%2FzZl6WEmLHSDyKT&width=1024",
+    monteWhite: "https://sspark.genspark.ai/cfimages?u1=L7VrOH6OSkh9oQdiMHmJ%2BZJRFbcCE4oKYiJ%2FgFbMj8WNFGsPGnpEDjb3xU6hBzP1oOY3aFolxFbVu6bOlEJuxbdWfKLXaRifJnkc2nf7m1lEaKPg%2FgLx&u2=4TTKD37T3pwjjLl2&width=1024",
+
+    // 진 스퀘어 시리즈
+    slateMotif: "",
+    slateSteel: "",
+    portlandMotif: "",
+    portlandSteel: "",
+
+    // 디자인월 그란데 시리즈
+    whiteTravertine: "https://sspark.genspark.ai/cfimages?u1=m%2BpFZ%2BSaSq5W9BHcEGmt0OIzOrmT7xYnP8mdsWYuPdo37SDf%2BkT3EsDfkXnPL%2FqwfERaLTmo8df%2BWlcCear6nHsewlAdTMvUomYsdUT0WI4bBkYzvrkVq5jfHpdAYfku5aZDzidG5WgAmZWME8MB9QK7ruceF5oTVAft%2BBWMDGBVFBP7vS56Ux%2BDpO1zKwZDG%2Bb5uHCWcqIprN9lwnJVx05ZyVYATeXE8%2FjcPkqBIyR0ul85EEy1FGVA426u0u62c1%2FCZhuJV0DRW3sjuBsXRwxRlJcf6rnpXfs%3D&u2=r0sspubtkiz4%2BW4b&width=1024",
+    designWallSaharaLight: "https://sspark.genspark.ai/cfimages?u1=DLl8bw3ciePRjhjpfLPqM%2BZtD20Agq4dTGQYgRwEJCzZa5K21Lr5uupLOMK8E2CbBP%2B4zqzC%2F0FIIA2H3LXvsBYuVk%2FzjvtrkZSRNrojY7NNmE3366%2BYnFRHQGgNGWmoc08k30c9pZ29idmFr7eojkoK%2BHXtAHJenvRT17Kv6h0K3n1142cg41lB3tO7L8%2BscaUxqUxquk7WpJCNYMGhCSRII%2FfbaDsYLQ1VBOAERRc%2FZnH4Sh2Ilr45HmPsMlKYtuU7QHo%2Bj517s5cO8QZRFWjO0%2BqbXyEvYuAxzRb9A7yvTIkBg0OIUfegRQz5uozHrBTTzIMttYUX4cvBSdzwDw8sjDDrdM6TwdMA1rQUxHR4Bjn5sbg4epPxpLl0q1E0wkwuzAbz70wYxkhwbhRiuDszSfzQ0g%3D%3D&u2=eShLPi3FUKckAbW1&width=1024",
+
+    // 시그니월 시리즈 (placeholder)
+    signiwallWhiteOak: "",
+    signiwallBlackWalnut: "",
+
+    // 에코스텍 시리즈
+    ecostecAshGreen: "https://sspark.genspark.ai/cfimages?u1=OfcSqBMst%2BXSvyWKGiJXoEuDOmBRQ0sW3fhDldiYUIZkCh%2FJEUEXfiNBtuATbOR0QbKgXzfESpJa1oqhbkBQcOtLb5iO8ggVZpO94QQA9xtdm64jLLa4iPOBwnKv1L2Y3gOKAc5mslRNbpxRAfkfbTDF53LRefIveIqWq%2FWxSc2iuHLO%2BQeWrZKmCi%2FvGOjsv0%2F8ScMdf6FANisKLay6%2BUiETJmQVWemIZjg5evZ69DEl03P18CSicDO8jFgo3MN4fR9awRTC42mRtCl%2BKJQ9fjx2vVY56P2BMM%3D&u2=fHGmoq%2FYy3KD5FcQ&width=1024",
+    ecostecBronze: "https://sspark.genspark.ai/cfimages?u1=1oXlJfoFfMC1lmhHgoXpt%2B9NIxtAda0IK1iQOxLz888thVakoPFvRXhqEX4kf68pUMJHFWyb0hDNdadWX67A53qcYzg6kTbeONRbS88q1HCL1xZniEmpWw2n6%2FSVAOL%2FSvQ3WTNdrNAyavSq6POFZfo6x%2FtGeE2ScZhZeUaCLA648RmmxQO6UvrUaPwtdK3VX8%2BFrpXFG5i18kOaN4p98TavZVO9HsQCcHSMnjTrTgL%2B8xzhR11Rl%2FV%2BcR%2BZklHP6%2BQAiT%2BoN1wFZwhhz6VQVmNaWMpNrAcCpyk%3D&u2=JH2zy%2FwgZAQ0fYjK&width=1024",
+    ecostecOfficeGray: "https://sspark.genspark.ai/cfimages?u1=FYkZwS1zVit1TDa9O5ziOdmGVcRzzDLBuHMcjhjWksir%2B1Cq9tUdYdQkJJrUYzPvTSgVErBkuWOQA59SLM6gPZJaMmfuaRWhIhvWp3uuiqlZL4w28%2BXlRUQ8Pg%2B4Oavuuu9SYQB9Ez2yWZFX64n%2BN0hkoJL6N1DiMT2UOi6n21OBzdw3pkF96oxMzosUNNvqlwhplMxsO68euYuM8WRkZ6uY4iCfoRq8rYfHFyfVfsbHY%2BCqMFE5bgoERfdIa%2FQeylyzA2vWpOW9k1RHYi1aa3H8uVpWyltG%2BECb%2BOqk%2FIeyK1f%2FsFCk9Q%3D%3D&u2=lZ3QdchWQJaidtXh&width=1024",
+  },
 
 } as const;

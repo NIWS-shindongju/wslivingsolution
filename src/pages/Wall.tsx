@@ -18,7 +18,7 @@ export default function Wall() {
       id: 'designwall',
       name: '디자인월',
       type: '입체무늬 벽장재',
-      description: '프리미엄 벽면 인테리어',
+      description: '600x300x7T 아트월/악센트월 전용',
       imgSrc: IMAGES.designWall_saharaLight_kitchen,
       alt: '디자인월 벽재',
       badges: ['BEST']
@@ -27,7 +27,7 @@ export default function Wall() {
       id: 'designwall-grande',
       name: '디자인월 그란데',
       type: '대형 벽장재',
-      description: '넓은 공간을 위한 대형 패널',
+      description: '800x295x7T 넓은 벽면 시공 최적화',
       imgSrc: IMAGES.designWall_saharaLight_artwall,
       alt: '디자인월 그란데 벽재',
       badges: ['NEW']

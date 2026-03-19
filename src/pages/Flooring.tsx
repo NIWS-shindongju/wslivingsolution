@@ -15,13 +15,13 @@ export default function Flooring() {
   ];
 
   const jinSeriesProducts = [
-    { id: 'jin-origin', name: '진 오리진', imgSrc: IMAGES.emotionBlanc_newlywed_livingroom, alt: '진 오리진 바닥재', type: '원목강마루' },
-    { id: 'jin-tera', name: '진 테라', imgSrc: IMAGES.saharaLight_75_livingroom, alt: '진 테라 바닥재', type: '광폭 강마루' },
+    { id: 'jin-origin', name: '진 오리진', imgSrc: IMAGES.saharaLight_75_entrance, alt: '진 오리진 바닥재', type: '원목강마루' },
+    { id: 'jin-tera', name: '진 테라', imgSrc: IMAGES.saharaLight_75_hallway, alt: '진 테라 바닥재', type: '광폭 강마루' },
     { id: 'jin-tera-max', name: '진 테라 맥스', imgSrc: IMAGES.saharaLight_75_whiteBeige, alt: '진 테라 맥스 바닥재', type: '초광폭 강마루' },
-    { id: 'jin-herringbone', name: '진 헤링본', imgSrc: IMAGES.emotionBlanc_newlywed_bright, alt: '진 헤링본 바닥재', type: '헤링본 패턴' },
-    { id: 'jin-grande', name: '진 그란데', imgSrc: IMAGES.jinGrande_productBanner, alt: '진 그란데 바닥재', type: '타일형 강마루' },
-    { id: 'jin-grande-square', name: '진 그란데 스퀘어', imgSrc: IMAGES.iconic_floorExample, alt: '진 그란데 스퀘어 바닥재', type: '정사각 타일형' },
-    { id: 'jin-texture', name: '진 텍스처', imgSrc: IMAGES.emotionBlanc_minimal_livingroom, alt: '진 텍스처 바닥재', type: '엠보싱 마감' },
+    { id: 'jin-herringbone', name: '진 헤링본', imgSrc: IMAGES.emotionBlanc_newlywed_kitchenView, alt: '진 헤링본 바닥재', type: '헤링본 패턴' },
+    { id: 'jin-grande', name: '진 그란데', imgSrc: IMAGES.emotionBlanc_newlywed_bright, alt: '진 그란데 바닥재', type: '타일형 강마루' },
+    { id: 'jin-grande-square', name: '진 그란데 스퀘어', imgSrc: IMAGES.emotionBlanc_minimal_tilelike, alt: '진 그란데 스퀘어 바닥재', type: '정사각 타일형' },
+    { id: 'jin-texture', name: '진 텍스처', imgSrc: IMAGES.emotionBlanc_minimal_durability, alt: '진 텍스처 바닥재', type: '엠보싱 마감' },
   ];
 
   const otherFlooringProducts = [
@@ -93,6 +93,14 @@ export default function Flooring() {
 
       <section className="py-14 md:py-20 lg:py-24 bg-warm-ivory">
         <div className="container mx-auto px-5 md:px-6 lg:px-8">
+          <div className="mb-8 md:mb-12 rounded-xl overflow-hidden">
+            <SafeImage
+              src={IMAGES.jinSeriesLineup_banner}
+              alt="진 시리즈 라인업"
+              className="w-full h-auto"
+            />
+          </div>
+
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-light text-charcoal mb-2 md:mb-4">
               진(Jin) 시리즈

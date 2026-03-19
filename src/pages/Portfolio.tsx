@@ -28,6 +28,9 @@ export default function Portfolio() {
     { id: 8, title: '사하라라이트 벽바닥 통일', category: '주거시설', year: '2024', img: IMAGES.saharaLight_wallFloor_living },
     { id: 9, title: '이모션블랑 미니멀 화이트', category: '주거시설', year: '2024', img: IMAGES.emotionBlanc_minimal_livingroom },
     { id: 10, title: '에코스텍 홈스튜디오', category: '주거시설', year: '2024', img: IMAGES.ecostec_studioAfter },
+    { id: 11, title: '계산동 하이베라스 사무실', category: '상업시설', year: '2024', img: IMAGES.wsindus_ecostec_office1 },
+    { id: 12, title: '사무실 에코스텍 흡음패널', category: '상업시설', year: '2024', img: IMAGES.wsindus_ecostec_office2 },
+    { id: 13, title: '라이즈오토그래프 호텔 포토부스', category: '상업시설', year: '2024', img: IMAGES.wsindus_photobooth_exterior },
   ];
 
   const filteredProjects = selectedCategory === '전체'

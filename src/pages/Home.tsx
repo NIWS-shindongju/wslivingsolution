@@ -86,8 +86,8 @@ export default function Home() {
             <div className="bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-40 md:h-48 overflow-hidden">
                 <SafeImage
-                  src={IMAGES.jinGrande_productBanner}
-                  alt="진 그란데 이모션블랑 바닥재"
+                  src={IMAGES.emotionBlanc_newlywed_livingroom}
+                  alt="27년 경험의 프리미엄 시공"
                   className="w-full h-full"
                 />
               </div>
@@ -105,8 +105,8 @@ export default function Home() {
             <div className="bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-40 md:h-48 overflow-hidden">
                 <SafeImage
-                  src={IMAGES.iconic_wallExample}
-                  alt="시그니월 벽장재"
+                  src={IMAGES.wsindus_ecostec_office1}
+                  alt="관공서 및 공공기관 검증된 시공"
                   className="w-full h-full"
                 />
               </div>
@@ -124,8 +124,8 @@ export default function Home() {
             <div className="bg-warm-ivory rounded-xl overflow-hidden hover-lift">
               <div className="h-40 md:h-48 overflow-hidden">
                 <SafeImage
-                  src={IMAGES.iconic_furnitureExample}
-                  alt="디하임 가구 도어재"
+                  src={IMAGES.ecostec_productInfo}
+                  alt="세이프월 및 에코스텍 흡음패널"
                   className="w-full h-full"
                 />
               </div>

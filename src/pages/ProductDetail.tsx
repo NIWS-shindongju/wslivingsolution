@@ -46,40 +46,40 @@ export default function ProductDetail() {
 
   const getProductMainImage = (productName: string) => {
     // Iconic Stone patterns
-    if (productName.includes('몬테 화이트')) return IMAGES.iconic.monteWhite;
-    if (productName.includes('이모션 블랑')) return IMAGES.iconic.emotionBlanc;
-    if (productName.includes('사하라 라이트')) return IMAGES.iconic.saharaLight;
-    if (productName.includes('슬레이트 모티프')) return IMAGES.iconic.slateMotif;
-    if (productName.includes('슬레이트 스틸')) return IMAGES.iconic.slateSteel;
-    if (productName.includes('포틀랜드 모티프')) return IMAGES.iconic.portlandMotif;
-    if (productName.includes('포틀랜드 스틸')) return IMAGES.iconic.portlandSteel;
-    if (productName.includes('아이코닉 스톤')) return IMAGES.iconic.collectionBanner;
+    if (productName.includes('몬테 화이트') || productName.includes('몬테화이트')) return IMAGES.products.monteWhite;
+    if (productName.includes('이모션 블랑') || productName.includes('이모션블랑')) return IMAGES.products.emotionBlanc;
+    if (productName.includes('사하라 라이트') || productName.includes('사하라라이트')) return IMAGES.products.saharaLight;
+    if (productName.includes('슬레이트 모티프') || productName.includes('슬레이트모티프')) return IMAGES.products.slateMotif;
+    if (productName.includes('슬레이트 스틸') || productName.includes('슬레이트스틸')) return IMAGES.products.slateSteel;
+    if (productName.includes('포틀랜드 모티프') || productName.includes('포틀랜드모티프')) return IMAGES.products.portlandMotif;
+    if (productName.includes('포틀랜드 스틸') || productName.includes('포틀랜드스틸')) return IMAGES.products.portlandSteel;
+    if (productName.includes('아이코닉 스톤')) return IMAGES.iconic_overview;
 
     // Jin series
-    if (productName.includes('진 오리진')) return IMAGES.products.jinOrigin;
-    if (productName.includes('진 테라 맥스')) return IMAGES.products.jinTeraMax;
-    if (productName.includes('진 테라')) return IMAGES.products.jinTera;
-    if (productName.includes('진 헤링본')) return IMAGES.products.jinHerringbone;
-    if (productName.includes('진 그란데 스퀘어')) return IMAGES.products.jinGrandeSquare;
-    if (productName.includes('진 그란데')) return IMAGES.products.jinGrande;
-    if (productName.includes('진 텍스쳐')) return IMAGES.products.jinTexture;
+    if (productName.includes('진 오리진')) return IMAGES.saharaLight_75_entrance;
+    if (productName.includes('진 테라 맥스')) return IMAGES.saharaLight_75_whiteBeige;
+    if (productName.includes('진 테라')) return IMAGES.saharaLight_75_hallway;
+    if (productName.includes('진 헤링본')) return IMAGES.emotionBlanc_newlywed_kitchenView;
+    if (productName.includes('진 그란데 스퀘어')) return IMAGES.emotionBlanc_minimal_tilelike;
+    if (productName.includes('진 그란데')) return IMAGES.emotionBlanc_newlywed_bright;
+    if (productName.includes('진 텍스처') || productName.includes('진 텍스쳐')) return IMAGES.emotionBlanc_minimal_durability;
 
     // Wall products
-    if (productName.includes('시그니월')) return IMAGES.products.signiwall;
-    if (productName.includes('디자인월 그란데')) return IMAGES.products.designwallGrande;
-    if (productName.includes('디자인월')) return IMAGES.products.designwall;
-    if (productName.includes('디하임')) return IMAGES.products.dheim;
+    if (productName.includes('시그니월')) return IMAGES.iconic_wallExample;
+    if (productName.includes('디자인월 그란데')) return IMAGES.products.designWallSaharaLight;
+    if (productName.includes('디자인월')) return IMAGES.products.whiteTravertine;
+    if (productName.includes('디하임')) return IMAGES.iconic_furnitureExample;
 
     // Ecostec
-    if (productName.includes('에코스텍')) return IMAGES.products.ecostec;
-    if (productName.includes('세이프월')) return IMAGES.products.safewall;
+    if (productName.includes('에코스텍')) return IMAGES.products.ecostecAshGreen;
+    if (productName.includes('세이프월')) return IMAGES.wsindus_ecostec_spec;
 
     // Default flooring
-    if (productName.includes('나투스')) return IMAGES.products.natus;
-    if (productName.includes('바움')) return IMAGES.products.baum;
-    if (productName.includes('클릭S')) return IMAGES.products.clickS;
+    if (productName.includes('나투스')) return IMAGES.saharaLight_75_comfort;
+    if (productName.includes('바움')) return IMAGES.saharaLight_75_shelf;
+    if (productName.includes('클릭S')) return IMAGES.saharaLight_75_install;
 
-    return IMAGES.heroes.flooring;
+    return IMAGES.saharaLight_75_livingroom;
   };
 
   const getGalleryImages = (productName: string) => {
@@ -88,66 +88,66 @@ export default function ProductDetail() {
     // For Iconic Stone products, use different pattern images
     if (productName.includes('아이코닉 스톤')) {
       return [
-        IMAGES.iconic.collectionBanner,
-        IMAGES.iconic.monteWhite,
-        IMAGES.iconic.emotionBlanc,
-        IMAGES.iconic.saharaLight
+        IMAGES.iconic_overview,
+        IMAGES.iconic_monteWhite,
+        IMAGES.iconic_emotionBlanc,
+        IMAGES.iconic_saharaLight
       ];
     }
 
     // For specific Iconic Stone patterns
-    if (productName.includes('몬테 화이트')) {
-      return [IMAGES.iconic.monteWhite, IMAGES.heroes.home, IMAGES.iconic.emotionBlanc, IMAGES.iconic.saharaLight];
+    if (productName.includes('몬테 화이트') || productName.includes('몬테화이트')) {
+      return [IMAGES.iconic_monteWhite, IMAGES.emotionBlanc_newlywed_expanded, IMAGES.iconic_emotionBlanc, IMAGES.iconic_saharaLight];
     }
-    if (productName.includes('이모션 블랑')) {
-      return [IMAGES.iconic.emotionBlanc, IMAGES.iconic.monteWhite, IMAGES.heroes.home, IMAGES.iconic.saharaLight];
+    if (productName.includes('이모션 블랑') || productName.includes('이모션블랑')) {
+      return [IMAGES.iconic_emotionBlanc, IMAGES.emotionBlanc_newlywed_livingroom, IMAGES.emotionBlanc_minimal_livingroom, IMAGES.iconic_saharaLight];
     }
-    if (productName.includes('사하라 라이트')) {
-      return [IMAGES.iconic.saharaLight, IMAGES.iconic.emotionBlanc, IMAGES.iconic.monteWhite, IMAGES.heroes.home];
+    if (productName.includes('사하라 라이트') || productName.includes('사하라라이트')) {
+      return [IMAGES.iconic_saharaLight, IMAGES.saharaLight_75_livingroom, IMAGES.saharaLight_wallFloor_living, IMAGES.iconic_emotionBlanc];
     }
-    if (productName.includes('슬레이트 모티프')) {
-      return [IMAGES.iconic.slateMotif, IMAGES.iconic.slateSteel, IMAGES.iconic.portlandMotif, IMAGES.heroes.home];
+    if (productName.includes('슬레이트 모티프') || productName.includes('슬레이트모티프')) {
+      return [IMAGES.iconic_slateMotif, IMAGES.iconic_slateSteel, IMAGES.iconic_portlandMotif, IMAGES.emotionBlanc_newlywed_expanded];
     }
-    if (productName.includes('슬레이트 스틸')) {
-      return [IMAGES.iconic.slateSteel, IMAGES.iconic.slateMotif, IMAGES.iconic.portlandSteel, IMAGES.heroes.home];
+    if (productName.includes('슬레이트 스틸') || productName.includes('슬레이트스틸')) {
+      return [IMAGES.iconic_slateSteel, IMAGES.iconic_slateMotif, IMAGES.iconic_portlandSteel, IMAGES.emotionBlanc_newlywed_expanded];
     }
-    if (productName.includes('포틀랜드 모티프')) {
-      return [IMAGES.iconic.portlandMotif, IMAGES.iconic.portlandSteel, IMAGES.iconic.slateMotif, IMAGES.heroes.home];
+    if (productName.includes('포틀랜드 모티프') || productName.includes('포틀랜드모티프')) {
+      return [IMAGES.iconic_portlandMotif, IMAGES.iconic_portlandSteel, IMAGES.iconic_slateMotif, IMAGES.emotionBlanc_newlywed_expanded];
     }
-    if (productName.includes('포틀랜드 스틸')) {
-      return [IMAGES.iconic.portlandSteel, IMAGES.iconic.portlandMotif, IMAGES.iconic.slateSteel, IMAGES.heroes.home];
+    if (productName.includes('포틀랜드 스틸') || productName.includes('포틀랜드스틸')) {
+      return [IMAGES.iconic_portlandSteel, IMAGES.iconic_portlandMotif, IMAGES.iconic_slateSteel, IMAGES.emotionBlanc_newlywed_expanded];
     }
 
     // For Jin Grande series
     if (productName.includes('진 그란데')) {
-      return [IMAGES.products.jinGrande, IMAGES.products.jinGrandeSquare, IMAGES.heroes.flooring, IMAGES.heroes.home];
+      return [IMAGES.emotionBlanc_newlywed_bright, IMAGES.emotionBlanc_minimal_tilelike, IMAGES.jinGrande_productBanner, IMAGES.emotionBlanc_newlywed_livingroom];
     }
 
     // For Signiwall
     if (productName.includes('시그니월')) {
-      return [IMAGES.products.signiwall, IMAGES.heroes.wall, IMAGES.products.designwall, IMAGES.heroes.home];
+      return [IMAGES.iconic_wallExample, IMAGES.signiwall_jinGrande_unified, IMAGES.designWall_saharaLight_artwall, IMAGES.emotionBlanc_newlywed_expanded];
     }
 
     // For Dheim
     if (productName.includes('디하임')) {
-      return [IMAGES.products.dheim, IMAGES.products.designwall, IMAGES.heroes.wall, IMAGES.heroes.home];
+      return [IMAGES.iconic_furnitureExample, IMAGES.iconic_wallExample, IMAGES.signiwall_jinGrande_unified, IMAGES.emotionBlanc_newlywed_expanded];
     }
 
     // For Ecostec
     if (productName.includes('에코스텍')) {
       return [
-        IMAGES.products.ecostec,
-        IMAGES.heroes.ecostec,
-        IMAGES.products.safewall,
-        IMAGES.heroes.home
+        IMAGES.ecostec_productInfo,
+        IMAGES.ecostec_studioAfter,
+        IMAGES.ecostec_studioProcess,
+        IMAGES.wsindus_ecostec_office1
       ];
     }
 
     // Default: use main image with related images
     return [
       mainImage,
-      IMAGES.heroes.flooring,
-      IMAGES.heroes.wall,
+      IMAGES.saharaLight_75_livingroom,
+      IMAGES.designWall_saharaLight_artwall,
       IMAGES.heroes.home
     ];
   };

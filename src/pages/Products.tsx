@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Shield, Droplets, Sparkles, ArrowRight } from 'lucide-react';
+import SafeImage from '../components/SafeImage';
+import { IMAGES } from '../constants/images';
 
 export default function Products() {
   return (
@@ -22,8 +24,12 @@ export default function Products() {
           <div className="space-y-20" id="ecostec">
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="h-80 lg:h-auto bg-gray-200 flex items-center justify-center text-sm text-gray-500">
-                  [에코스텍 타공 판넬 클로즈업]
+                <div className="h-80 lg:h-auto">
+                  <SafeImage
+                    src={IMAGES.ecostec_productInfo}
+                    alt="에코스텍 타공 패널"
+                    className="w-full h-full"
+                  />
                 </div>
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <h2 className="font-serif text-3xl font-bold text-charcoal mb-4">
@@ -44,8 +50,12 @@ export default function Products() {
 
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden" id="safewall">
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="h-80 lg:h-auto bg-gray-200 flex items-center justify-center text-sm text-gray-500 lg:order-2">
-                  [세이프월 시공 사진]
+                <div className="h-80 lg:h-auto lg:order-2">
+                  <SafeImage
+                    src={IMAGES.wsindus_ecostec_spec}
+                    alt="세이프월 시공"
+                    className="w-full h-full"
+                  />
                 </div>
                 <div className="p-8 lg:p-12 flex flex-col justify-center lg:order-1">
                   <h2 className="font-serif text-3xl font-bold text-charcoal mb-4">
@@ -90,14 +100,26 @@ export default function Products() {
                   디자인월
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                  <div className="h-48 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">
-                    [디자인월 패턴 1]
+                  <div className="h-48 rounded-lg overflow-hidden">
+                    <SafeImage
+                      src={IMAGES.designWall_saharaLight_kitchen}
+                      alt="디자인월 주방 시공"
+                      className="w-full h-full"
+                    />
                   </div>
-                  <div className="h-48 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">
-                    [디자인월 패턴 2]
+                  <div className="h-48 rounded-lg overflow-hidden">
+                    <SafeImage
+                      src={IMAGES.designWall_saharaLight_artwall}
+                      alt="디자인월 아트월"
+                      className="w-full h-full"
+                    />
                   </div>
-                  <div className="h-48 bg-gray-200 rounded-lg flex items-center justify-center text-sm text-gray-500">
-                    [디자인월 패턴 3]
+                  <div className="h-48 rounded-lg overflow-hidden">
+                    <SafeImage
+                      src={IMAGES.saharaLight_wallFloor_product}
+                      alt="디자인월 제품"
+                      className="w-full h-full"
+                    />
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed text-center mb-8">
@@ -160,8 +182,12 @@ export default function Products() {
 
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden" id="dheim">
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="h-80 lg:h-auto bg-gray-200 flex items-center justify-center text-sm text-gray-500">
-                  [디하임 마감재 사진]
+                <div className="h-80 lg:h-auto">
+                  <SafeImage
+                    src={IMAGES.iconic_furnitureExample}
+                    alt="디하임 가구 마감재"
+                    className="w-full h-full"
+                  />
                 </div>
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <h2 className="font-serif text-3xl font-bold text-charcoal mb-4">
