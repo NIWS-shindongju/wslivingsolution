@@ -12,6 +12,9 @@ export default {
         charcoal: '#333333',
         'warm-ivory': '#F8F6F1',
         'stone-gray': '#9E9E9E',
+        cream: '#FDF8F0',
+        deepgreen: '#2D5016',
+        woodbrown: '#8B6914',
       },
       fontFamily: {
         serif: ['Cormorant Garamond', 'Noto Serif KR', 'serif'],
