@@ -56,7 +56,7 @@ export default function Header() {
     },
     { name: '에코스텍·세이프월', path: '/ecostec' },
     { name: '맞춤가공', path: '/custom' },
-    { name: '시공사례', path: '/portfolio' },
+    { name: '견적·시공', path: '/portfolio' },
     { name: '견적문의', path: '/contact' },
   ];
 
