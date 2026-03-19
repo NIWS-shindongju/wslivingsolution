@@ -5,10 +5,10 @@ import SafeImage from '../components/SafeImage';
 
 export default function Custom() {
   const equipment = [
-    { name: 'CNC Router', image: IMAGES.equipment.cncRouter, desc: '목재 정밀 가공' },
-    { name: 'CNC 선반', image: IMAGES.equipment.cncLathe, desc: '원형 가공' },
-    { name: 'MCT', image: IMAGES.equipment.mct, desc: '밀링 가공' },
-    { name: 'Laser Cutter', image: IMAGES.equipment.laserCutter, desc: '레이저 정밀 절단' },
+    { name: 'CNC Router', image: "", desc: '목재 정밀 가공', fallbackText: 'CNC Router' },
+    { name: 'CNC 선반', image: "", desc: '원형 가공', fallbackText: 'CNC 선반' },
+    { name: 'MCT', image: "", desc: '밀링 가공', fallbackText: 'MCT' },
+    { name: 'Laser Cutter', image: "", desc: '레이저 정밀 절단', fallbackText: 'Laser Cutter' },
   ];
 
   const capabilities = [
@@ -24,12 +24,12 @@ export default function Custom() {
     {
       name: '목재',
       items: ['MDF', '합판', '원목'],
-      image: IMAGES.materials.wood
+      image: ""
     },
     {
       name: '금속',
       items: ['알루미늄', 'SUS(스테인리스)'],
-      image: IMAGES.materials.metal
+      image: ""
     },
     {
       name: '플라스틱',
@@ -47,24 +47,15 @@ export default function Custom() {
   ];
 
   const businessItems = [
-    { name: 'Photobooth', image: IMAGES.wsindus.photobooth },
-    { name: 'Pallet Rack', image: IMAGES.wsindus.palletRack },
-    { name: 'Angle Rack', image: IMAGES.wsindus.angleRack },
-    { name: 'Ball Bearing', image: IMAGES.wsindus.ballBearing },
+    { name: 'Photobooth', image: "" },
+    { name: 'Pallet Rack', image: "" },
+    { name: 'Angle Rack', image: "" },
+    { name: 'Ball Bearing', image: "" },
   ];
 
   return (
     <div className="w-full">
-      <section className="relative h-[300px] md:h-[500px] flex items-center justify-center bg-charcoal">
-        <div className="absolute inset-0">
-          <SafeImage
-            src={IMAGES.heroes.custom}
-            alt="맞춤 가공 서비스"
-            className="w-full h-full"
-            loading="eager"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 to-charcoal"></div>
+      <section className="relative h-[300px] md:h-[500px] flex items-center justify-center bg-gradient-to-b from-charcoal/80 to-charcoal">
         <div className="relative z-10 text-center text-white px-5">
           <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold mb-4">목재 맞춤가공</h1>
           <p className="text-sm md:text-xl text-gray-300">김포 자체 공장에서, 어떤 형태든 깎아냅니다</p>
@@ -86,6 +77,7 @@ export default function Custom() {
                   src={item.image}
                   alt={`${item.name} 목재 가공 장비`}
                   className="w-full h-48 md:h-56 rounded-lg"
+                  fallbackText={item.fallbackText}
                 />
                 <h3 className="font-serif text-xl font-bold text-charcoal text-center mb-2 mt-6">
                   {item.name}
@@ -132,11 +124,12 @@ export default function Custom() {
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {materials.map((category, index) => (
               <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg">
-                {category.image ? (
+                {category.image !== null ? (
                   <SafeImage
                     src={category.image}
                     alt={`${category.name} 가공 소재`}
                     className="w-full h-48"
+                    fallbackText={category.name}
                   />
                 ) : (
                   <div className="w-full h-48 bg-gradient-to-br from-gray-300 to-gray-400"></div>
@@ -180,6 +173,7 @@ export default function Custom() {
                   src={item.image}
                   alt={item.name}
                   className="w-full h-40 md:h-48"
+                  fallbackText={item.name}
                 />
                 <div className="p-4">
                   <h3 className="font-semibold text-charcoal text-center">

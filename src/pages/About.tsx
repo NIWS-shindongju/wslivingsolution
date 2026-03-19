@@ -15,23 +15,15 @@ export default function About() {
     { year: '2022', title: '국회의사당 리모델링 디자인월 납품', desc: '' },
     { year: '2022', title: '두원공대 파주캠퍼스 에코스텍 납품·시공', desc: '' },
     { year: '2022', title: '(주)우성인더스 법인 설립', desc: '' },
-    { year: '2026', title: '우성리빙솔루션 브랜드 론칭', desc: '27년의 경험을 새 이름에 담다' }
+    { year: '2026', title: '우성동화 브랜드 론칭', desc: '27년의 경험을 새 이름에 담다' }
   ];
 
   return (
     <div className="w-full">
-      <section className="relative h-[300px] md:h-[500px] flex items-center justify-center bg-charcoal">
-        <SafeImage
-          src={IMAGES.heroes.about}
-          alt="우성리빙솔루션 회사 소개"
-          className="absolute inset-0 w-full h-full"
-          loading="eager"
-          fallbackText="우성리빙솔루션"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 to-charcoal"></div>
+      <section className="relative h-[300px] md:h-[500px] flex items-center justify-center bg-gradient-to-b from-charcoal/80 to-charcoal">
         <div className="relative z-10 text-center text-white px-5">
           <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold mb-4">우성이야기</h1>
-          <p className="text-sm md:text-xl text-gray-300">우성산업 → 우성인더스 → 우성리빙솔루션, 27년의 여정</p>
+          <p className="text-sm md:text-xl text-gray-300">우성산업 → 우성인더스 → 우성동화, 27년의 여정</p>
         </div>
       </section>
 
@@ -56,13 +48,13 @@ export default function About() {
                   지금은 동화기업이 자사 제품에 대한 소비자 현장 상담까지 우리에게 맡기고 있습니다. 제조사가 '이 제품을 현장에서 어떻게 쓰는지는 우성에게 물어보라'고 할 만큼, 현장 경험에서는 누구에게도 뒤지지 않습니다.
                 </p>
                 <p>
-                  2022년 (주)우성인더스로 법인 전환을 하였고, 2026년 목재·인테리어 자재 전문 브랜드 '우성리빙솔루션'을 론칭합니다. 이름은 바뀌었지만, 우성산업 시절부터 이어온 원칙은 같습니다 — 현장에서 직접 해보고, 결과물로 말한다.
+                  2022년 (주)우성인더스로 법인 전환을 하였고, 2026년 목재·인테리어 자재 전문 브랜드 '우성동화'를 론칭합니다. 이름은 바뀌었지만, 우성산업 시절부터 이어온 원칙은 같습니다 — 현장에서 직접 해보고, 결과물로 말한다.
                 </p>
               </div>
             </div>
             <div className="md:order-1 md:flex-1">
               <SafeImage
-                src={IMAGES.about.earlyWork}
+                src=""
                 alt="우성산업 초창기 작업 모습"
                 className="w-full h-48 md:h-64 rounded-lg"
                 fallbackText="우성산업 초창기"
@@ -77,16 +69,16 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="md:flex-1">
               <SafeImage
-                src={IMAGES.about.factoryPanorama}
-                alt="우성리빙솔루션 공장 전경"
+                src=""
+                alt="우성동화 공장 전경"
                 className="w-full h-64 md:h-80 rounded-lg"
                 fallbackText="김포 공장 전경"
               />
             </div>
             <div className="md:flex-1">
               <SafeImage
-                src={IMAGES.about.teamwork}
-                alt="우성리빙솔루션 팀워크"
+                src=""
+                alt="우성동화 팀워크"
                 className="w-full h-48 md:h-56 rounded-lg"
                 fallbackText="우성 팀워크"
               />
@@ -142,7 +134,7 @@ export default function About() {
               <div className="flex items-center">
                 <div className="bg-cream p-8 rounded-2xl shadow-lg">
                   <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
-                    안녕하십니까. 우성리빙솔루션 대표이사 신만식입니다.
+                    안녕하십니까. 우성동화 대표이사 신만식입니다.
                   </p>
                   <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
                     [대표 인사말 내용이 들어갈 자리입니다. 실제 대표님의 메시지로 교체해 주세요.]
@@ -164,7 +156,7 @@ export default function About() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
-              우성리빙솔루션이 다른 이유
+              우성동화가 다른 이유
             </h2>
           </div>
 
