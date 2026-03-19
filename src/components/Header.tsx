@@ -82,7 +82,7 @@ export default function Header() {
               <span className={`ml-1 font-serif text-lg md:text-xl font-light transition-colors ${
                 isScrolled ? 'text-dark-slate' : 'text-white'
               } group-hover:text-copper`}>
-                리빙솔루션
+                동화
               </span>
             </div>
             <span className={`ml-3 text-xs font-light transition-colors hidden lg:inline ${
@@ -163,7 +163,7 @@ export default function Header() {
             <div className="flex items-center justify-between h-16 border-b border-gray-100">
               <Link to="/" className="flex items-center">
                 <span className="font-serif text-xl font-normal text-copper">WS</span>
-                <span className="ml-1 font-serif text-lg font-light text-dark-slate">리빙솔루션</span>
+                <span className="ml-1 font-serif text-lg font-light text-dark-slate">동화</span>
               </Link>
               <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-dark-slate">
                 <X size={24} />
