@@ -68,6 +68,11 @@ export default function Footer() {
               <p className="mt-3 text-xs">
                 <span className="text-white">wsdongwha.com</span>
               </p>
+              <p className="mt-3">
+                <a href="https://www.greendongwha.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-400 transition-colors text-xs">
+                  제조사: 동화자연마루 greendongwha.com
+                </a>
+              </p>
             </div>
             <a href="https://smartstore.naver.com/wsindus" target="_blank" rel="noopener noreferrer" className="block bg-[#03C75A] hover:bg-[#02b351] text-white text-center py-4 rounded-lg text-lg font-normal mt-4 md:hidden transition-colors">스마트스토어 바로가기</a>
             <a href="tel:032-589-7744" className="block bg-copper text-white text-center py-4 rounded-lg text-lg font-normal mt-2 md:hidden">032-589-7744 전화하기</a>
@@ -87,10 +92,10 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-6 md:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-copper transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/greendongwha/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-copper transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-copper transition-colors" aria-label="YouTube">
+              <a href="https://www.youtube.com/@green_dongwha" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-copper transition-colors" aria-label="YouTube">
                 <Youtube size={20} />
               </a>
             </div>
