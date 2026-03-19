@@ -18,19 +18,19 @@ export default function Portfolio() {
   const categories = ['전체', '공공시설', '교육시설', '상업시설', '주거시설'];
 
   const projects: Project[] = [
-    { id: 1, title: '진 그란데 이모션블랑 신혼집 거실', category: '주거시설', year: '2024', img: IMAGES.emotionBlanc_newlywed_livingroom },
-    { id: 2, title: '이모션블랑 주방 인테리어', category: '주거시설', year: '2024', img: IMAGES.emotionBlanc_newlywed_kitchenView },
-    { id: 3, title: '이모션블랑 밝은 거실', category: '주거시설', year: '2024', img: IMAGES.emotionBlanc_newlywed_bright },
-    { id: 4, title: '사하라라이트 현관+거실', category: '주거시설', year: '2024', img: IMAGES.saharaLight_75_entrance },
-    { id: 5, title: '사하라라이트 75평 거실', category: '주거시설', year: '2024', img: IMAGES.saharaLight_75_livingroom },
-    { id: 6, title: '디자인월+사하라라이트 주방', category: '주거시설', year: '2024', img: IMAGES.designWall_saharaLight_kitchen },
-    { id: 7, title: '디자인월 아트월 거실', category: '주거시설', year: '2024', img: IMAGES.designWall_saharaLight_artwall },
-    { id: 8, title: '사하라라이트 벽바닥 통일', category: '주거시설', year: '2024', img: IMAGES.saharaLight_wallFloor_living },
-    { id: 9, title: '이모션블랑 미니멀 화이트', category: '주거시설', year: '2024', img: IMAGES.emotionBlanc_minimal_livingroom },
-    { id: 10, title: '에코스텍 홈스튜디오', category: '주거시설', year: '2024', img: IMAGES.ecostec_studioAfter },
-    { id: 11, title: '계산동 하이베라스 사무실', category: '상업시설', year: '2024', img: IMAGES.wsindus_ecostec_office1 },
-    { id: 12, title: '사무실 에코스텍 흡음패널', category: '상업시설', year: '2024', img: IMAGES.wsindus_ecostec_office2 },
-    { id: 13, title: '라이즈오토그래프 호텔 포토부스', category: '상업시설', year: '2024', img: IMAGES.wsindus_photobooth_exterior },
+    { id: 1, title: '진 그란데 이모션블랑 신혼집 거실', category: '주거시설', year: '2024', img: "" },
+    { id: 2, title: '이모션블랑 주방 인테리어', category: '주거시설', year: '2024', img: "" },
+    { id: 3, title: '이모션블랑 밝은 거실', category: '주거시설', year: '2024', img: "" },
+    { id: 4, title: '사하라라이트 현관+거실', category: '주거시설', year: '2024', img: "" },
+    { id: 5, title: '사하라라이트 75평 거실', category: '주거시설', year: '2024', img: "" },
+    { id: 6, title: '디자인월+사하라라이트 주방', category: '주거시설', year: '2024', img: "" },
+    { id: 7, title: '디자인월 아트월 거실', category: '주거시설', year: '2024', img: "" },
+    { id: 8, title: '사하라라이트 벽바닥 통일', category: '주거시설', year: '2024', img: "" },
+    { id: 9, title: '이모션블랑 미니멀 화이트', category: '주거시설', year: '2024', img: "" },
+    { id: 10, title: '에코스텍 홈스튜디오', category: '주거시설', year: '2024', img: "" },
+    { id: 11, title: '계산동 하이베라스 사무실', category: '상업시설', year: '2024', img: "" },
+    { id: 12, title: '사무실 에코스텍 흡음패널', category: '상업시설', year: '2024', img: "" },
+    { id: 13, title: '라이즈오토그래프 호텔 포토부스', category: '상업시설', year: '2024', img: "" },
   ];
 
   const filteredProjects = selectedCategory === '전체'
@@ -42,7 +42,7 @@ export default function Portfolio() {
       <section className="relative h-[300px] md:h-[500px] flex items-center justify-center bg-charcoal">
         <div className="absolute inset-0">
           <SafeImage
-            src={IMAGES.iconic_overview}
+            src={IMAGES.iconic.overview}
             alt="시공 사례"
             className="w-full h-full"
             loading="eager"
@@ -89,6 +89,7 @@ export default function Portfolio() {
                     src={project.img}
                     alt={`${project.title} 시공사례`}
                     className="w-full h-full group-hover:scale-110 transition-transform duration-700"
+                    fallbackText={project.title}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
@@ -122,6 +123,7 @@ export default function Portfolio() {
                 src={selectedProject.img}
                 alt={`${selectedProject.title} 시공사례`}
                 className="w-full h-full"
+                fallbackText={selectedProject.title}
               />
               <div className="absolute bottom-3 left-3 bg-black/60 text-white px-3 py-1 rounded">
                 {selectedProject.year} · {selectedProject.category}
@@ -151,7 +153,7 @@ export default function Portfolio() {
                 <h3 className="font-serif text-xl font-bold text-charcoal mb-3">프로젝트 정보</h3>
                 <p className="text-gray-700 leading-relaxed">
                   {selectedProject.title} 시공 사례입니다.
-                  {selectedProject.year}년 완공된 이 프로젝트는 우성리빙솔루션의 전문적인 시공 기술과
+                  {selectedProject.year}년 완공된 이 프로젝트는 우성동화의 전문적인 시공 기술과
                   노하우가 집약된 대표 사례로, 공간의 특성에 맞는 최적의 마감재를 선택하고
                   정밀하게 시공하여 뛰어난 결과물을 완성했습니다.
                 </p>

@@ -10,36 +10,40 @@ export default function Wall() {
       name: '시그니월',
       type: '초대형 빅슬랩 벽장재',
       description: '1,010×2,460mm 아이코닉 스톤 패턴',
-      imgSrc: IMAGES.iconic_wallExample,
+      imgSrc: IMAGES.iconic.wallProduct,
       alt: '시그니월 벽재',
-      badges: ['NEW 2025', 'PREMIUM']
+      badges: ['NEW 2025', 'PREMIUM'],
+      fallbackText: '시그니월'
     },
     {
       id: 'designwall',
       name: '디자인월',
       type: '입체무늬 벽장재',
       description: '600x300x7T 아트월/악센트월 전용',
-      imgSrc: IMAGES.designWall_saharaLight_kitchen,
+      imgSrc: "",
       alt: '디자인월 벽재',
-      badges: ['BEST']
+      badges: ['BEST'],
+      fallbackText: '디자인월'
     },
     {
       id: 'designwall-grande',
       name: '디자인월 그란데',
       type: '대형 벽장재',
       description: '800x295x7T 넓은 벽면 시공 최적화',
-      imgSrc: IMAGES.designWall_saharaLight_artwall,
+      imgSrc: "",
       alt: '디자인월 그란데 벽재',
-      badges: ['NEW']
+      badges: ['NEW'],
+      fallbackText: '디자인월 그란데'
     },
     {
       id: 'dheim',
       name: '디하임',
       type: '가구 마감재',
       description: '친환경 E0 보드 LPM',
-      imgSrc: IMAGES.iconic_furnitureExample,
+      imgSrc: IMAGES.iconic.furnitureProduct,
       alt: '디하임 가구재',
-      badges: ['NEW 2024', 'ECO']
+      badges: ['NEW 2024', 'ECO'],
+      fallbackText: '디하임'
     },
   ];
 
@@ -67,7 +71,7 @@ export default function Wall() {
     <div className="w-full">
       <section className="relative h-[500px] md:h-[500px] overflow-hidden">
         <SafeImage
-          src={IMAGES.designWall_saharaLight_artwall}
+          src={IMAGES.iconic.wallProduct}
           alt="동화자연마루 아이코닉 스톤 컬렉션"
           className="absolute inset-0 w-full h-full"
           loading="eager"
@@ -112,6 +116,7 @@ export default function Wall() {
                     src={product.imgSrc}
                     alt={product.alt}
                     className="w-full h-48 md:h-56 rounded-t-xl"
+                    fallbackText={product.fallbackText || product.name}
                   />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal text-xs md:text-sm">자세히 보기</span>

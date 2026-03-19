@@ -18,34 +18,22 @@ export default function Ecostec() {
   };
 
   const getProductImage = (productName: string) => {
-    if (productName.includes('세이프월')) return IMAGES.wsindus_ecostec_spec;
-    if (productName.includes('에코스텍')) return IMAGES.ecostec_productInfo;
-    return IMAGES.ecostec_productInfo;
+    return "";
   };
 
   const spaces = [
-    { icon: Briefcase, title: '사무실', image: IMAGES.wsindus_ecostec_office1 },
-    { icon: Building2, title: '회의실', image: IMAGES.wsindus_ecostec_office2 },
-    { icon: BookOpen, title: '홈스튜디오', image: IMAGES.ecostec_studioAfter },
-    { icon: Theater, title: '강당/극장', image: IMAGES.ecostec_studioProcess },
-    { icon: Dumbbell, title: '체육관', image: IMAGES.wsindus_glassPartition },
-    { icon: Church, title: '종교시설', image: IMAGES.wsindus_ecostec_spec },
+    { icon: Briefcase, title: '사무실', image: "" },
+    { icon: Building2, title: '회의실', image: "" },
+    { icon: BookOpen, title: '홈스튜디오', image: "" },
+    { icon: Theater, title: '강당/극장', image: "" },
+    { icon: Dumbbell, title: '체육관', image: "" },
+    { icon: Church, title: '종교시설', image: "" },
   ];
 
   return (
     <div className="w-full">
       <section className="relative h-[60vh] md:h-screen flex items-center justify-center">
-        <div className="absolute inset-0">
-          <SafeImage
-            src={IMAGES.ecostec_studioAfter}
-            alt="에코스텍 흡음 패널"
-            className="w-full h-full"
-            loading="eager"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate opacity-70">
-          <div className="absolute inset-0 bg-gradient-to-r from-dark-slate/90 to-dark-slate/50"></div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate"></div>
 
         <div className="relative z-10 container mx-auto px-5 md:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -86,6 +74,7 @@ export default function Ecostec() {
                     src={getProductImage(product.name)}
                     alt={product.name}
                     className="w-full h-40 md:h-48"
+                    fallbackText={product.name}
                   />
                   <div className="absolute inset-0 bg-copper/0 group-hover:bg-copper/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white font-normal">자세히 보기</span>
@@ -132,6 +121,7 @@ export default function Ecostec() {
                     src={space.image}
                     alt={`${space.title} 인테리어`}
                     className="w-full h-full group-hover:scale-110 transition-transform duration-500"
+                    fallbackText={space.title}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3 text-white">
@@ -152,7 +142,7 @@ export default function Ecostec() {
               27년간 쌓아온 현장 경험
             </h2>
             <p className="text-base md:text-lg lg:text-xl text-stone-gray mb-8 font-light leading-relaxed">
-              우성리빙솔루션은 2005년부터 에코스텍을 시공해온<br className="hidden md:block" />
+              우성동화는 2005년부터 에코스텍을 시공해온<br className="hidden md:block" />
               국내 최장수 시공 파트너입니다.<br />
               국립중앙디지털도서관, 서울시 인재개발원,<br className="hidden md:block" />
               연세대학교, 국회의사당 등<br />
