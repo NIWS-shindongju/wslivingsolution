@@ -166,6 +166,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 동화자연마루 공식 영상 */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-5 md:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-xs text-stone-gray mb-2 tracking-widest uppercase">동화자연마루 공식 채널</p>
+            <h2 className="text-2xl md:text-3xl font-serif font-light text-dark-slate">
+              아이코닉 스톤 컬렉션, 영상으로 만나보세요
+            </h2>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/fhRXBCCrvgM?rel=0&modestbranding=1"
+                title="동화자연마루 아이코닉 스톤 컬렉션 총정리"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+            <p className="text-center text-xs text-stone-gray mt-4">
+              영상 출처: 동화자연마루 공식 유튜브 채널
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-5 md:px-6 lg:px-8">
           <div className="text-center mb-12">
