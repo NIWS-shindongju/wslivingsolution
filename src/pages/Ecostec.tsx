@@ -38,15 +38,19 @@ export default function Ecostec() {
 
   return (
     <div className="w-full">
-      <section className="relative h-[60vh] md:h-screen flex items-center justify-center">
-        <SafeImage
-          src="https://sspark.genspark.ai/cfimages?u1=ZJYdED5eI5ZYR3VKtszxDtKxGmiqBqziWky5%2FLGSAJy%2FLVSlXpOsv%2FJQjo%2B9mZ%2Bl5SpsIE0uqNOgsDloJFPt5vVkBtsg4c0ecPyVue%2FiIGvJSdUuY4ggzzSXoyzkiaeLfrfWKWgbx4WOvjINGAqHgvIXhxsyk6N40jXsVisJ1ceJSme1Y63D06TnyN%2BNYMLoj9TgnF06XuCltx3Z0WFO&u2=lyKOUAPBioB%2BrzXq&width=1024"
-          alt="에코스텍 배너"
-          className="absolute inset-0 w-full h-full"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
-
+      <section className="relative h-[60vh] md:h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 w-full h-full pointer-events-none">
+          <iframe
+            src="https://www.youtube.com/embed/bl0cRgVOr8I?autoplay=1&mute=1&loop=1&playlist=bl0cRgVOr8I&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&vq=hd1080"
+            title="에코스텍 시공 영상"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] min-w-full min-h-full"
+            style={{ aspectRatio: '16/9' }}
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            frameBorder="0"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 container mx-auto px-5 md:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="inline-block bg-copper/20 border border-copper text-copper px-4 py-2 rounded-full text-xs md:text-sm font-normal mb-6">
