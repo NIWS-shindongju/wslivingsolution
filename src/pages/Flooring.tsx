@@ -5,37 +5,37 @@ import { IMAGES } from '../constants/images';
 
 export default function Flooring() {
   const patterns = [
-    { key: 'monteWhite', name: '몬테화이트', isNew: true },
-    { key: 'emotionBlanc', name: '이모션블랑', isNew: true },
-    { key: 'saharaLight', name: '사하라라이트', isNew: false },
-    { key: 'slateMotif', name: '슬레이트모티프', isNew: true },
-    { key: 'slateSteel', name: '슬레이트스틸', isNew: false },
-    { key: 'portlandMotif', name: '포틀랜드모티프', isNew: true },
-    { key: 'portlandSteel', name: '포틀랜드스틸', isNew: false },
+    { key: 'monteWhite', name: '몬테화이트', isNew: true, img: "https://sspark.genspark.ai/cfimages?u1=SJXPliw24Z%2FIelEBfevN%2F%2BqwqSIjFb1%2FTSLvSkAig4t7EOAovVvfBjOMm0p98JGztaBgmkrOSBG%2BsjiExxZeQZQESNby5UTC%2BQJn%2BVKp7QVWAQ3BTbHSxp478YJgm5A%3D&u2=ulCmHJRUz7BMStBj&width=1024" },
+    { key: 'emotionBlanc', name: '이모션블랑', isNew: true, img: "https://sspark.genspark.ai/cfimages?u1=L7VrOH6OSkh9oQdiMHmJRuYZptM8GgtxzS3umfQhqJ2Qm%2BwCDBPoaRaz9J2yCcOCUdreBLaiNZaP2n9owyqzyS3ZDEk33x43s29uNljj7kcdRNbD3IhwSmc1xEa54sf%2BLwQ2&u2=rVMkgWLQNtMP9OSJ&width=1024" },
+    { key: 'saharaLight', name: '사하라라이트', isNew: false, img: "https://sspark.genspark.ai/cfimages?u1=sfhwcOHjQid%2BKwJRFQLF3nLeSyEpA6fCCPab3nCISLONv8ZiiVVVnz5gi9B6BhLFs2eiQcHO8TNoS6JSMF%2FdFZ%2FR89IbyMLfQlqpYySkuzk0XaXcLYyVUNJnqiWlkrTScTs%3D&u2=TaWyaAzz%2FUsTwmGZ&width=1024" },
+    { key: 'slateMotif', name: '슬레이트모티프', isNew: true, img: "https://sspark.genspark.ai/cfimages?u1=nDYVHBDC8g53f5ufdah2o47rMR%2BRxU6hQohVTc5RzcRrUM0vfjaGssiLVHm8uMLqcrnNoa%2B6qpRfk5dCrCHlkz01BOf%2F0bAmNgQ6ngIJJqtxRZ1Sz8fu4yD2KmTZ%2BQM%3D&u2=cKXyEo%2BkkXz1hpKH&width=1024" },
+    { key: 'slateSteel', name: '슬레이트스틸', isNew: false, img: "https://sspark.genspark.ai/cfimages?u1=9daGJcI3WyGXlE6%2BpL314nMLY9cY%2F3U%2F88Q72mOMp%2F8bFJ%2FLJ93K7tS8SCTUhQL%2B5%2FpPzvc4EYkv1zzarvIk0h4y8LkJil1ezHxoG6f0IrdL5E3ajRuInjq%2BH3vH408%3D&u2=Ak9OITkXaNJhUuWX&width=1024" },
+    { key: 'portlandMotif', name: '포틀랜드모티프', isNew: true, img: "https://sspark.genspark.ai/cfimages?u1=8A5blL6IEjbR6RcZ1OJ16ZAB%2BjGFzKHXfWyupdofObTfLcqke5Yh5TNdveR6wYkb1oniqakjcunOYWF7g054kdGoo8%2FiMBJkPDiDYCIDRxIIlX550MJK74UsHzp6koHpFVs%3D&u2=eToLsPUsN%2FIhYjg9&width=1024" },
+    { key: 'portlandSteel', name: '포틀랜드스틸', isNew: false, img: "https://sspark.genspark.ai/cfimages?u1=Nr0%2FIfX%2BfyKtPATQgQObdUXJ%2BtV3AxXKsUY%2FevKFB1KGz4wI7lIKJGW6J2ut4QEEGzm5aDjRm4ENDB6kC66ZGuEfvmt38VTdKBn11vUTuhZNrbh84S7ipexsfXeriQ5s7yk%3D&u2=%2F%2BNl0iFNLb%2BUnfb%2F&width=1024" },
   ];
 
   const jinSeriesProducts = [
-    { id: 'jin-origin', name: '진 오리진', imgSrc: "", alt: '진 오리진 바닥재', type: '원목강마루', fallbackText: '진 오리진' },
-    { id: 'jin-tera', name: '진 테라', imgSrc: "", alt: '진 테라 바닥재', type: '광폭 강마루', fallbackText: '진 테라' },
-    { id: 'jin-tera-max', name: '진 테라 맥스', imgSrc: "", alt: '진 테라 맥스 바닥재', type: '초광폭 강마루', fallbackText: '진 테라 맥스' },
-    { id: 'jin-herringbone', name: '진 헤링본', imgSrc: "", alt: '진 헤링본 바닥재', type: '헤링본 패턴', fallbackText: '진 헤링본' },
-    { id: 'jin-grande', name: '진 그란데', imgSrc: "", alt: '진 그란데 바닥재', type: '타일형 강마루', fallbackText: '진 그란데' },
-    { id: 'jin-grande-square', name: '진 그란데 스퀘어', imgSrc: "", alt: '진 그란데 스퀘어 바닥재', type: '정사각 타일형', fallbackText: '진 그란데 스퀘어' },
-    { id: 'jin-texture', name: '진 텍스처', imgSrc: "", alt: '진 텍스처 바닥재', type: '엠보싱 마감', fallbackText: '진 텍스처' },
+    { id: 'jin-origin', name: '진 오리진', imgSrc: "https://sspark.genspark.ai/cfimages?u1=Q7595GHS8TOZ4RCz1%2BmEhC0nkHSnoLCVmtqf9JaPLbN3%2B%2FkzDCHiay68vhF8CPrebyBgy9J3MIifQGUBv1f7ivo6nvVN%2Bsh1WGPssxI1RkPA0zXmBrnJDL5%2Fwf4k%2FQ%3D%3D&u2=N%2BrbGV1vZ9hCW%2Bnv&width=1024", alt: '진 오리진 바닥재', type: '원목강마루', fallbackText: '진 오리진' },
+    { id: 'jin-tera', name: '진 테라', imgSrc: "https://sspark.genspark.ai/cfimages?u1=sfhwcOHjQid%2BKwJRFQLF3nLeSyEpA6fCCPab3nCISLONv8ZiiVVVnz5gi9B6BhLFs2eiQcHO8TNoS6JSMF%2FdFZ%2FR89IbyMLfQlqpYySkuzk0XaXcLYyVUNJnqiWlkrTScTs%3D&u2=TaWyaAzz%2FUsTwmGZ&width=1024", alt: '진 테라 바닥재', type: '광폭 강마루', fallbackText: '진 테라' },
+    { id: 'jin-tera-max', name: '진 테라 맥스', imgSrc: "https://sspark.genspark.ai/cfimages?u1=L7VrOH6OSkh9oQdiMHmJRuYZptM8GgtxzS3umfQhqJ2Qm%2BwCDBPoaRaz9J2yCcOCUdreBLaiNZaP2n9owyqzyS3ZDEk33x43s29uNljj7kcdRNbD3IhwSmc1xEa54sf%2BLwQ2&u2=rVMkgWLQNtMP9OSJ&width=1024", alt: '진 테라 맥스 바닥재', type: '초광폭 강마루', fallbackText: '진 테라 맥스' },
+    { id: 'jin-herringbone', name: '진 헤링본', imgSrc: "https://sspark.genspark.ai/cfimages?u1=nDYVHBDC8g53f5ufdah2o47rMR%2BRxU6hQohVTc5RzcRrUM0vfjaGssiLVHm8uMLqcrnNoa%2B6qpRfk5dCrCHlkz01BOf%2F0bAmNgQ6ngIJJqtxRZ1Sz8fu4yD2KmTZ%2BQM%3D&u2=cKXyEo%2BkkXz1hpKH&width=1024", alt: '진 헤링본 바닥재', type: '헤링본 패턴', fallbackText: '진 헤링본' },
+    { id: 'jin-grande', name: '진 그란데', imgSrc: "https://sspark.genspark.ai/cfimages?u1=8zHPzS2uvICR0a6efZ69v0c%2Bd8CWf%2BnZfUzTl0ITcP9BWSW3TEKx4mVmebOUNBrnXvG%2BEhZXH28pA1F0XI%2FTL5EMVqvipFE8TQVAH%2FoTkq7wNfe4NCuDJZivdA%3D%3D&u2=txT6r43e4gaZw89x&width=1024", alt: '진 그란데 바닥재', type: '타일형 강마루', fallbackText: '진 그란데' },
+    { id: 'jin-grande-square', name: '진 그란데 스퀘어', imgSrc: "https://sspark.genspark.ai/cfimages?u1=sJzu9Z6LyOjuwBfBh1gnc7SsrwX4BWv67jU0kTnevC%2FLFkRRrZT6g4TPziMUsc7Efvt%2F8kkpdUFrBql%2B%2BzwOZqltG%2FOWJ3Ka2KsAz3%2BTH8E%3D&u2=9Nz%2F1%2BJNdqlqMIi2&width=1024", alt: '진 그란데 스퀘어 바닥재', type: '정사각 타일형', fallbackText: '진 그란데 스퀘어' },
+    { id: 'jin-texture', name: '진 텍스처', imgSrc: "https://sspark.genspark.ai/cfimages?u1=9daGJcI3WyGXlE6%2BpL314nMLY9cY%2F3U%2F88Q72mOMp%2F8bFJ%2FLJ93K7tS8SCTUhQL%2B5%2FpPzvc4EYkv1zzarvIk0h4y8LkJil1ezHxoG6f0IrdL5E3ajRuInjq%2BH3vH408%3D&u2=Ak9OITkXaNJhUuWX&width=1024", alt: '진 텍스처 바닥재', type: '엠보싱 마감', fallbackText: '진 텍스처' },
   ];
 
   const otherFlooringProducts = [
-    { id: 'natus', name: '나투스', imgSrc: "", alt: '나투스 바닥재', type: '원목강마루', fallbackText: '나투스' },
-    { id: 'baum', name: '바움', imgSrc: "", alt: '바움 바닥재', type: '프리미엄 원목', fallbackText: '바움' },
-    { id: 'click-s', name: '클릭S', imgSrc: "", alt: '클릭S 바닥재', type: '강화마루', fallbackText: '클릭S' },
-    { id: 'duo-texture', name: '듀오 텍스처', imgSrc: "", alt: '듀오 텍스처 바닥재', type: '강화마루', fallbackText: '듀오 텍스처' },
+    { id: 'natus', name: '나투스', imgSrc: "https://sspark.genspark.ai/cfimages?u1=8A5blL6IEjbR6RcZ1OJ16ZAB%2BjGFzKHXfWyupdofObTfLcqke5Yh5TNdveR6wYkb1oniqakjcunOYWF7g054kdGoo8%2FiMBJkPDiDYCIDRxIIlX550MJK74UsHzp6koHpFVs%3D&u2=eToLsPUsN%2FIhYjg9&width=1024", alt: '나투스 바닥재', type: '원목강마루', fallbackText: '나투스' },
+    { id: 'baum', name: '바움', imgSrc: "https://sspark.genspark.ai/cfimages?u1=Nr0%2FIfX%2BfyKtPATQgQObdUXJ%2BtV3AxXKsUY%2FevKFB1KGz4wI7lIKJGW6J2ut4QEEGzm5aDjRm4ENDB6kC66ZGuEfvmt38VTdKBn11vUTuhZNrbh84S7ipexsfXeriQ5s7yk%3D&u2=%2F%2BNl0iFNLb%2BUnfb%2F&width=1024", alt: '바움 바닥재', type: '프리미엄 원목', fallbackText: '바움' },
+    { id: 'click-s', name: '클릭S', imgSrc: "https://sspark.genspark.ai/cfimages?u1=E31nxApL9vbk5H3UqIu1lPP5k%2FXM9Q1sQrjTe28t4Z4NjBROg1M76dc9rdeh72HAT5AK%2FR1TNAeVkRTTWvxI3%2BIAxGHidMP08LXGbHX3Yyot84Vpv%2FVry7Q%2FA3JhxlWN&u2=4C5DDSWPjjyrIMur&width=1024", alt: '클릭S 바닥재', type: '강화마루', fallbackText: '클릭S' },
+    { id: 'duo-texture', name: '듀오 텍스처', imgSrc: "https://sspark.genspark.ai/cfimages?u1=05E9R7AOJ8mvw30idedmNZkdYlGPQD0CSuU1WZCNP4O0rtvQQHoiP8ZSRd%2FfHelNQOLw95AWJMoknsD%2FXGGNnYjV73nM6VFIa1xpABsyOA6uU335kXfXF1os9pI%3D&u2=v60ApCDGwnXBcSbA&width=1024", alt: '듀오 텍스처 바닥재', type: '강화마루', fallbackText: '듀오 텍스처' },
   ];
 
   return (
     <div className="w-full">
       <section className="relative h-[500px] md:h-[500px] overflow-hidden">
         <SafeImage
-          src={IMAGES.iconic.collectionBanner}
+          src="https://sspark.genspark.ai/cfimages?u1=8zHPzS2uvICR0a6efZ69v0c%2Bd8CWf%2BnZfUzTl0ITcP9BWSW3TEKx4mVmebOUNBrnXvG%2BEhZXH28pA1F0XI%2FTL5EMVqvipFE8TQVAH%2FoTkq7wNfe4NCuDJZivdA%3D%3D&u2=txT6r43e4gaZw89x&width=1024"
           alt="동화자연마루 아이코닉 스톤 컬렉션"
           className="absolute inset-0 w-full h-full"
           loading="eager"
@@ -73,7 +73,7 @@ export default function Flooring() {
               <div key={p.key} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
                 <div className="relative h-48 md:h-64 overflow-hidden">
                   <SafeImage
-                    src={IMAGES.iconic[p.key as keyof typeof IMAGES.iconic]}
+                    src={p.img}
                     alt={`아이코닉 스톤 ${p.name} 패턴`}
                     className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                   />

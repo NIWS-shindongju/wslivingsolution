@@ -18,6 +18,12 @@ export default function Ecostec() {
   };
 
   const getProductImage = (productName: string) => {
+    if (productName === '에코스텍') {
+      return "https://sspark.genspark.ai/cfimages?u1=ZJYdED5eI5ZYR3VKtszxDtKxGmiqBqziWky5%2FLGSAJy%2FLVSlXpOsv%2FJQjo%2B9mZ%2Bl5SpsIE0uqNOgsDloJFPt5vVkBtsg4c0ecPyVue%2FiIGvJSdUuY4ggzzSXoyzkiaeLfrfWKWgbx4WOvjINGAqHgvIXhxsyk6N40jXsVisJ1ceJSme1Y63D06TnyN%2BNYMLoj9TgnF06XuCltx3Z0WFO&u2=lyKOUAPBioB%2BrzXq&width=1024";
+    }
+    if (productName === '세이프월') {
+      return "https://sspark.genspark.ai/cfimages?u1=F1hvWd1VS8S57oLcIENb3pvy01mPBxdLRJxrPfR5D5jEIhbMPbkJ9MD91V5KHJSMl6MMzY9lWBgBxLA4LMQzxSPslKIrbn5GRWhey4sArzlzQ56gZRkICoW2CiUnb6SKRrGtJI1U%2F7TmeT9T5bqBPlNACgveYN44wz4%2F4WZbw8EsH0eOzmcqbft2O08lN5dHZZaF%2BCtjnvO5WrEMQVs%3D&u2=FBMm1C5tmSBO1vE0&width=1024";
+    }
     return "";
   };
 
@@ -33,7 +39,13 @@ export default function Ecostec() {
   return (
     <div className="w-full">
       <section className="relative h-[60vh] md:h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-slate via-charcoal to-dark-slate"></div>
+        <SafeImage
+          src="https://sspark.genspark.ai/cfimages?u1=ZJYdED5eI5ZYR3VKtszxDtKxGmiqBqziWky5%2FLGSAJy%2FLVSlXpOsv%2FJQjo%2B9mZ%2Bl5SpsIE0uqNOgsDloJFPt5vVkBtsg4c0ecPyVue%2FiIGvJSdUuY4ggzzSXoyzkiaeLfrfWKWgbx4WOvjINGAqHgvIXhxsyk6N40jXsVisJ1ceJSme1Y63D06TnyN%2BNYMLoj9TgnF06XuCltx3Z0WFO&u2=lyKOUAPBioB%2BrzXq&width=1024"
+          alt="에코스텍 배너"
+          className="absolute inset-0 w-full h-full"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
 
         <div className="relative z-10 container mx-auto px-5 md:px-6 lg:px-8">
           <div className="max-w-3xl">

@@ -10,7 +10,7 @@ export default function Wall() {
       name: '시그니월',
       type: '초대형 빅슬랩 벽장재',
       description: '1,010×2,460mm 아이코닉 스톤 패턴',
-      imgSrc: IMAGES.iconic.wallProduct,
+      imgSrc: "https://sspark.genspark.ai/cfimages?u1=hkyMUsbyHbvACwTCMLS%2BHPYvsM%2FUHCg2AdTdHHBKxMsaGGqrhFNjdbOZ2PiLPIEvxwTpoG803uqp45khETUwufGo3kCJpKnMVbd9wfA3dBbbDPqfgtZoVqMl&u2=cvvnlcqP6vg2fgWi&width=1024",
       alt: '시그니월 벽재',
       badges: ['NEW 2025', 'PREMIUM'],
       fallbackText: '시그니월'
@@ -20,7 +20,7 @@ export default function Wall() {
       name: '디자인월',
       type: '입체무늬 벽장재',
       description: '600x300x7T 아트월/악센트월 전용',
-      imgSrc: "",
+      imgSrc: "https://sspark.genspark.ai/cfimages?u1=sfhwcOHjQid%2BKwJRFQLF3nLeSyEpA6fCCPab3nCISLONv8ZiiVVVnz5gi9B6BhLFs2eiQcHO8TNoS6JSMF%2FdFZ%2FR89IbyMLfQlqpYySkuzk0XaXcLYyVUNJnqiWlkrTScTs%3D&u2=TaWyaAzz%2FUsTwmGZ&width=1024",
       alt: '디자인월 벽재',
       badges: ['BEST'],
       fallbackText: '디자인월'
@@ -30,7 +30,7 @@ export default function Wall() {
       name: '디자인월 그란데',
       type: '대형 벽장재',
       description: '800x295x7T 넓은 벽면 시공 최적화',
-      imgSrc: "",
+      imgSrc: "https://sspark.genspark.ai/cfimages?u1=L7VrOH6OSkh9oQdiMHmJRuYZptM8GgtxzS3umfQhqJ2Qm%2BwCDBPoaRaz9J2yCcOCUdreBLaiNZaP2n9owyqzyS3ZDEk33x43s29uNljj7kcdRNbD3IhwSmc1xEa54sf%2BLwQ2&u2=rVMkgWLQNtMP9OSJ&width=1024",
       alt: '디자인월 그란데 벽재',
       badges: ['NEW'],
       fallbackText: '디자인월 그란데'
@@ -40,7 +40,7 @@ export default function Wall() {
       name: '디하임',
       type: '가구 마감재',
       description: '친환경 E0 보드 LPM',
-      imgSrc: IMAGES.iconic.furnitureProduct,
+      imgSrc: "https://sspark.genspark.ai/cfimages?u1=TbmevO0bNt3%2BEEIGa%2FoeN%2FfPbF0%2FUGVcNOljJkyX5BPqBgqMA0ecphL6K3pGe0fnHYWzHSyvhKruVSCfWuTkaY0Zw3%2FgQYJbYcBWJjuK5Xg9fY%2FiZ43ncXOsUcz1S%2BE%3D&u2=8ctThVuWag5RNKkg&width=1024",
       alt: '디하임 가구재',
       badges: ['NEW 2024', 'ECO'],
       fallbackText: '디하임'
@@ -48,13 +48,13 @@ export default function Wall() {
   ];
 
   const iconicStonePatterns = [
-    { key: 'monteWhite', name: '몬테화이트', isNew: true },
-    { key: 'emotionBlanc', name: '이모션블랑', isNew: true },
-    { key: 'saharaLight', name: '사하라라이트', isNew: false },
-    { key: 'slateMotif', name: '슬레이트모티프', isNew: true },
-    { key: 'slateSteel', name: '슬레이트스틸', isNew: false },
-    { key: 'portlandMotif', name: '포틀랜드모티프', isNew: true },
-    { key: 'portlandSteel', name: '포틀랜드스틸', isNew: false },
+    { key: 'monteWhite', name: '몬테화이트', isNew: true, img: "https://sspark.genspark.ai/cfimages?u1=SJXPliw24Z%2FIelEBfevN%2F%2BqwqSIjFb1%2FTSLvSkAig4t7EOAovVvfBjOMm0p98JGztaBgmkrOSBG%2BsjiExxZeQZQESNby5UTC%2BQJn%2BVKp7QVWAQ3BTbHSxp478YJgm5A%3D&u2=ulCmHJRUz7BMStBj&width=1024" },
+    { key: 'emotionBlanc', name: '이모션블랑', isNew: true, img: "https://sspark.genspark.ai/cfimages?u1=L7VrOH6OSkh9oQdiMHmJRuYZptM8GgtxzS3umfQhqJ2Qm%2BwCDBPoaRaz9J2yCcOCUdreBLaiNZaP2n9owyqzyS3ZDEk33x43s29uNljj7kcdRNbD3IhwSmc1xEa54sf%2BLwQ2&u2=rVMkgWLQNtMP9OSJ&width=1024" },
+    { key: 'saharaLight', name: '사하라라이트', isNew: false, img: "https://sspark.genspark.ai/cfimages?u1=sfhwcOHjQid%2BKwJRFQLF3nLeSyEpA6fCCPab3nCISLONv8ZiiVVVnz5gi9B6BhLFs2eiQcHO8TNoS6JSMF%2FdFZ%2FR89IbyMLfQlqpYySkuzk0XaXcLYyVUNJnqiWlkrTScTs%3D&u2=TaWyaAzz%2FUsTwmGZ&width=1024" },
+    { key: 'slateMotif', name: '슬레이트모티프', isNew: true, img: "https://sspark.genspark.ai/cfimages?u1=nDYVHBDC8g53f5ufdah2o47rMR%2BRxU6hQohVTc5RzcRrUM0vfjaGssiLVHm8uMLqcrnNoa%2B6qpRfk5dCrCHlkz01BOf%2F0bAmNgQ6ngIJJqtxRZ1Sz8fu4yD2KmTZ%2BQM%3D&u2=cKXyEo%2BkkXz1hpKH&width=1024" },
+    { key: 'slateSteel', name: '슬레이트스틸', isNew: false, img: "https://sspark.genspark.ai/cfimages?u1=9daGJcI3WyGXlE6%2BpL314nMLY9cY%2F3U%2F88Q72mOMp%2F8bFJ%2FLJ93K7tS8SCTUhQL%2B5%2FpPzvc4EYkv1zzarvIk0h4y8LkJil1ezHxoG6f0IrdL5E3ajRuInjq%2BH3vH408%3D&u2=Ak9OITkXaNJhUuWX&width=1024" },
+    { key: 'portlandMotif', name: '포틀랜드모티프', isNew: true, img: "https://sspark.genspark.ai/cfimages?u1=8A5blL6IEjbR6RcZ1OJ16ZAB%2BjGFzKHXfWyupdofObTfLcqke5Yh5TNdveR6wYkb1oniqakjcunOYWF7g054kdGoo8%2FiMBJkPDiDYCIDRxIIlX550MJK74UsHzp6koHpFVs%3D&u2=eToLsPUsN%2FIhYjg9&width=1024" },
+    { key: 'portlandSteel', name: '포틀랜드스틸', isNew: false, img: "https://sspark.genspark.ai/cfimages?u1=Nr0%2FIfX%2BfyKtPATQgQObdUXJ%2BtV3AxXKsUY%2FevKFB1KGz4wI7lIKJGW6J2ut4QEEGzm5aDjRm4ENDB6kC66ZGuEfvmt38VTdKBn11vUTuhZNrbh84S7ipexsfXeriQ5s7yk%3D&u2=%2F%2BNl0iFNLb%2BUnfb%2F&width=1024" },
   ];
 
   const getBadgeStyle = (badge: string) => {
@@ -71,7 +71,7 @@ export default function Wall() {
     <div className="w-full">
       <section className="relative h-[500px] md:h-[500px] overflow-hidden">
         <SafeImage
-          src={IMAGES.iconic.wallProduct}
+          src="https://sspark.genspark.ai/cfimages?u1=hkyMUsbyHbvACwTCMLS%2BHPYvsM%2FUHCg2AdTdHHBKxMsaGGqrhFNjdbOZ2PiLPIEvxwTpoG803uqp45khETUwufGo3kCJpKnMVbd9wfA3dBbbDPqfgtZoVqMl&u2=cvvnlcqP6vg2fgWi&width=1024"
           alt="동화자연마루 아이코닉 스톤 컬렉션"
           className="absolute inset-0 w-full h-full"
           loading="eager"
@@ -160,7 +160,7 @@ export default function Wall() {
               <div key={pattern.key} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
                 <div className="relative h-48 md:h-64 overflow-hidden">
                   <SafeImage
-                    src={IMAGES.iconic[pattern.key as keyof typeof IMAGES.iconic]}
+                    src={pattern.img}
                     alt={`아이코닉 스톤 ${pattern.name} 패턴`}
                     className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                   />
