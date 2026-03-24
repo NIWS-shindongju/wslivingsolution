@@ -167,7 +167,7 @@ export default function Portfolio() {
               032-589-7744
             </a>
             <a
-              href="http://pf.kakao.com/_pxoMRn/chat"
+              href="http://pf.kakao.com/_MdhEX/chat"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-yellow-400 hover:bg-yellow-500 text-charcoal px-8 py-4 rounded-lg text-lg font-normal transition-all text-center"

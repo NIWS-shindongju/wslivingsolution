@@ -231,7 +231,7 @@ export default function Header() {
                   <span>전화하기</span>
                 </a>
                 <a
-                  href="http://pf.kakao.com/_pxoMRn/chat"
+                  href="http://pf.kakao.com/_MdhEX/chat"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 bg-yellow-400 text-charcoal py-4 rounded-lg font-normal"

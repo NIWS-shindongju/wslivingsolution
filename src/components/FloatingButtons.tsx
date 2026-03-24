@@ -40,7 +40,9 @@ export default function FloatingButtons() {
       </a>
 
       <a
-        href="#"
+        href="http://pf.kakao.com/_MdhEX/chat"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hidden md:flex w-12 h-12 md:w-14 md:h-14 bg-yellow-400 hover:bg-yellow-500 rounded-full items-center justify-center shadow-xl transition-all hover:scale-110"
         aria-label="카카오톡 상담"
       >

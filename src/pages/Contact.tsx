@@ -305,13 +305,17 @@ export default function Contact() {
                   빠른 상담이 필요하신가요?
                 </p>
                 <a
-                  href="#"
+                  href="http://pf.kakao.com/_MdhEX/chat"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-charcoal hover:bg-charcoal/90 text-white px-6 py-3 rounded-lg font-semibold transition-all md:hidden mb-4"
                 >
                   카카오톡으로 문의하기
                 </a>
                 <a
-                  href="#"
+                  href="http://pf.kakao.com/_MdhEX/chat"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hidden md:inline-block bg-charcoal hover:bg-charcoal/90 text-white px-6 py-3 rounded-lg font-semibold transition-all"
                 >
                   카카오톡으로 문의하기
