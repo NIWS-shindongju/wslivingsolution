@@ -116,7 +116,7 @@ export default function Products() {
                   </div>
                   <div className="h-48 rounded-lg overflow-hidden">
                     <SafeImage
-                      src={IMAGES.saharaLight_wallFloor_product}
+                      src={IMAGES.iconic.wallProduct}
                       alt="디자인월 제품"
                       className="w-full h-full"
                     />
